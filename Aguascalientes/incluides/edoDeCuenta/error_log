@@ -1,0 +1,18 @@
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagecreatefrompng(template.png): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 47
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 48
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 53
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 57
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 59
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 61
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 63
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagecopymerge() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 65
+[03-Jan-2020 22:37:36 UTC] PHP Warning:  imagepng() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 74
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagecreatefrompng(template.png): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 47
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 48
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 53
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 57
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 59
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 61
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagettftext() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 63
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagecopymerge() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 65
+[03-Jan-2020 22:37:40 UTC] PHP Warning:  imagepng() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/edoDeCuenta/generar_boton.php on line 74

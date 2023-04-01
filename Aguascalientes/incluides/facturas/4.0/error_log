@@ -1,0 +1,465 @@
+[05-Jan-2022 23:35:33 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[05-Jan-2022 23:36:33 UTC] PHP Notice:  Array to string conversion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 200
+[06-Jan-2022 00:01:50 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:01:50 UTC] PHP Fatal error:  Call to a member function setRequestUrl() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:02:52 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:03:52 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 59
+[06-Jan-2022 00:03:52 UTC] PHP Fatal error:  Call to a member function setRequestUrl() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 59
+[06-Jan-2022 00:04:31 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:08:16 UTC] PHP Fatal error:  Class 'http' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:08:41 UTC] PHP Fatal error:  Can't use function return value in write context in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:09:26 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:11:43 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:12:18 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:24:46 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:24:57 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:29:04 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:29:04 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:33:51 UTC] PHP Fatal error:  Class 'http' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:34:04 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 59
+[06-Jan-2022 00:34:04 UTC] PHP Fatal error:  Call to a member function setRequestUrl() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 59
+[06-Jan-2022 00:46:26 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 00:57:44 UTC] PHP Parse error:  syntax error, unexpected '$response' (T_VARIABLE), expecting ')' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 203
+[06-Jan-2022 00:58:12 UTC] PHP Parse error:  syntax error, unexpected '$response' (T_VARIABLE), expecting ')' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 203
+[06-Jan-2022 17:12:04 UTC] PHP Warning:  include_once(../conexion.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:12:04 UTC] PHP Warning:  include_once(): Failed opening '../conexion.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:12:04 UTC] PHP Notice:  Undefined variable: conexion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:12:04 UTC] PHP Fatal error:  Call to a member function query() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:12:21 UTC] PHP Warning:  include_once(../../conexion.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:12:21 UTC] PHP Warning:  include_once(): Failed opening '../../conexion.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:12:21 UTC] PHP Notice:  Undefined variable: conexion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:12:21 UTC] PHP Fatal error:  Call to a member function query() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:13:00 UTC] PHP Notice:  Undefined variable: idClientes in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 25
+[06-Jan-2022 17:13:00 UTC] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 17:13:23 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE) in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:13:27 UTC] PHP Parse error:  syntax error, unexpected '$con' (T_VARIABLE) in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:13:42 UTC] PHP Warning:  include_once(../../conexion.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:13:42 UTC] PHP Warning:  include_once(): Failed opening '../../conexion.php' for inclusion (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:13:42 UTC] PHP Notice:  Undefined variable: con in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:13:42 UTC] PHP Fatal error:  Call to a member function query() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 11
+[06-Jan-2022 17:14:16 UTC] PHP Fatal error:  Class 'http\Client' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 17:18:36 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=6b08d578801ebec029706f4c1348ae83664cd033; expires=Fri, 07-Jan-2022 01:18:35 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:18:34 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 17:19:52 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=c3005ad926f6aa77a87218f8d8ab147574cff522; expires=Fri, 07-Jan-2022 01:19:50 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:19:50 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 17:26:46 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:26:46 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:27:57 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:27:57 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 17:29:26 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:29:26 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:29:36 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:29:36 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:29:46 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:29:46 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:31:02 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:31:02 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 17:31:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getBody() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:177
+Stack trace:
+#0 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 177
+[06-Jan-2022 17:32:15 UTC] PHP Notice:  Trying to get property of non-object in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:32:15 UTC] PHP Notice:  Trying to get property of non-object in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 253
+[06-Jan-2022 17:34:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getBody() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:177
+Stack trace:
+#0 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 177
+[06-Jan-2022 17:38:29 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 57
+[06-Jan-2022 17:39:14 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 57
+[06-Jan-2022 17:39:25 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 57
+[06-Jan-2022 17:39:41 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 57
+[06-Jan-2022 17:41:41 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:41:42 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:41:43 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:41:44 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:41:44 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:49:31 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 182
+[06-Jan-2022 17:49:53 UTC] PHP Fatal error:  Call to a member function getBody() on null in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 177
+[06-Jan-2022 17:52:19 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=987604e7a878369617bae6c4da58853d475e7b09; expires=Fri, 07-Jan-2022 01:52:17 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:52:17 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 17:57:42 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=9ffc850bf835b483198ff199ba4d7630d38dccaa; expires=Fri, 07-Jan-2022 01:57:40 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:57:40 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 17:57:54 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=58485858756c977b2c27ebb109b49001fbb9aa84; expires=Fri, 07-Jan-2022 01:57:53 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:57:53 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 17:58:08 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=2014af87983b20579d230c1f0da538915d9c1bbd; expires=Fri, 07-Jan-2022 01:58:07 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:58:07 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 17:58:37 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=800cd13f5610e5ff04eddb672bc55f622dc27cdd; expires=Fri, 07-Jan-2022 01:58:36 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 17:58:36 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 18:04:51 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=122c41991fbd84ff45bc1ff76489cb210f8bbeb1; expires=Fri, 07-Jan-2022 02:04:50 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 18:04:50 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 18:05:15 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=dd7d0c1ee0da895875df13e9396a2ce36ddde877; expires=Fri, 07-Jan-2022 02:05:14 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 18:05:13 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 18:13:43 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 183
+[06-Jan-2022 18:14:31 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 184
+[06-Jan-2022 18:14:50 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=1a9ae5deb7ea45ea408831cdfc0c6927362dd55d; expires=Fri, 07-Jan-2022 02:14:49 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 18:14:49 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 18:21:02 UTC] PHP Notice:  Undefined variable: idClientes in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 25
+[06-Jan-2022 18:21:02 UTC] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 19:25:06 UTC] PHP Notice:  Undefined variable: idClientes in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 25
+[06-Jan-2022 19:25:06 UTC] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 19:41:22 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=c722f7b856cb3df1bcddf99442fe0a62843e968c; expires=Fri, 07-Jan-2022 03:41:21 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 19:41:21 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 175
+[06-Jan-2022 19:43:38 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=cf9cbd70b81d0354899453e9e1548eedbcd95edc; expires=Fri, 07-Jan-2022 03:43:37 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 19:43:37 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 176
+[06-Jan-2022 19:45:34 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 19:46:54 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 19:47:01 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 58
+[06-Jan-2022 19:47:29 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=01cb707b6720fa903b0fe959c0f24ea46b052bcc; expires=Fri, 07-Jan-2022 03:47:29 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 19:47:29 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 179
+[06-Jan-2022 19:53:51 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:53:51 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:54:50 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:54:50 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:55:00 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:55:00 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:55:11 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 19:55:11 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 19:55:11 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:02:43 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 20:02:43 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 20:02:53 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=237f02bccb43b3c8652384f64e4aca220f1cb88f; expires=Fri, 07-Jan-2022 04:02:53 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:02:53 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 179
+[06-Jan-2022 20:05:11 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:05:11 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='/home/digital/php:.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:05:24 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:05:24 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:05:24 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='/home/digital/php:.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:07:18 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:07:18 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:07:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='/home/digital/php:') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:07:41 UTC] PHP Notice:  Undefined variable: request in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:07:41 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:07:41 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='/home/digital/php:') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:09:11 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=0ef7f5761348cb41ae3d6644e7d56fb067981cae; expires=Fri, 07-Jan-2022 04:09:11 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:09:10 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 180
+[06-Jan-2022 20:10:00 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=afa8a55fe970ab3dd4add0a6563d29d106b8dfcc; expires=Fri, 07-Jan-2022 04:10:00 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:10:00 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 180
+[06-Jan-2022 20:12:14 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=4b2cb2e39861d12c0d01444f810526cd82684fbf; expires=Fri, 07-Jan-2022 04:12:14 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:12:13 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 180
+[06-Jan-2022 20:21:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:22:31 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 26
+[06-Jan-2022 20:25:25 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 26
+[06-Jan-2022 20:25:43 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:25:55 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:25:58 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:26:39 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:27:37 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:28:43 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:29:42 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 27
+[06-Jan-2022 20:40:18 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 20:40:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[06-Jan-2022 20:40:31 UTC] PHP Fatal error:  Class 'HTTP_Request2' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:40:39 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:40:39 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='/home/digital/php:.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 3
+[06-Jan-2022 20:41:07 UTC] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/digital/php/HTTP/Request.php on line 412
+[06-Jan-2022 20:41:07 UTC] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/digital/php/HTTP/Request.php on line 736
+[06-Jan-2022 20:41:07 UTC] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/digital/php/HTTP/Request.php on line 749
+[06-Jan-2022 20:41:07 UTC] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/digital/php/HTTP/Request.php on line 794
+[06-Jan-2022 20:41:07 UTC] PHP Strict Standards:  Redefining already defined constructor for class Net_URL in /home/digital/php/Net/URL.php on line 124
+[06-Jan-2022 20:41:07 UTC] PHP Fatal error:  Class 'HTTP_Request2' not found in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 4
+[06-Jan-2022 20:41:58 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 200 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=a2d3e869908db8a2e9c9191bf8ea98d9906c8aa3; expires=Fri, 07-Jan-2022 04:41:57 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: User-Agent
+content-length: 61
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:41:57 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 20:41:58 UTC] PHP Fatal error:  Uncaught exception 'http\Exception\RuntimeException' with message 'http\Client::send(): Failed to parse headers: unexpected character '\057' at pos 4 of 'HTTP/2 200 \r\nexpires: Thu, 19 Nov 1981 08:52:00 GMT\r\ncache-control: no-store, no-cache, must-revalidate\r\npragma: no-cache\r\naccess-control-allow-origin: *\r\naccess-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key\r\naccess-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE\r\nset-cookie: xnovatech_session=a2d3e869908db8a2e9c9191bf8ea98d9906c8aa3'' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:10
+Stack trace:
+#0 /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php(10): http\Client->send()
+#1 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 20:42:47 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 200 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=d0482b8704e8d680e38fd8e7a67345cf7a86f958; expires=Fri, 07-Jan-2022 04:42:47 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: User-Agent
+content-length: 61
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:42:47 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 20:42:47 UTC] PHP Fatal error:  Uncaught exception 'http\Exception\RuntimeException' with message 'http\Client::send(): Failed to parse headers: unexpected character '\057' at pos 4 of 'HTTP/2 200 \r\nexpires: Thu, 19 Nov 1981 08:52:00 GMT\r\ncache-control: no-store, no-cache, must-revalidate\r\npragma: no-cache\r\naccess-control-allow-origin: *\r\naccess-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key\r\naccess-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE\r\nset-cookie: xnovatech_session=d0482b8704e8d680e38fd8e7a67345cf7a86f958'' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:10
+Stack trace:
+#0 /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php(10): http\Client->send()
+#1 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 20:50:26 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 200 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=91397c6e939c685a5608989992a924b260aeb2b9; expires=Fri, 07-Jan-2022 04:50:26 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: User-Agent
+content-length: 61
+content-type: application/json; charset=utf-8
+date: Thu, 06 Jan 2022 20:50:26 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 20:50:26 UTC] PHP Fatal error:  Uncaught exception 'http\Exception\RuntimeException' with message 'http\Client::send(): Failed to parse headers: unexpected character '\057' at pos 4 of 'HTTP/2 200 \r\nexpires: Thu, 19 Nov 1981 08:52:00 GMT\r\ncache-control: no-store, no-cache, must-revalidate\r\npragma: no-cache\r\naccess-control-allow-origin: *\r\naccess-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key\r\naccess-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE\r\nset-cookie: xnovatech_session=91397c6e939c685a5608989992a924b260aeb2b9'' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:10
+Stack trace:
+#0 /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php(10): http\Client->send()
+#1 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[06-Jan-2022 22:35:37 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 500 
+accept-ranges: bytes
+vary: Accept-Encoding,User-Agent
+content-type: text/html
+date: Thu, 06 Jan 2022 22:33:33 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 203
+[06-Jan-2022 22:35:37 UTC] PHP Fatal error:  Uncaught exception 'http\Exception\RuntimeException' with message 'http\Client::send(): Failed to parse headers: unexpected character '\057' at pos 4 of 'HTTP/2 500 \r\naccept-ranges: bytes\r\nvary: Accept-Encoding,User-Agent\r\ncontent-type: text/html\r\ndate: Thu, 06 Jan 2022 22:33:33 GMT\r\nserver: Apache\r\n\r\n'' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:203
+Stack trace:
+#0 /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php(203): http\Client->send()
+#1 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 203
+[10-Jan-2022 18:08:06 UTC] PHP Warning:  require_once(HTTP/Request2.php): failed to open stream: No such file or directory in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[10-Jan-2022 18:08:06 UTC] PHP Fatal error:  require_once(): Failed opening required 'HTTP/Request2.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 2
+[10-Jan-2022 18:08:25 UTC] PHP Notice:  http\Client::send(): Non-standard version separator ' ' in HTTP protocol version '2 400 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key
+access-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE
+set-cookie: xnovatech_session=8bb4c8d7a6cba07edd60b58373f21b9ef63598e9; expires=Tue, 11-Jan-2022 02:08:25 GMT; Max-Age=28800; path=/; secure; HttpOnly; SameSite=Lax
+vary: Accept-Encoding,User-Agent
+content-type: application/json; charset=utf-8
+date: Mon, 10 Jan 2022 18:08:25 GMT
+server: Apache
+
+' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[10-Jan-2022 18:08:25 UTC] PHP Fatal error:  Uncaught exception 'http\Exception\RuntimeException' with message 'http\Client::send(): Failed to parse headers: unexpected character '\057' at pos 4 of 'HTTP/2 400 \r\nexpires: Thu, 19 Nov 1981 08:52:00 GMT\r\ncache-control: no-store, no-cache, must-revalidate\r\npragma: no-cache\r\naccess-control-allow-origin: *\r\naccess-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, api-usuario, api-password, jsoncfdi, uuid, destinatario, cco, mensaje, X-Api-Key\r\naccess-control-allow-methods: GET, POST, OPTIONS, PUT, PATCH, DELETE\r\nset-cookie: xnovatech_session=8bb4c8d7a6cba07edd60b58373f21b9ef63598e9'' in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php:10
+Stack trace:
+#0 /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php(10): http\Client->send()
+#1 {main}
+  thrown in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_test.php on line 10
+[21-Jan-2022 18:13:19 UTC] PHP Notice:  Undefined variable: idClientes in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 25
+[21-Jan-2022 18:13:19 UTC] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 27
+[21-Jan-2022 18:22:11 UTC] PHP Notice:  Array to string conversion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 141
+[21-Jan-2022 18:35:35 UTC] PHP Notice:  Array to string conversion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 141
+[21-Jan-2022 18:35:56 UTC] PHP Notice:  Array to string conversion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 141
+[21-Jan-2022 18:41:21 UTC] PHP Notice:  Array to string conversion in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 141
+[25-Jan-2022 18:55:34 UTC] PHP Notice:  Undefined index: idClientes in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 22
+[25-Jan-2022 18:55:34 UTC] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/digital/public_html/admin/clases/facturas/3.3/generar_factura_manual_activo.php on line 25
