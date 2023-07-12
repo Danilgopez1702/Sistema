@@ -37,9 +37,17 @@
                             </div>
                             <div class="row-md-12">
                                 <div class="form-group row">
+                                    <label class="col-sm-8 col-form-label">Telefono del Cliente:<span class="require">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="tel" name="tel" maxlength="10" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-md-12">
+                                <div class="form-group row">
                                     <label class="col-sm-8 col-form-label">Numero de servicio cfe:<span class="require">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="cfe" name="cfe" required="" />
+                                        <input type="text" class="form-control" id="cfe" name="cfe" maxlength="12" required/>
                                     </div>
                                 </div>
                             </div>

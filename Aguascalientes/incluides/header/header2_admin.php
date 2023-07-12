@@ -32,9 +32,6 @@
 <!-- Page level plugins -->
 <script src="../../../assets/vendor/chart.js/Chart.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="../../../assets/js/demo/chart-area-demo.js"></script>
-<script src="../../../assets/js/demo/chart-pie-demo.js"></script>
 
 <!-- Datatables -->
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>

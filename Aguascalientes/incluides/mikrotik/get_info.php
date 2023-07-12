@@ -3,8 +3,6 @@ use PEAR2\Net\RouterOS;
 require("../../../base_datos/conexion/conexion.php");
 include_once("PEAR2_Net_RouterOS-1.0.0b6/src/PEAR2/Autoload.php");
 
-$resultMk = mysqli_query($conexion, "SELECT usuario, pass, puerto FROM acceso_mk WHERE id_acceso_mk = 1");
-$rowMk = mysqli_fetch_assoc($resultMk);
 
 $sql_mk =  mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `id_cliente`= '$id_cliente'");
 $date = mysqli_fetch_assoc($sql_mk);
@@ -29,7 +27,7 @@ try {
     ******************CREAR CONEXION CON MK*****************
     ********************************************************/
     
-    $client  = new RouterOS\Client('189.201.189.2', $rowMk['usuario'], $rowMk['pass'], $rowMk['puerto']);
+    $client = new RouterOS\Client('189.201.189.2', 'SYSADMIN', ',xa^)w3V5jrk!h&L', '2089');
 
     $printRequest = new RouterOS\Request('/tool/user-manager/user/print');
     $printRequest->setArgument('.proplist', '.id,actual-profile,username');

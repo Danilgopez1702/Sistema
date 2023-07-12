@@ -34,7 +34,7 @@ $(function() {
                     $("#nummacont").prop('disabled', false);
                     $("#instalador_ont").prop('disabled', false);
 
-                } else{
+                } else if(data == 'error2'){
                     toastr.error('Equipo ' + $("#nummacont").val() + ' no existe en el inventario.'); 
                     $("#nummacont").val('');
                     $("#nummacont").focus();

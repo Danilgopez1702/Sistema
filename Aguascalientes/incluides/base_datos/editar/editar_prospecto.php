@@ -1,4 +1,6 @@
 <?php
+session_start();
+if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     require("../conexion/conexion.php");
 
     $id = $_POST['id'];
@@ -25,4 +27,5 @@
 
      
     header("location: ../../admin/clientes/consultar/prospecto.php?id=$id");
+}
 ?>

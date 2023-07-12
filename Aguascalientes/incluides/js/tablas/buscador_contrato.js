@@ -12,14 +12,39 @@ $(document).ready(function () {
     "columns":[
 
       {"data": "id_cliente" },
-      {"data": "status_cliente"},
+      {"data": "status_cliente",
+      "mRender": function ( data, type, full ) {
+        if (data == 0) {
+          return "<div class='alert alert-primary' role='alert'> Activo </div>";
+        } else if (data == 1) {
+          return "<div class='alert alert-primary' role='alert'> Por Vencer </div>";
+        } else if (data == 2) {
+          return "<div class='alert alert-warning' role='alert'> Moroso </div>";
+        } else if (data == 3) {
+          return "<div class='alert alert-warning' role='alert'> Moroso Inactivo </div>";
+        } else if (data == 4) {
+          return "<div class='alert alert-info' role='alert'> Eq Recuperado </div>";
+        } else if (data == 5) {
+          return "<div class='alert alert-warning' role='alert'> Eq por Recuperar </div>";
+        } else if (data == 6) {
+          return "<div class='alert alert-info' role='alert'> Eq Recuperado </div>";
+        } else if (data == 7) {
+          return "<div class='alert alert-info' role='alert'> Prospecto </div>";
+        } else if (data == 8) {
+          return "<div class='alert alert-dark' role='alert'> Dificil Rec. </div>";
+        } else if (data == 9) {
+          $status_cliente = "Por Revisar";
+        }
+      }},
       {"data": "folio_cliente"},
+      {"data": "onu_cliente"},
+      {"data": "bandera_cliente"},
       {"data": "numero_cliente"},
       {"data": "apellido_p_cliente"},
       {"data": "apellido_m_cliente"},
       {"data": "nombre_cliente"},
 
-      {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div></div>"}
+      {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnRepo' data-toggle='modal' title='Levantar reporte'><i class='fas fa-thin fa-wrench ml-2'></i></button></div>"}
   ],
     lengthMenu: [50, 75, 100],
     language: {
@@ -57,4 +82,14 @@ $(document).on("click", ".btnBorrar", function(){
   window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/clientes/consultar/caratula.php?id=" + user_id;
   
 });
+
+//Reporte
+$(document).on("click", ".btnRepo", function(){
+  fila = $(this);           
+  user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
+  console.log(user_id); 
+  window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
+  
+});
 })
+

@@ -207,7 +207,7 @@ function formSubmit(){
     console.log(num_cliente);
 
     $.ajax({
-        url: "../../../procesos/checarnumcliente.php",
+        url: "../../../procesos/checar_pago.php",
         type: 'POST',
         data: {
             'num_cliente' : num_cliente

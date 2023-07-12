@@ -157,6 +157,15 @@ require_once("../../../base_datos/conexion/conexion.php");
                                     </div>
                                 </div>
                             </div>
+                            <!-- Ingresar Referencia Domiciliaria -->
+                            <div class="col-md-6 mb-3">
+                                <div class="form-inline">
+                                    <label class="col-sm-4 col-form-label">Comentarios</label>
+                                    <div class="col-sm-8">
+                                        <textarea type="text" class="form-control col-sm-12" id="comentarios" name="comentarios" require></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

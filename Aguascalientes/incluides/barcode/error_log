@@ -1,0 +1,16 @@
+[22-Apr-2023 21:06:32 UTC] PHP Notice:  Undefined index: rango in /home/digital/public_html/admin/clases/barcode/index_planilla.php on line 5
+[22-Apr-2023 21:06:32 UTC] PHP Notice:  Undefined index: start in /home/digital/public_html/admin/clases/barcode/index_planilla.php on line 5
+[22-Apr-2023 21:06:32 UTC] PHP Notice:  Undefined index: rango in /home/digital/public_html/admin/clases/barcode/index_planilla.php on line 13
+[22-Apr-2023 21:06:32 UTC] PHP Notice:  Undefined index: start in /home/digital/public_html/admin/clases/barcode/index_planilla.php on line 13
+[22-Apr-2023 21:06:32 UTC] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/digital/public_html/admin/clases/barcode/barcode_planilla.php on line 185
+[22-Apr-2023 21:06:32 UTC] PHP Warning:  imagepng() expects parameter 1 to be resource, boolean given in /home/digital/public_html/admin/clases/barcode/barcode_planilla.php on line 194
+[24-Apr-2023 18:37:09 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:38:34 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:45:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:46:21 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:51:06 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:51:36 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:53:50 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:54:27 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:55:15 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5
+[24-Apr-2023 18:55:41 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/digital/public_html/admin/clases/barcode/index_digital.php on line 5

@@ -5,13 +5,12 @@ $id = $_GET['id'];
 include "../../../procesos/migraciones.php"
 ?>
 
-<h2>Ver migracion #<?php echo $numero_reporte ?></h2>
 <div class="card shadow mb-4">
 	<div class="card-header py-sm-2">
-		<h4 class="m-0 font-weight-bold text-primary">Consultar migraciones de: <?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?></h4>
+		<h4 class="m-0 font-weight-bold text-primary">Consultar migraciones </h4>
 	</div>
 	<div class="card-body ">
-
+ 
 		<!-- div de Informacion de Cliente -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-sm-2">
@@ -129,7 +128,7 @@ include "../../../procesos/migraciones.php"
 							<!-- Telefono 3-->
 							<div class="col-md-6 mb-3">
 								<div class="form-inline ">
-									<label class="col-sm-4 col-form-label">Telefono 3</label>
+									<label class="col-sm-4 col-form-label">Antena</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente" value="<?php echo $tel3_reporte ?>" disabled>
 									</div>

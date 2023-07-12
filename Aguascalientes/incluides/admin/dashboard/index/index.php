@@ -49,7 +49,7 @@ include "../../../procesos/dashboard.php";
                                     <small><?php echo $cancelado ?></small>
                                 </div>
                             </a>
-                            <a href="../../clientes/consultar/consultar_contrato.php?acomodo=7" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_contrato.php?acomodo=8" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Dificil Recuperacion</h5>
                                     <small><?php echo $dificil ?></small>
@@ -74,25 +74,25 @@ include "../../../procesos/dashboard.php";
                             <a href="../../reportes/visualizacion/ver_domicilio.php" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Cambio de Domicilio</h5>
-                                    <small>2</small>
+                                    <small><?php echo $cambio ?></small>
                                 </div>
                             </a>
-                            <a href="../../reportes/visualizacion/ver_domicilio.php" class="list-group-item list-group-item-action ">
+                            <a href="../../reportes/visualizacion/ver_reparaciones.php" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Reparaciones</h5>
-                                    <small>2</small>
+                                    <small><?php echo $reparaciones ?></small>
                                 </div>
                             </a>
-                            <a href="../../reportes/visualizacion/ver_domicilio.php" class="list-group-item list-group-item-action ">
+                            <a href="../../reportes/visualizacion/ver_migraciones.php" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Migraciones</h5>
-                                    <small>2</small>
+                                    <small><?php echo $migraciones ?></small>
                                 </div>
                             </a>
-                            <a href="../../reportes/visualizacion/ver_domicilio.php" class="list-group-item list-group-item-action ">
+                            <a href="../../reportes/visualizacion/ver_ventas.php" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Ventas</h5>
-                                    <small>2</small>
+                                    <small><?php echo $ventas ?></small>
                                 </div>
                             </a>
                         </div>
@@ -112,28 +112,28 @@ include "../../../procesos/dashboard.php";
                     </div>
                     <div class="card-body">
                         <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=1" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Revisar</h5>
-                                    <small>2</small>
+                                    <small><?php echo $rev ?></small>
                                 </div>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=2" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Revisar (segunda vez)</h5>
-                                    <small>2</small>
+                                    <small><?php echo $rev2 ?></small>
                                 </div>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/encuestas.php?acomodo=1" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Encuestar</h5>
-                                    <small>2</small>
+                                    <small><?php echo $en ?></small>
                                 </div>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/encuestas.php?acomodo=2" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Encuestar (segunda vez)</h5>
-                                    <small>2</small>
+                                    <small><?php echo $en2 ?></small>
                                 </div>
                             </a>
                         </div>
@@ -150,22 +150,22 @@ include "../../../procesos/dashboard.php";
                     </div>
                     <div class="card-body">
                         <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=1" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Primera Revisón</h5>
-                                    <small>2</small>
+                                    <small><?php echo $rep ?></small>
                                 </div>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=2" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Segunda Revisón</h5>
-                                    <small>2</small>
+                                    <small><?php echo $segunda ?></small>
                                 </div>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=3" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Revisón Morosa</h5>
-                                    <small>2</small>
+                                    <small><?php echo $moroso ?></small>
                                 </div>
                             </a>
                         </div>

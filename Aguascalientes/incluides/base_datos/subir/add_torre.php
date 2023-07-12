@@ -8,11 +8,12 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 
         $torre = $_POST['torre'];
         $nombre = $_POST['nombre'];
+        $tel = $_POST['tel'];
         $direccion = $_POST['direccion'];
         $cfe = $_POST['cfe'];
 
-        $sql = mysqli_query($conexion, "INSERT INTO `torres`(`lugar_torre`, `cliente_torre`, `direccion_torre`, `cfe_torre`) 
-        VALUES ('$torre','$nombre','$direccion','$cfe')");
+        $sql = mysqli_query($conexion, "INSERT INTO `torres`(`lugar_torre`, `cliente_torre`, `tel_torre`, `direccion_torre`, `cfe_torre`) 
+        VALUES ('$torre','$nombre','$tel', '$direccion','$cfe')");
 
         var_dump($sql);
         mysqli_close($conexion);

@@ -1,4 +1,6 @@
 <?php
+session_start();
+if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 require("../conexion/conexion.php");
 $id_cliente = $_GET['id'];
 $consultar_factura = mysqli_query($conexion, "SELECT * FROM `facturacion` WHERE id_cliente = '$id_cliente'");
@@ -35,6 +37,6 @@ if (mysqli_num_rows($consultar_factura) < 0) {
     `cp_factura`, `status_facturacion`, `id_zona`) VALUES ('$id_cliente', '$precio', '$fechaActual', '$nombre', 
     '$paterno', '$materno', '$nacimiento', '$email', '$calle', '$exterior', '$interior', '$estado', '$municipio', '$colonia', $postal, 2, 1)");
 }
-var_dump($sql3);
+}
 ?>                  
 <meta http-equiv="refresh" content="1; url=../../admin/clientes/facturacion/datos_facturacion.php?id=<?php echo $id_cliente ?>">

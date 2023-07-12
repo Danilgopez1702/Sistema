@@ -44,9 +44,17 @@ require("../../../base_datos/conexion/conexion.php");
     $factura = $cliente['factura'];
 
     $consultar_encuesta = mysqli_query($conexion, "SELECT * FROM `encuesta` WHERE `id_cliente` =  '$id_cliente'");
-    $encuesta = mysqli_fetch_assoc($consultar_encuesta);
-    $notas = $encuesta['razon_encuesta'];
-
+    $encuesta_cont = mysqli_num_rows($consultar_encuesta);
+    if($encuesta_cont > 0){
+        $encuesta = mysqli_fetch_assoc($consultar_encuesta);
+        if($encuesta['razon_encuesta'] != NULL){
+            $notas = $encuesta['razon_encuesta'];
+        }else{
+            $notas = " ";
+        }
+    }else{
+        $notas = " ";
+    }
 
     $consultar_zona = mysqli_query($conexion, "SELECT * FROM zonafibra WHERE id_zonafibra = $id_zona");
     $zonafibra = mysqli_fetch_assoc($consultar_zona);
@@ -71,81 +79,45 @@ require("../../../base_datos/conexion/conexion.php");
         $instalacion_name = "Fibra ONT";
     }
 
-    //entra el if de paquete y precio 
-        if($paquete_cliente == "2MB"){
-            $paquete = "2MB";
-            $precio_m = "$199";
-        }else if($paquete_cliente == "2MBV"){
-            $paquete = "2MB";
-            $precio_m = "$199";
-        }else if($paquete_cliente == "4MB"){
-            $paquete = "4MB";
-            $precio_m = "$269";
-        }else if($paquete_cliente == "4MBV"){
-            $paquete = "4MB";
-            $precio_m = "$269";
-        }else if($paquete_cliente == "6MB"){
-            $paquete = "6MB";
-            $precio_m = "$349";
-        }else if($paquete_cliente == "6MBV"){
-            $paquete = "6MB";
-            $precio_m = "$349";
-        }else if($paquete_cliente == "8MB"){
-            $paquete = "8MB";
-            $precio_m = "$399";
-        }else if($paquete_cliente == "8MBV"){
-            $paquete = "8MB";
-            $precio_m = "$399";
-        }else if($paquete_cliente == "10MB"){
-            $paquete = "10MB";
-            $precio_m = "$499";
-        }else if($paquete_cliente == "10MBV"){
-            $paquete = "10MB";
-            $precio_m = "$499";
-        }else if($paquete_cliente == "15MB"){
-            $paquete = "15MB";
-            $precio_m = "$599";
-        }else if($paquete_cliente == "15MBV"){
-            $paquete = "15MB";
-            $precio_m = "$599";
-        }else if($paquete_cliente == "5MBF"){
-            $paquete = "5MBF";
-            $precio_m = "$199";
-        }else if($paquete_cliente == "5MBFV"){
-            $paquete = "5MBF";
-            $precio_m = "$199";
-        }else if($paquete_cliente == "10MBF"){
-            $paquete = "10MBF";
-            $precio_m = "$269";
-        }else if($paquete_cliente == "10MBFV"){
-            $paquete = "10MBF";
-            $precio_m = "$269";
-        }else if($paquete_cliente == "20MBF"){
-            $paquete = "20MBF";
-            $precio_m = "$349";
-        }else if($paquete_cliente == "20MBFV"){
-            $paquete = "20MBF";
-            $precio_m = "$349";
-        }else if($paquete_cliente == "30MBF"){
-            $paquete = "30MB";
-            $precio_m = "$399";
-        }else if($paquete_cliente == "30MBFV"){
-            $paquete = "30MBF";
-            $precio_m = "$399";
-        }else if($paquete_cliente == "50MBF"){
-            $paquete = "50MBF";
-            $precio_m = "$499";
-        }else if($paquete_cliente == "50MBFV"){
-            $paquete = "50MBF";
-            $precio_m = "$499";
-        }else if($paquete_cliente == "100MBF"){
-            $paquete = "100MBF";
-            $precio_m = "$899";
-        }else if($paquete_cliente == "100MBFV"){
-            $paquete = "100MBF";
-            $precio_m = "$899";
-        }else if($paquete_cliente == "cancelado"){
-            $paquete = "cancelado";
-            $precio_m = "cancelado";
-        }
+  //entra el if de paquete y precio 
+  if($paquete_cliente == "2Megas"){
+    $paquete = "2MB";
+    $precio_m = "$199";
+}else if($paquete_cliente == "4Megas"){
+    $paquete = "4MB";
+    $precio_m = "$269";
+}else if($paquete_cliente == "6Megas"){
+    $paquete = "6MB";
+    $precio_m = "$349";
+}else if($paquete_cliente == "8Megas"){
+    $paquete = "8MB";
+    $precio_m = "$399";
+}else if($paquete_cliente == "10Megas"){
+    $paquete = "10MB";
+    $precio_m = "$499";
+}else if($paquete_cliente == "15Megas"){
+    $paquete = "15MB";
+    $precio_m = "$599";
+}else if($paquete_cliente == "5MegasFibra"){
+    $paquete = "5MBF";
+    $precio_m = "$199";
+}else if($paquete_cliente == "10MegasFibra"){
+    $paquete = "10MBF";
+    $precio_m = "$269";
+}else if($paquete_cliente == "20Megas"){
+    $paquete = "20MBF";
+    $precio_m = "$349";
+}else if($paquete_cliente == "30Megas"){
+    $paquete = "30MB";
+    $precio_m = "$399";
+}else if($paquete_cliente == "50Megas"){
+    $paquete = "50MBF";
+    $precio_m = "$499";
+}else if($paquete_cliente == "100Megas"){
+    $paquete = "100MBF";
+    $precio_m = "$899";
+}else if($paquete_cliente == "cancelado"){
+    $paquete = "cancelado";
+    $precio_m = "cancelado";
+}
 ?>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 require("../conexion/conexion.php");
 
 $id_cliente = $_POST['id'];
@@ -21,7 +23,7 @@ $regimen = $_POST['regimen'];
     `email_factura`= '$email',`calle_factura`= '$calle',`ext_factura`= '$exterior',`int_factura`= '$interior',`estado_factura`= '$estado',
     `municipio_factura`= '$municipio',`colonia_factura`= '$colonia',`cp_factura`= '$postal',`rfc_factura`='$rfc',`regimen_factura`='$regimen',`status_facturacion`= 2 
     WHERE id_cliente = $id_cliente");
-
+}
 var_dump($sql3);
 ?>
 <meta http-equiv="refresh" content="1; url=../../admin/clientes/facturacion/datos_facturacion.php?id=<?php echo $id_cliente ?>">

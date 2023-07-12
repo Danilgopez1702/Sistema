@@ -8,7 +8,7 @@ header("Content-Disposition: attachment; filename=$filename.xls");
 header("Pragma: no-cache");
 header("Expires: 0");
 //se hace la consulta de los nombres de las celdas a imprimir
-$query = mysqli_query($conexion, "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'digital_sistemadn' AND TABLE_NAME = 'pago_manual'");
+$query = mysqli_query($conexion, "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'inventar_sistemadn' AND TABLE_NAME = 'pago_manual'");
 while ($row = mysqli_fetch_assoc($query)) {
     $result[] = $row;
 }

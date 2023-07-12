@@ -56,15 +56,20 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
         <!-- Custom styles for this template-->
         <link href="../../../assets/css/sb-admin-2.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+        <!-- toast -->
+        <script src=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js "></script>
+        <link href=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css " rel="stylesheet">
 
         <!-- Datatables -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-        
+
 
     </head>
 
-    <body id="page-top">
+    <body id="page-top"  onload="cel()">
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -73,9 +78,10 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center " href="../admin/">
+                <a class="sidebar-brand d-flex align-items-center " href="../../../admin/dashboard/index/index.php">
                     <div>
-                        <img src="../../../assets/img/logo_blanco.png" width="150" height="60" />
+                        <img src="../../../assets/img/logo_blanco.png" id="imagen" width="150" height="60" />
+                        <H4 id="dn" style="display:none;">DN</H4>
                     </div>
 
                 </a>
@@ -101,11 +107,12 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="../../clientes/agregar/nuevo_contrato.php">Nuevo</a>
+                            <a class="collapse-item" href="../../clientes/agregar/nuevo_prospecto.php">Nuevo Prospecto</a>
+                            <a class="collapse-item" href="../../clientes/agregar/nuevo_contrato.php">Nuevo Contrato</a>
                             <a class="collapse-item" href="../../clientes/consultar/consultar_contrato.php?acomodo=99">Consultar</a>
-                            <a class="collapse-item" href="../../clientes/consultar/consultar_revisar.php?acomodo=7">Prospectos</a>
-                            <a class="collapse-item" href="../../clientes/consultar/consultar_revisar.php?acomodo=9">Por Revisar</a>
-                            <a class="collapse-item" href="../../clientes/consultar/encuestas.php">Encuestas</a>
+                            <a class="collapse-item" href="../../clientes/consultar/consultar_prospecto.php">Prospectos</a>
+                            <a class="collapse-item" href="../../clientes/consultar/consultar_contrato.php?acomodo=9">Por Revisar</a>
+                            <a class="collapse-item" href="../../clientes/consultar/encuestas.php?acomodo=1">Encuestas</a>
                         </div>
                     </div>
                 </li>
@@ -170,21 +177,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
                     </a>
                     <div id="collapseBarras" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="../../codigo_barras/individual/codigo_barras_tarjeta.php">Una Tarjeta</a>
+                            <!--<a class="collapse-item" href="../../codigo_barras/plantilla/codigo_barras_plantilla.php">Tarjetas Digital</a> -->
                             <a class="collapse-item" href="../../codigo_barras/plantilla/codigo_barras_plantilla.php">Plantillas de Tarjetas</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagos" aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-credit-card"></i>
-                        <span>Pagos</span></a>
-                    </a>
-                    <div id="collapsePagos" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="../..//pagos/pago_tarjeta.php">Pago con Tarjeta</a>
+                            <!--<a class="collapse-item" href="../../../docs/404.html">Tarjetas Digital</a> -->
                         </div>
                     </div>
                 </li>
@@ -262,6 +257,11 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="../../olt/ver_olt/olt.php">
+                        <i class="fas fa-fw fa-network-wired"></i>
+                        <span>OLT</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../../torres/ver_torres/telefonos_torres.php">
                         <i class="fas fa-fw fa-phone-volume"></i>
                         <span>Telefonos Torres</span></a>
@@ -333,6 +333,16 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                    <script type="text/javascript">
+                        function cel() {
+
+                            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+
+                                document.getElementById('imagen').style.display = 'none';
+                                document.getElementById('dn').style.display = 'block';
+                            }
+                            }
+                    </script>
                     <?php
                 } else {
                     header('location: ../../../reenvio/reenvio.php');

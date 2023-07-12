@@ -2,7 +2,7 @@
 
 include "../../../header/header_admin.php";
 require_once("../../../base_datos/conexion/conexion.php");
-$id_cliente = $_GET['id'];
+$id_prosp = $_GET['id'];
 include "../../../procesos/prospectos.php";
 ?>
 
@@ -12,11 +12,12 @@ include "../../../procesos/prospectos.php";
         <h4 class="m-0 font-weight-bold text-primary">Datos del Cliente</h4>
     </div>
     <div class="card-body">
-        <form class="forms-sample" method='post' id="formo" action='../../../base_datos/editar/editar_prospecto.php' enctype="multipart/form-data">
+        <form class="forms-sample" method='post' id="formo" action='../../../base_datos/subir/prospecto_a_cliente.php' enctype="multipart/form-data">
             <!-- Datos del Contrato -->
             <div class="card shadow mb-4">
                 <div class="card-header py-sm-2">
                     <h4 class="m-0 font-weight-bold text-primary">Datos del Contrato</h4>
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id_prosp ?>" required="" />
                 </div>
                 <div class="form-row py-3">
                     <div class="container text-center">
@@ -157,12 +158,21 @@ include "../../../procesos/prospectos.php";
                                     </div>
                                 </div>
                             </div>
+                            <!-- Ingresar Referencia Domiciliaria -->
+                            <div class="col-md-6 mb-3">
+                                <div class="form-inline">
+                                    <label class="col-sm-4 col-form-label">Comentarios</label>
+                                    <div class="col-sm-8">
+                                        <textarea type="text" class="form-control col-sm-12" id="comentarios" name="comentarios" require><?php echo $comentarios ?></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="panel-body text-right">
-                <button type="submit" class="btn btn-primary btn-icon-split btn-lg col-sm-2">Editar Prospecto</button>
+                <button type="submit" class="btn btn-primary btn-icon-split btn-lg col-sm-2">Agregar Cliente</button>
             </div>
         </form>
     </div>

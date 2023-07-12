@@ -94,7 +94,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
                                             ?>
-                                                    <option value="<?php echo $data_tecnico['usuario_usuario'] ?>">
+                                                    <option value="<?php echo $data_tecnico['id_usuario'] ?>">
                                                         <?php echo $data_tecnico['usuario_usuario'] ?>
                                                     </option>
                                             <?php
@@ -403,7 +403,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Codigo Postal</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="postal" name="postal" require>
+                                        <input type="text" class="form-control col-sm-12" id="postal" name="postal" maxlength="5" require>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +550,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Telefono Referencia 1</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="ref_tel" name="ref_tel" required>
+                                        <input type="text" class="form-control col-sm-12" id="ref_tel" maxlength="10" name="ref_tel" required>
                                     </div>
                                 </div>
                             </div>
@@ -568,7 +568,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Telefono Referencia 2</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="ref_tel2" name="ref_tel2" required>
+                                        <input type="text" class="form-control col-sm-12" id="ref_tel2" maxlength="10" name="ref_tel2" required>
                                     </div>
                                 </div>
                             </div>

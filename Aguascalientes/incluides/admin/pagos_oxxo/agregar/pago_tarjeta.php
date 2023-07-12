@@ -1,7 +1,6 @@
 <?php
 include "../../../header/header_admin.php";
 $id_cliente = $_GET['id'];
-include "../../../mikrotik/get_info.php";
 include "../../../procesos/pago_tarjeta.php";
 ?>
 
@@ -35,7 +34,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Paquete Contratado:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="nombre" name="nombre" value="<?php echo $user_profile ?>" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="nombre" name="nombre" value="<?php echo $velocidad_cliente ?>" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +64,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Nombre(s)</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="nombre" name="nombre" required>
+                                        <input type="text" class="form-control col-sm-12" id="nombre" name="nombre" value="<?php echo $nombre ?>">
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +73,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Apellidos</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="apellidos" name="apellidos" required>
+                                        <input type="text" class="form-control col-sm-12" id="apellidos" name="apellidos" value="<?php echo $apellido ?>" required>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +82,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Codigo Postal</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="postal" name="postal" require>
+                                        <input type="text" class="form-control col-sm-12" id="postal" name="postal" value="<?php echo $postal ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +91,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Pais</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="pais" name="pais" require>
+                                        <input type="text" class="form-control col-sm-12" id="pais" name="pais" value="<?php echo $pais ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +100,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Estado</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="estado" name="estado" require>
+                                        <input type="text" class="form-control col-sm-12" id="estado" name="estado" value="<?php echo $estado ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +109,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Municipio</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="municipio" name="municipio" require>
+                                        <input type="text" class="form-control col-sm-12" id="municipio" name="municipio" value="<?php echo $municipio ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +118,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Colonia</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="colonia" name="colonia" require>
+                                        <input type="text" class="form-control col-sm-12" id="colonia" name="colonia" value="<?php echo $colonia ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +127,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Calle y Numero</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="calleyNumero" name="calleyNumero" require>
+                                        <input type="text" class="form-control col-sm-12" id="calleyNumero" name="calleyNumero" value="<?php echo $calle ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +136,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Numero Interior</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="n_int" name="n_int">
+                                        <input type="text" class="form-control col-sm-12" id="n_int" name="n_int" value="<?php echo $interior ?>">
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +145,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Telefono 1</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="celular" name="celular" maxlength="10" require>
+                                        <input type="text" class="form-control col-sm-12" id="celular" name="celular" maxlength="10" value="<?php echo $tel1 ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +154,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Telefono 2</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="telefono" name="telefono" maxlength="10" require>
+                                        <input type="text" class="form-control col-sm-12" id="telefono" name="telefono" maxlength="10" value="<?php echo $tel2 ?>" require>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +163,7 @@ include "../../../procesos/pago_tarjeta.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Email</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control col-sm-12" id="email" name="email" require>
+                                        <input type="email" class="form-control col-sm-12" id="email" name="email" value="<?php echo $email ?>" require>
                                     </div>
                                 </div>
                             </div>

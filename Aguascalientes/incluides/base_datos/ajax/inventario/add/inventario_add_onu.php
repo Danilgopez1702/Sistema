@@ -16,8 +16,8 @@ if($numero>=1){
 echo "error";
 }else{
     //si no es mayor a 1 se inserta los datos que estan en el post
-$sql = mysqli_query($conexion, "INSERT INTO `inventario`(`onu_inventario`, `mac_inventario`,`fallo_inventario`, `tipo_inventario`)
- VALUES ('$numonu','$nummac','$fallo',1)");
+$sql = mysqli_query($conexion, "INSERT INTO `inventario`(`onu_inventario`,`id_instalador`, `mac_inventario`,`fallo_inventario`, `tipo_inventario`)
+ VALUES ('$numonu', 2,'$nummac','$fallo',1)");
 //el valor mensajes es para llamarlo en el log como string
 $mensajes ='Se agrego el equipo con onu '.$numonu .' y con mac'.$nummac.' al inventario';
 //esta consulta inserta valores en el historial (logs)

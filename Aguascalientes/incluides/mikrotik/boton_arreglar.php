@@ -1,227 +1,116 @@
 <?php
-use PEAR2\Net\RouterOS;
-include_once("PEAR2_Net_RouterOS-1.0.0b6/src/PEAR2/Autoload.php");
-require_once "../base_datos/conexion/conexion.php";
+include 'funciones.php';
+require('routeros_api.class.php');
+$API = new RouterosAPI();
+
+$API->debug = true;
+require("../base_datos/conexion/conexion.php");
 
 $id = $_POST['id'];
 
-$resultMk = mysqli_query($conexion, "SELECT usuario, pass, nombre FROM usuarios WHERE idUsuarios = 83");
-$rowMk = mysqli_fetch_assoc($resultMk);
+$consulta_clientes = mysqli_query($conexion, "SELECT `radio_cliente`, `router_cliente`, `velocidad_cliente` FROM `cliente` WHERE `id_cliente` = '$id'");
+$mac_clientes = mysqli_fetch_assoc($consulta_clientes);
 
-$sql =  mysqli_query($conexion, "SELECT * FROM `clientes` WHERE `idClientes`= $id");
-$date = mysqli_fetch_assoc($sql);
-$no_antena = $date['num_equipo'];
-$no_router = $date['NumRouter'];
-$velocidad = $date['velocidad'];
+if (!$mac_clientes['radio_cliente']) {
 
-if(!$no_antena && !$no_router){
+    $mac = $mac_clientes['router_cliente'];
+} else if (!$mac_clientes['router_cliente']) {
 
-}else if(!$no_router){
-    $mac = $no_antena;
-}else{
-    $mac = $no_router;
+    $mac = $mac_clientes['radio_cliente'];
 }
-$mac = str_replace(":","",$mac);
-$mac = wordwrap($mac , 2 , ':' , true );
+$mac = str_replace(":", "", $mac);
+$mac = wordwrap($mac, 2, ':', true);
 $mac = strtoupper($mac);
 
-try {
+$velocidad = $mac_clientes['velocidad_cliente'];
+$userman_user = 'SYSADMIN';
+$userman_pass = ',xa^)w3V5jrk!h&L';
+$userman_ip = '10.255.255.0';
 
-    $client   = new RouterOS\Client('189.201.189.2', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client2  = new RouterOS\Client('189.201.189.3', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client3  = new RouterOS\Client('189.201.187.2', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client4  = new RouterOS\Client('189.201.187.3', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client5  = new RouterOS\Client('189.201.189.7', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client6  = new RouterOS\Client('189.201.188.2', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client7  = new RouterOS\Client('189.201.189.8', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client8  = new RouterOS\Client('189.201.189.9', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client9  = new RouterOS\Client('189.201.187.5', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client10 = new RouterOS\Client('189.201.187.6', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client11 = new RouterOS\Client('189.201.187.6', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client12 = new RouterOS\Client('189.201.187.3', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client13 = new RouterOS\Client('189.201.187.8', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
-    $client14 = new RouterOS\Client('189.201.189.5', $rowMk['usuario'], $rowMk['pass'], $rowMk['nombre']);
+if ($velocidad == '2MB') {
+    $perfil = "2Megas";
+} else if ($velocidad == '2 MB') {
+    $perfil = "2Megas";
+} else if ($velocidad == '4MB') {
+    $perfil = "4Megas";
+} else if ($velocidad == '4 MB') {
+    $perfil = "4Megas";
+} else if ($velocidad == '5MB') {
+    $perfil = "5Megas";
+} else if ($velocidad == '5 MB') {
+    $perfil = "5Megas";
+} else if ($velocidad == '6MB') {
+    $perfil = "6Megas";
+} else if ($velocidad == '6 MB') {
+    $perfil = "6Megas";
+} else if ($velocidad == '8MB') {
+    $perfil = "8Megas";
+} else if ($velocidad == '8 MB') {
+    $perfil = "8Megas";
+} else if ($velocidad == '10MB') {
+    $perfil = "10Megas";
+} else if ($velocidad == '10 MB') {
+    $perfil = "10Megas";
+} else if ($velocidad == '15MB') {
+    $perfil = "15Megas";
+} else if ($velocidad == '15 MB') {
+    $perfil = "15Megas";
+} else if ($velocidad == '20MBF') {
+    $perfil = "20Megas";
+} else if ($velocidad == '20MB') {
+    $perfil = "20Megas";
+} else if ($velocidad == '30MBF') {
+    $perfil = "30Megas";
+} else if ($velocidad == '30MB') {
+    $perfil = "30Megas";
+} else if ($velocidad == '50MBF') {
+    $perfil = "50Megas";
+} else if ($velocidad == '50MB') {
+    $perfil = "50Megas";
+} else if ($velocidad == '100MBF') {
+    $perfil = "100Megas";
+} else if ($velocidad == '100MB') {
+    $perfil = "100Megas";
+} else if ($velocidad == '5MBF') {
+    $perfil = "5MegasFibra";
+} else if ($velocidad == '10MBF') {
+    $perfil = "10MegasFibra";
+}
+$buscar_user = $busqueda_userman($userman_ip, $userman_user, $userman_pass, $mac, $API);
+$numero_userman = $buscar_user['id_userman'];
+$eliminacion = $eliminar($userman_ip, $userman_user, $userman_pass, $numero_userman, $API);
+$crear = $agregar($userman_ip, $userman_user, $userman_pass, $mac, $API);
+$buscar_user = $busqueda_userman($userman_ip, $userman_user, $userman_pass, $mac, $API);
+$id_userman = $buscar_user['id_userman'];
+$paquete = $cambio_paquete($userman_ip, $userman_user, $userman_pass, $API, $perfil, $id_userman);
 
-    /*******************************************************
-    ********************Eliminamos cliente*******************
-    ********************************************************/
-    $activateRequest = new RouterOS\Request('/tool user-manager user remove');
-    $activateRequest
-        ->setArgument('numbers', $mac);
-    $client->sendSync($activateRequest);
+//Consultamos los mk para ver en donde se encuentra (hotspot)
+$consulta_mk = mysqli_query($conexion, "SELECT * FROM `mk` WHERE `nombre_mk` != 'DigitalNet 1'");
+$conteo_mk = mysqli_num_rows($consulta_mk);
+if ($conteo_mk > 0) {
+    while ($mk = mysqli_fetch_array($consulta_mk)) {
 
-    /*******************************************************
-    ********************Agregando cliente*******************
-    ********************************************************/
-    $activateRequest = new RouterOS\Request('/tool user-manager user add');
-    $activateRequest
-        ->setArgument('username', $mac)
-        ->setArgument('password', 'D1LcO16')
-        ->setArgument('customer', 'admin');
-    $client->sendSync($activateRequest);
+        $mk_ip = $mk['ip_mk'];
+        $mk_user = 'SYSADMIN';
+        $mk_pass = ',xa^)w3V5jrk!h&L';
 
+        //Checamos si existe la mac en el mk
+        $funcion_mk = $busqueda_general($mk_ip, $mk_user, $mk_pass, $mac, $API);
 
-    /*******************************************************
-    ******************Obtenemos ID del user*****************
-    ********************************************************/
-    $printRequest = new RouterOS\Request('/tool/user-manager/user/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('username', $mac));
-    $id = $client->sendSync($printRequest)->getProperty('.id');
+        // Verificar una condición para detener el bucle
+        if ($funcion_mk['id_general'] == 0) {
+        } else {
+            $ip_general = $funcion_mk['mk_ip'];
+            break; // Detener el bucle cuando se cumpla la condición
+        }
+    }
+}
+//deslogueamos
+$deslogear = $deslogeo($ip_general, $mk_user, $mk_pass, $mac, $API);
+$deslogear = $deslogeo($ip_general, $mk_user, $mk_pass, $mac, $API);
 
-
-    /*******************************************************
-    *****Cambiamos el perfil del cliente en user-manager****
-    ********************************************************/
-    $activateRequest = new RouterOS\Request('/tool/user-manager/user/create-and-activate-profile');
-    $activateRequest
-        ->setArgument('customer', 'admin')
-        ->setArgument('profile', $perfil)
-        ->setArgument('numbers', $id);
-    $client->sendSync($activateRequest);
-
-
-    /*******************************************************
-    ******************Obtenemos ID del host*****************
-    ********************************************************/
-
-
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id2 = $client2->sendSync($printRequest)->getProperty('.id');
-
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id3 = $client3->sendSync($printRequest)->getProperty('.id');
-
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id4 = $client4->sendSync($printRequest)->getProperty('.id');
-
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id5 = $client5->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id6 = $client6->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id7 = $client7->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id8 = $client8->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id9 = $client9->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id10 = $client10->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id11 = $client11->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id12 = $client12->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id13 = $client13->sendSync($printRequest)->getProperty('.id');
-    
-    $printRequest = new RouterOS\Request('/ip/hotspot/host/print');
-    $printRequest->setArgument('.proplist', '.id');
-    $printRequest->setQuery(RouterOS\Query::where('mac-address', $mac));
-    $id14 = $client14->sendSync($printRequest)->getProperty('.id');
-    
-    
-    if (empty($id2) && empty($id3) && empty($id4) && empty($id5) && empty($id6) && empty($id7) && empty($id8) && empty($id9) && empty($id10) && empty($id11) && empty($id12) && empty($id13)) {
-        echo " LISTO ...";
-    }else{
-    
-    //$id2 now contains the ID of the entry we're targeting
-
-    /**************************************************************
-    Desconectamos al usuario para que se active con el nuevo perfil
-    ***************************************************************/
-
-
-    $removeRequest2 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest2->setArgument('numbers', $id2);
-    $client2->sendSync($removeRequest2);
-
-    $removeRequest3 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest3->setArgument('numbers', $id3);
-    $client3->sendSync($removeRequest3);
-
-    $removeRequest4 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest4->setArgument('numbers', $id4);
-    $client4->sendSync($removeRequest4);
-
-    $removeRequest5 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest5->setArgument('numbers', $id5);
-    $client5->sendSync($removeRequest5);
-    
-    $removeRequest6 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest6->setArgument('numbers', $id6);
-    $client6->sendSync($removeRequest6);
-    
-    $removeRequest7 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest7->setArgument('numbers', $id7);
-    $client7->sendSync($removeRequest7);
-    
-    $removeRequest8 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest8->setArgument('numbers', $id8);
-    $client8->sendSync($removeRequest8);
-    
-    $removeRequest9 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest9->setArgument('numbers', $id9);
-    $client9->sendSync($removeRequest9);
-    
-    $removeRequest10 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest10->setArgument('numbers', $id10);
-    $client10->sendSync($removeRequest10);
-    
-    $removeRequest11 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest11->setArgument('numbers', $id11);
-    $client11->sendSync($removeRequest11);
-    
-    $removeRequest12 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest12->setArgument('numbers', $id12);
-    $client12->sendSync($removeRequest12);
-    
-    $removeRequest13 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest13->setArgument('numbers', $id13);
-    $client13->sendSync($removeRequest13);
-    
-    $removeRequest14 = new RouterOS\Request('/ip/hotspot/host/remove');
-    $removeRequest14->setArgument('numbers', $id14);
-    $client14->sendSync($removeRequest14);
-   
-    echo " LISTO ...";
-} 
-} catch (RouterOS\SocketException $e) {
-    echo "error: Fallo la coneccion con RouterOS... " . $e;
-} catch (RouterOS\DataFlowException $e) {
-    echo "error: ".$e->getMessage();//Wrong username or password; probably
-} catch (Exception $e) {
-    echo "error: Error desconocido, comuniquese con el administrador (Daniel)" . $e; //Connection fail to MySQL; probably
-} 
-?>
+if ($ip_general == 0) {
+    echo "error2";
+} else {
+    echo "ok";
+}

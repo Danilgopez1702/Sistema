@@ -9,8 +9,7 @@ $nombre_completo = $cliente['nombre_cliente'] ." " . $cliente['apellido_p_client
 $nombre = $cliente['nombre_cliente'];
 $apellido = $cliente['apellido_p_cliente'] . " ". $cliente['apellido_m_cliente'];
 $email = $cliente['email_cliente'];
-$calle = $cliente['calle_cliente'];
-$exterior = $cliente['numero_ext'];
+$calle = $cliente['calle_cliente'] . " " . $cliente['numero_ext'];
 $interior = $cliente['numero_int'];
 $postal = $cliente['codigo_postal'];
 $estado = $cliente['estado'];
@@ -21,6 +20,6 @@ $pais = "Mexico";
 $tel1 = $cliente['tel1_cliente'];
 $tel2 = $cliente['tel2_cliente'];
 $precio = $cliente['precio_cliente'];
-$paquete_cliente = $cliente['paquete_cliente'];
+$velocidad_cliente = $cliente['velocidad_cliente'];
 
 ?>

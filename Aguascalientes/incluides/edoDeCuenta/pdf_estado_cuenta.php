@@ -29,7 +29,7 @@ end TARJETA OXXO
 	$nocliente = $row['numero_cliente'];
 	$paquete = $row['paquete_cliente'];
 	$total = "$".number_format((float)$row['precio_cliente'], 2, '.', '');
-	$fechalimite = strftime("%d de %B de %Y",strtotime($row['fecha_corte']));
+	$fechalimite = date('d-m-Y', strtotime($row['fecha_corte']));
 
 
 $jpg_image = imagecreatefrompng('template.png');

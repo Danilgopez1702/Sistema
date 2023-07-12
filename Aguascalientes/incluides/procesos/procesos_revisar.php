@@ -1,6 +1,6 @@
 <?php
 require("../../../base_datos/conexion/conexion.php");
-    $consultar_cliente = mysqli_query($conexion, "SELECT * FROM cliente WHERE id_cliente = $id_cliente");
+    $consultar_cliente = mysqli_query($conexion, "SELECT * FROM `revisar` AS revisar INNER JOIN cliente AS cliente ON revisar.id_cliente = '$id_cliente' AND cliente.id_cliente = '$id_cliente'");
     $cliente = mysqli_fetch_assoc($consultar_cliente);
     $id_cliente = $cliente['id_cliente'];
     $folio = $cliente['folio_cliente'];
@@ -43,7 +43,11 @@ require("../../../base_datos/conexion/conexion.php");
     $id_zona = $cliente['id_zona'];
     $factura = $cliente['factura'];
 
-    $razon = $cliente['razon_revisar'];
+    if($cliente['razon_revisar'] != NULL){
+        $razon = $cliente['razon_revisar'];
+    }else{
+        $razon = "";
+    }
 
     $consultar_zona = mysqli_query($conexion, "SELECT * FROM zonafibra WHERE id_zonafibra = $id_zona");
     $zonafibra = mysqli_fetch_assoc($consultar_zona);

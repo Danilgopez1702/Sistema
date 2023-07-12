@@ -14,7 +14,7 @@ if ($acomodo == 0) {
 } else if ($acomodo == 4) {
 	$oracion = "Equipos Recuperados";
 } else if ($acomodo == 5) {
-	$oracion = "Equipos por Recuper";
+	$oracion = "Equipos por Recuperar";
 } else if ($acomodo == 6) {
 	$oracion = "Clientes Cancelados";
 } else if ($acomodo == 7) {

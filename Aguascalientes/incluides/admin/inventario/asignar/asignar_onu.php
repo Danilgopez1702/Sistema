@@ -62,11 +62,6 @@ require_once("../../../base_datos/conexion/conexion.php");
     </form>
 </div>
 
-<!-- estos 3 renglones son para los poop ups con el tostring-->
-<link href = "../../../js/toastr/toastr.min.css" rel="stylesheet" >
-<script src="https:ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../../../js/toastr/toastr.min.js"></script>
-
 <!-- aqui se manda llamar el js (script) de asignar_tecnico_onu.js-->
 <script src="../../../js/inventario/asignar/asignar_tecnico_onu.js"></script>
 

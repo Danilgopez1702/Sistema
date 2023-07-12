@@ -1,10 +1,10 @@
-$(document).ready(function(){ 
+$(document).ready(function () {
     var instalacion = document.getElementById('instalacion_nueva').value;
-    if(instalacion == 1){
+    if (instalacion == 1) {
         document.getElementById("antena_div").style.display = "block";
-    }else if(instalacion == 2){
+    } else if (instalacion == 2) {
         document.getElementById("onu_div").style.display = "block";
-    }else if(instalacion == 3){
+    } else if (instalacion == 3) {
         document.getElementById("ont_div").style.display = "block";
     }
 })
@@ -20,7 +20,7 @@ function precio() {
     } else if (paquete == "4Megas") {
         document.getElementById('precio_m').value = '269';
         document.getElementById('velocidad').value = '4MB';
-    }else if (paquete == "6Megas") {
+    } else if (paquete == "6Megas") {
         document.getElementById('precio_m').value = '349';
         document.getElementById('velocidad').value = '6MB';
     } else if (paquete == "8Megas") {
@@ -35,19 +35,19 @@ function precio() {
     } else if (paquete == "5MegasFibra") {
         document.getElementById('precio_m').value = '199';
         document.getElementById('velocidad').value = '5MBF';
-    }else if (paquete == "10MegasFibra") {
+    } else if (paquete == "10MegasFibra") {
         document.getElementById('precio_m').value = '269';
         document.getElementById('velocidad').value = '10MBF';
-    }else if (paquete == "20Megas") {
+    } else if (paquete == "20Megas") {
         document.getElementById('precio_m').value = '349';
         document.getElementById('velocidad').value = '20MBF';
-    }else if (paquete == "30Megas") {
+    } else if (paquete == "30Megas") {
         document.getElementById('precio_m').value = '399';
         document.getElementById('velocidad').value = '30MBF';
-    }else if (paquete == "50Megas") {
+    } else if (paquete == "50Megas") {
         document.getElementById('precio_m').value = '499';
         document.getElementById('velocidad').value = '50MBF';
-    }else if (paquete == "100Megas") {
+    } else if (paquete == "100Megas") {
         document.getElementById('precio_m').value = '899';
         document.getElementById('velocidad').value = '100MBF';
     }
@@ -191,4 +191,53 @@ function form_instalacion() {
         document.getElementById("onu").required = false;
         console.log(tipo)
     }
+}
+function formSubmit() {
+
+    toastr.success('Modificando cliente!');
+    $("#velocidad").prop("disabled", false);
+    $("#precio_m").prop("disabled", false);
+    $("#formo").submit();
+}
+function refresh(){
+    var id = $("#id").val();
+    $("#btn_refresh").attr("disabled", true);
+    toastr.info('Deslogueando...');
+    console.log(id)
+    $.ajax({
+        url: "../../../mikrotik/refresh.php",
+        type: 'POST',
+        data: {
+            'id' : id
+        }
+    }).done(function(data) {
+        if (data == 'error2') {
+            toastr.error('Cliente No Encontrado.');
+            $("#btn_refresh").prop("disabled", false);
+        }else  {
+            toastr.success('Cliente Deslogueado.');
+            $("#btn_refresh").prop("disabled", false);
+        }
+    })
+}
+function arreglar(){
+    var id = $("#id").val();
+    $("#btn_arreglar").prop("disabled", true);
+    toastr.info('Arreglando...');
+    console.log(id)
+    $.ajax({
+        url: "../../../mikrotik/boton_arreglar.php",
+        type: 'POST',
+        data: {
+            'id' : id
+        }
+    }).done(function(data) {
+        if (data == 'error2') {
+            toastr.error('Cliente No Encontrado.');
+            $("#btn_refresh").prop("disabled", false);
+        }else  {
+            toastr.success('Cliente Arreglado.');
+            $("#btn_refresh").prop("disabled", false);
+        }
+    })
 }

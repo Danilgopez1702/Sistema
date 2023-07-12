@@ -3,6 +3,7 @@
         $query_reporte = mysqli_query($conexion, "SELECT * FROM `reportes` WHERE `id_reportes` =  '$id'");
         $extraccion_reporte = mysqli_fetch_assoc($query_reporte);
 
+        $id_numero_reporte = $extraccion_reporte['id_reportes'];
         $numero_reporte = $extraccion_reporte['no_reporte_reportes'];
         $cliente_reporte = $extraccion_reporte['id_cliente'];
         $usuario_reporte = $extraccion_reporte['id_usuario'];
@@ -55,6 +56,7 @@
         $usuario_reparador = mysqli_fetch_assoc($query_reparador);
 
         $reparador_reporte = $usuario_reparador['usuario_usuario'];
+        $id_reparador_reporte = $usuario_reparador['id_usuario'];
 
 
 

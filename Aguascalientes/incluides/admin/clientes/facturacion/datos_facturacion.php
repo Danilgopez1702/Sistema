@@ -195,7 +195,7 @@ include "../../../procesos/procesos_facturacion.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="regimen" id="regimen" style="border-radius: 5px;">
                                             <?php
-                                            if ($regimen_factura == NULL) { ?>
+                                            if (!$regimen_factura) { ?>
                                                 <option>Selecciona un Regimen Fiscal....</option>
                                             <?php
                                             } else { ?>

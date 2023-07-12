@@ -1,8 +1,10 @@
 $(function() {
     $("#nummac").on("input", function() {
         var instalador_onu = $("#instalador_onu").val();
-        var nummac = $("#nummac").val().length;
-        if(nummac == 12 && instalador_onu != 999999999999 ){
+        var numac = $("#nummac").val().length;
+        var nummac = $("#nummac").val();
+        console.log(nummac)
+        if(numac == 12 && instalador_onu != 999999999999 ){
             $("#nummac").prop('disabled', true);
             $("#instalador_onu").prop('disabled', true);        
 
@@ -12,7 +14,7 @@ $(function() {
                 type: 'POST',
 //estos son los datos que pides
                 data: {
-                    'nummac' : $("#nummac").val(),
+                    'nummac' : nummac,
                     'instalador_onu' : $("#instalador_onu").val()
                 }
 // indica que ya se conecto exitosamente
@@ -27,14 +29,14 @@ $(function() {
 
 
 //se mando una alerta (temporalmente)  de que fue cargada exitosamente
-                } else if(data== 'success'){
+                } else if(data == 'success'){
                     toastr.success('Equipo ' + $("#nummac").val() + ' fue asignado correctamente al tecnico.'); 
                     $("#nummac").val('');
                     $("#nummac").focus();
                     $("#nummac").prop('disabled', false);
                     $("#instalador_onu").prop('disabled', false);
 
-                } else{
+                } else if(data == 'error2'){
                     toastr.error('Equipo ' + $("#nummac").val() + ' no existe en el inventario.'); 
                     $("#nummac").val('');
                     $("#nummac").focus();

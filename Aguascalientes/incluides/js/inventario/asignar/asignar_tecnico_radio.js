@@ -36,7 +36,7 @@ $(function() {
                     $("#instalador_antena").prop('disabled', false);
 
 
-                } else{
+                } else if(data == 'error2'){
                     toastr.error('Equipo ' + $("#numradio").val() + ' no existe en el inventario.'); 
                     $("#numradio").val('');
                     $("#numradio").focus();

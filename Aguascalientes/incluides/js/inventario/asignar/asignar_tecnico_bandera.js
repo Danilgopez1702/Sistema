@@ -37,7 +37,7 @@ $(function() {
                     $("#instalador_bandera").prop('disabled', false);
 
 
-                } else{
+                } else if(data == 'error2'){
                     toastr.error('Equipo ' + $("#numbandera").val() + ' no existe en el inventario.'); 
                     $("#numbandera").val('');
                     $("#numbandera").focus();

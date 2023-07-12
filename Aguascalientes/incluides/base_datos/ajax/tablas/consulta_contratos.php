@@ -16,9 +16,13 @@ if ($acomodo == 0) {
 	$consulta = mysqli_query($conexion, "SELECT * FROM cliente WHERE `status_cliente` = '5' ORDER BY id_cliente");
 } else if ($acomodo == 6) {
 	$consulta = mysqli_query($conexion, "SELECT * FROM cliente WHERE `status_cliente` = '6' ORDER BY id_cliente");
+} else if ($acomodo == 7) {
+	$consulta = mysqli_query($conexion, "SELECT * FROM cliente WHERE `status_cliente` = '7' ORDER BY id_cliente");
 } else if ($acomodo == 8) {
 	$consulta = mysqli_query($conexion, "SELECT * FROM cliente WHERE `status_cliente` = '8' ORDER BY id_cliente");
-} else {
+}  else if ($acomodo == 9) {
+	$consulta = mysqli_query($conexion, "SELECT * FROM `revisar` AS revisar INNER JOIN cliente AS cliente ON revisar.id_cliente = cliente.id_cliente");
+}else {
 	$consulta = mysqli_query($conexion, "SELECT * FROM cliente ORDER BY id_cliente");
 }
 
@@ -29,29 +33,7 @@ $data = array();
 while ($info = mysqli_fetch_assoc($consulta)) {
 
 	$id_cliente = $info['id_cliente'];
-
-	if ($info['status_cliente'] == 0) {
-		$status_cliente = "Activo";
-	} else if ($info['status_cliente'] == 1) {
-		$status_cliente = "Por Vencer";
-	} else if ($info['status_cliente'] == 2) {
-		$status_cliente = "Moroso";
-	} else if ($info['status_cliente'] == 3) {
-		$status_cliente = "Moroso Inactivo";
-	} else if ($info['status_cliente'] == 4) {
-		$status_cliente = "Eq Recuperado";
-	} else if ($info['status_cliente'] == 5) {
-		$status_cliente = "Eq sin Recuperar";
-	} else if ($info['status_cliente'] == 6) {
-		$status_cliente = "Cancelado";
-	} else if ($info['status_cliente'] == 7) {
-		$status_cliente = "Prospecto";
-	} else if ($info['status_cliente'] == 8) {
-		$status_cliente = "Dificil Rec.";
-	} else if ($info['status_cliente'] == 9) {
-		$status_cliente = "Por Revisar";
-	}
-	
+	$status_cliente = $info['status_cliente'];
 	$folio_cliente = $info['folio_cliente'];
 	$onu_cliente = $info['onu_cliente'];
 	$bandera_cliente = $info['bandera_cliente'];

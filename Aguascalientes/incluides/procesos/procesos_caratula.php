@@ -5,7 +5,9 @@ require("../../../base_datos/conexion/conexion.php");
     $id_cliente = $cliente['id_cliente'];
     $folio = $cliente['folio_cliente'];
     $num_cliente = $cliente['numero_cliente'];
+    $status_cliente = $cliente['status_cliente'];
     $nombre_completo = $cliente['nombre_cliente'] ." " . $cliente['apellido_p_cliente'] ." " . $cliente['apellido_m_cliente'];
+    $nombre = $cliente['nombre_cliente'];
     $p_cliente = $cliente['apellido_p_cliente'];
     $m_cliente = $cliente['apellido_m_cliente'];
     $fecha_nacimiento = date("Y-m-d", strtotime( $cliente['fecha_nacimiento']));
@@ -28,14 +30,15 @@ require("../../../base_datos/conexion/conexion.php");
     $ref_tel2 = $cliente['ref_tel2'];
     $municipio = $cliente['municipio'];
     $paquete_cliente = $cliente['paquete_cliente'];
+    $velocidad_cliente = $cliente['velocidad_cliente'];
     $instalacion_cliente = $cliente['fecha_instalacion'];
-    $corte_cliente = $cliente['fecha_corte'];
+    $fecha_corte = $cliente['fecha_corte'];
     $vendedor_cliente = $cliente['vendedor_cliente'];
     $instalador_cliente = $cliente['id_instalador'];
     $radio_cliente = $cliente['radio_cliente'];
     $router_cliente = $cliente['router_cliente'];
     $onu_cliente = $cliente['onu_cliente'];
-    $ont_cliente = $cliente['onu_cliente'];
+    $ont_cliente = $cliente['ont_cliente'];
     $bandera_cliente = $cliente['bandera_cliente'];
     $bote_cliente = $cliente['bote_cliente'];
     $puerto_cliente = $cliente['puerto_cliente'];
@@ -45,6 +48,28 @@ require("../../../base_datos/conexion/conexion.php");
 
     if(!$bandera_cliente){
         $bandera_cliente = "No Instalada";
+    }
+
+    if($status_cliente == 0){
+        $status = "Activo";
+    }else if($status_cliente == 1){
+        $status = "Por Vencer";
+    }else if($status_cliente == 2){
+        $status = "Moroso";
+    }else if($status_cliente == 3){
+        $status = "Moroso Inactivo";
+    }else if($status_cliente == 4){
+        $status = "Eq Recuperado";
+    }else if($status_cliente == 5){
+        $status = "Eq por Recuperar";
+    }else if($status_cliente == 6){
+        $status = "Cancelado";
+    }else if($status_cliente == 7){
+        $status = "Prospecto";
+    }else if($status_cliente == 8){
+        $status = "Dificil Recuperacion";
+    }else if($status_cliente == 9){
+        $status = "Por Revisar";
     }
 
     $consultar_zona = mysqli_query($conexion, "SELECT * FROM zonafibra WHERE id_zonafibra = $id_zona");

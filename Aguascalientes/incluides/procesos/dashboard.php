@@ -1,5 +1,7 @@
 <?php
 require("../../../base_datos/conexion/conexion.php");
+date_default_timezone_set('America/Mazatlan');
+
 
 $query_activos = mysqli_query($conexion, "SELECT * FROM cliente WHERE `status_cliente` = '0'");
 $activos = mysqli_num_rows($query_activos);
@@ -37,5 +39,31 @@ $ventas = mysqli_num_rows($query_ventas);
 $query_cambio = mysqli_query($conexion, "SELECT * FROM `reportes` WHERE `tipo_reportes` = 4");
 $cambio = mysqli_num_rows($query_cambio);
 
+$query_rev = mysqli_query($conexion, "SELECT * FROM `revisar` WHERE `status_revisar` = 1");
+$rev = mysqli_num_rows($query_rev);
+
+$query_rev2 = mysqli_query($conexion, "SELECT * FROM `revisar` WHERE `status_revisar` = 2");
+$rev2 = mysqli_num_rows($query_rev2);
+
+$query_en = mysqli_query($conexion, "SELECT * FROM `encuesta` WHERE `status_encuesta` = 1");
+$en = mysqli_num_rows($query_en);
+
+$query_en2 = mysqli_query($conexion, "SELECT * FROM `encuesta` WHERE `status_encuesta` = 2");
+$en2 = mysqli_num_rows($query_en2);
+
+$query_repo = mysqli_query($conexion, "SELECT * FROM `reportes` WHERE `status_reportes` = 1 and `tipo_reportes` = 1");
+$rep = mysqli_num_rows($query_repo);
+$segunda = 0;
+$moroso =0;
+if($rep > 0){
+    while($data = mysqli_fetch_assoc($query_repo)){
+		if($data['fecha_rechazo'] != '0000-00-00'){
+			$segunda = $segunda + 1;
+		}
+		if($data['moroso_reportes'] == 2){
+			$moroso = $moroso + 1;
+		}
+	}
+}
 
 ?>

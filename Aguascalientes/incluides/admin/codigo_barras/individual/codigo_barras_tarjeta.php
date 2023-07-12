@@ -5,11 +5,11 @@ require_once("../../../base_datos/conexion/conexion.php");
 
 ?>
 
-<div class="card-body">
+<div class="card-body" >
     <form class="user" method="POST" action='../../../base_datos/subir/add_cliente.php'>
 
         <!-- Referencias Personales -->
-        <div class="card shadow col-sm-6 py-sm-2 m-sm-1">
+        <div class="card shadow col-sm-6 py-sm-2 m-sm-1 ">
             <div class="card-header py-sm-2">
                 <h6 class="m-0 font-weight-bold text-primary">Pago con Tarjeta</h6>
             </div>

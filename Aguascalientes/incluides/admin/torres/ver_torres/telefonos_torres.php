@@ -26,6 +26,7 @@ include "../../../modal/agregar/agregar_torre.php";
                     <th>ID</th>
                     <th>Torre de</th>
                     <th>Nombre Cliente</th>
+                    <th>Telefono Cliente</th>
                     <th>Direccion</th>
                     <th>Numero de servicio cfe</th>
                     <th>Acciones</th>
@@ -34,7 +35,7 @@ include "../../../modal/agregar/agregar_torre.php";
             </thead>
             <tbody>
                 <?php
-                $query = mysqli_query($conexion, "SELECT `id_torre`, `lugar_torre`, `cliente_torre`, `cfe_torre` FROM `torres`");
+                $query = mysqli_query($conexion, "SELECT *FROM `torres`");
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {
                     while ($data = mysqli_fetch_assoc($query)) { ?>
@@ -42,9 +43,11 @@ include "../../../modal/agregar/agregar_torre.php";
                             <td><?php echo $data['id_torre']; ?></td>
                             <td><?php echo $data['lugar_torre']; ?></td>
                             <td><?php echo $data['cliente_torre']; ?></td>
+                            <td><?php echo $data['tel_torre']; ?></td>
+                            <td><?php echo $data['direccion_torre']; ?></td>
                             <td><?php echo $data['cfe_torre']; ?></td>
                             <td>
-                                <a title="Eliminar usuario" onclick="return confirm('Estás seguro que deseas eliminar a <?php echo $data['lugar_torre']; ?>');" href="../../../base_datos/eliminar/eliminar_usuario.php?id=<?php echo $data['id_usuario'] ?>"><i class="fa fa-trash ml-2"></i></a>
+                                <a title="Eliminar usuario" onclick="return confirm('Estás seguro que deseas eliminar a <?php echo $data['lugar_torre']; ?>');" href="../../../base_datos/eliminar/eliminar_torre.php?id=<?php echo $data['id_torre'] ?>"><i class="fa fa-trash ml-2"></i></a>
                             </td>
                         </tr>
                 <?php

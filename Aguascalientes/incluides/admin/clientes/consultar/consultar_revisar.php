@@ -1,7 +1,7 @@
 <?php
 include "../../../header/header_admin.php";
 require("../../../base_datos/conexion/conexion.php");
-
+$acomodo = $_GET['acomodo'];
 ?>
 
 <h2>Tabla de Clientes por Revisar</h2>
@@ -26,33 +26,12 @@ require("../../../base_datos/conexion/conexion.php");
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `status_cliente` = 9 ");
-                        $result = mysqli_num_rows($query);
-                        if ($result > 0) {
-                            while ($data = mysqli_fetch_assoc($query)) { ?>
-                                <tr>
-                                    <td><?php echo $data['id_cliente'];?></td>
-                                    <td>Por Revisar</td>
-                                    <td><?php echo $data['folio_cliente'];?></td>
-                                    <td><?php echo $data['numero_cliente'];?></td>
-                                    <td><?php echo $data['apellido_p_cliente'];?></td>
-                                    <td><?php echo $data['apellido_m_cliente'];?></td>
-                                    <td><?php echo $data['nombre_cliente'];?></td>
-                                    <td>
-                                    <a title="Revisar Contrato" href="../../clientes/encuestas/caratula_encuesta.php?id=<?php echo $data['id_cliente'] ?>"><i class="fa fa-pen ml-2"></i></a>
-                                    </td>
-                                </tr>
-                                <?php
-                            }
-                        } 
-                    ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<script src="../../../js/tablas/buscador_mysql.js"></script>
+<script src="../../../js/tablas/buscador_revisar.js"></script>
 <?php
 include "../../../header/header2_admin.php";
 ?>

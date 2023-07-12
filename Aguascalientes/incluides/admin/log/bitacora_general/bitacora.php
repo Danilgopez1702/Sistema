@@ -10,10 +10,10 @@ require("../../../base_datos/conexion/conexion.php");
     </div>
     <div class="card-body ">
         <br>
-        <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">  
+        <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    
+
                     <th>ID</th>
                     <th>Accion</th>
                     <th>Responsable</th>
@@ -23,34 +23,7 @@ require("../../../base_datos/conexion/conexion.php");
                 </tr>
             </thead>
             <tbody>
-                    <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM `log` ");
-                        $result = mysqli_num_rows($query);
-                        if ($result > 0) {
-                            while ($data = mysqli_fetch_assoc($query)) { ?>
-                                <tr>
-                                    <td><?php echo $data['id_log'];?></td>
-                                    <td><?php echo $data['accion_log'];?></td>
-                                    <td><?php echo $data['nombre_usuario'];?></td>
-                                    <td>
-                                        <?php 
-                                             if(!$data['id_cliente']){
-                                                echo "n/a";
-                                            }else{
-                                                $instalador = $data['id_cliente'];
-                                                $query_instalador = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `id_cliente` =  '$instalador'");
-                                                $instalador_nombre = mysqli_fetch_assoc($query_instalador);
-                                                echo $instalador_nombre['numero_cliente'];
-                                            }
-                                        ?>
-                                    </td>
-                                    <td><?php echo $data['timestamp'];?></td>
-                                </tr>
-                                <?php
-                            }
-                        } 
-                    ?>
-                </tbody>
+            </tbody>
         </table>
     </div>
 </div>
