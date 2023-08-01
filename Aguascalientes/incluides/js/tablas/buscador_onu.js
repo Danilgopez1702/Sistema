@@ -69,7 +69,7 @@ $(document).ready(function () {
     user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
     var y = confirm('Estás seguro que deseas eliminar la ONU');
     if (y) {
-      window.location.href = "/digitalnetsistem/Aguascalientes/incluides/base_datos/eliminar/eliminar_inventario.php?id=" + user_id+"&&in=1";
+      window.location.href = "/Sistema/Aguascalientes/incluides/base_datos/eliminar/eliminar_inventario.php?id=" + user_id+"&&in=1";
     }
 
   });

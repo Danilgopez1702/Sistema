@@ -32,5 +32,5 @@ include "../../../modal/editar/editar_onu.php";
 <script src="../../../js/tablas/buscador_onu.js"></script>
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

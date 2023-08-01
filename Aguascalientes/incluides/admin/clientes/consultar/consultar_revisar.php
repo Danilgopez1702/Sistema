@@ -33,5 +33,5 @@ $acomodo = $_GET['acomodo'];
 </div>
 <script src="../../../js/tablas/buscador_revisar.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

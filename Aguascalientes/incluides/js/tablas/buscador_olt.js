@@ -73,7 +73,7 @@ $(document).ready(function () {
 		user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
 		var y = confirm('Estás seguro que deseas eliminar la OLT');
 		if (y) {
-			window.location.href = "/digitalnetsistem/Aguascalientes/incluides/base_datos/eliminar/eliminar_olt.php?id=" + user_id;
+			window.location.href = "/Sistema/Aguascalientes/incluides/base_datos/eliminar/eliminar_olt.php?id=" + user_id;
 		}
 
 	});

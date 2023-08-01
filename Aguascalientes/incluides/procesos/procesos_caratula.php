@@ -99,37 +99,73 @@ require("../../../base_datos/conexion/conexion.php");
         if($user_profile == "2Megas"){
             $paquete = "2MB";
             $precio_m = "$199";
+        }else if($user_profile == "2Vencido"){
+            $paquete = "2MB";
+            $precio_m = "$199";
         }else if($user_profile == "4Megas"){
+            $paquete = "4MB";
+            $precio_m = "$269";
+        }else if($user_profile == "4Vencido"){
             $paquete = "4MB";
             $precio_m = "$269";
         }else if($user_profile == "6Megas"){
             $paquete = "6MB";
             $precio_m = "$349";
+        }else if($user_profile == "6Vencido"){
+            $paquete = "6MB";
+            $precio_m = "$349";
         }else if($user_profile == "8Megas"){
+            $paquete = "8MB";
+            $precio_m = "$399";
+        }else if($user_profile == "8Vencido"){
             $paquete = "8MB";
             $precio_m = "$399";
         }else if($user_profile == "10Megas"){
             $paquete = "10MB";
             $precio_m = "$499";
+        }else if($user_profile == "10Vencido"){
+            $paquete = "10MB";
+            $precio_m = "$499";
         }else if($user_profile == "15Megas"){
+            $paquete = "15MB";
+            $precio_m = "$599";
+        }else if($user_profile == "15Vencido"){
             $paquete = "15MB";
             $precio_m = "$599";
         }else if($user_profile == "5MegasFibra"){
             $paquete = "5MBF";
             $precio_m = "$199";
+        }else if($user_profile == "5FibraVencido"){
+            $paquete = "5MBF";
+            $precio_m = "$199";
         }else if($user_profile == "10MegasFibra"){
+            $paquete = "10MBF";
+            $precio_m = "$269";
+        }else if($user_profile == "10FibraVencido"){
             $paquete = "10MBF";
             $precio_m = "$269";
         }else if($user_profile == "20Megas"){
             $paquete = "20MBF";
             $precio_m = "$349";
+        }else if($user_profile == "20Vencido"){
+            $paquete = "20MBF";
+            $precio_m = "$349";
         }else if($user_profile == "30Megas"){
+            $paquete = "30MB";
+            $precio_m = "$399";
+        }else if($user_profile == "30Vencido"){
             $paquete = "30MB";
             $precio_m = "$399";
         }else if($user_profile == "50Megas"){
             $paquete = "50MBF";
             $precio_m = "$499";
+        }else if($user_profile == "50Vencido"){
+            $paquete = "50MBF";
+            $precio_m = "$499";
         }else if($user_profile == "100Megas"){
+            $paquete = "100MBF";
+            $precio_m = "$899";
+        }else if($user_profile == "100Vencido"){
             $paquete = "100MBF";
             $precio_m = "$899";
         }else if($user_profile == "cancelado"){

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
+if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
 
     require("../conexion/conexion.php");
 

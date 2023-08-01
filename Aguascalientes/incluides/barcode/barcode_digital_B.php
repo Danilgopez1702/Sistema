@@ -96,7 +96,7 @@ $importe = 0;
 	$importe = $_GET['importe'];
 	$importeA = $_GET['importe']+50;
 	$DVA = '574004'.$clientes.'20990101'.$importeA;
-	$text = array("574004".$clientes."20990101".$importeA.DV($DVA));
+	$text = array("574004".$clientes."2099010100".$importeA.DV($DVA));
 
 
 //var_dump($text);

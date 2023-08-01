@@ -1,16 +1,15 @@
-<!--<h1>planilla nueva</h1>-->
+<?php
+$importe = $_GET['importe']; 
+$start = $_GET['start'];
+?>
+
 <table style="text-align:center;">
 	<tr>
 		<td>
-<img alt="" width="90%" src="barcode_planilla.php?rango=<?php echo $_GET['rango'];?>&start=<?php echo $_GET['start'];?>&importe=<?php echo $_GET['importe']; ?>" />
+            <img alt="" width="90%" src="barcode_digital.php?start=<?php echo $start;?>&importe=<?php echo $importe; ?>" />
+		</td>
+		<td>
+		    <img alt="" width="90%" src="barcode_digital_B.php?start=<?php echo $start;?>&importe=<?php echo $importe; ?>" />
 		</td>
 	</tr>
 </table>
-<!--<h1>planilla original</h1>
-<table style="text-align:center;">
-	<tr>
-		<td>
-<img alt="" width="78%" src="barcode_planilla3.php?rango=<?php echo $_GET['rango'];?>&start=<?php echo $_GET['start'];?>&importe=<?php echo $_GET['importe']; ?>" />
-		</td>
-	</tr>
-</table>-->

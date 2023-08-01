@@ -638,5 +638,5 @@ include "../../../mikrotik/get_info.php";
 </div>
 <script src="../../../js/cliente/editar_cliente.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

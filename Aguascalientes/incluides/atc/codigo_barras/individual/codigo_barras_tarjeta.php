@@ -1,6 +1,6 @@
 <?php
 
-include "../../../header/header_admin.php";
+include "../../../header/header_atc.php";
 require_once("../../../base_datos/conexion/conexion.php");
 
 ?>
@@ -66,5 +66,5 @@ require_once("../../../base_datos/conexion/conexion.php");
 
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

@@ -48,5 +48,5 @@ include "../../../header/header_admin.php";
 
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

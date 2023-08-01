@@ -55,7 +55,7 @@ $(document).ready(function () {
     fila = $(this);           
     user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
     console.log(user_id); 
-    window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/clientes/por_revisar/contrato_revisar.php?id=" + user_id;
+    window.location.href = "/Sistema/Aguascalientes/incluides/admin/clientes/por_revisar/contrato_revisar.php?id=" + user_id;
     
   });
   })

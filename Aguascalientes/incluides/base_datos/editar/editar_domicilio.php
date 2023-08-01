@@ -13,6 +13,8 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     $sql = mysqli_query($conexion,"UPDATE `reportes` SET `mensaje_reportes` = '$reporte', `id_reparador` = '$nreparador'
     WHERE id_reportes = '$id'");
 
+    
+
     header("location: ../../admin/reportes/caratula/domicilio.php?id=$id");
 }
 ?>

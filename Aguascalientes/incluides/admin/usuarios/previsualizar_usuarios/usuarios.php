@@ -41,5 +41,5 @@ include "../../../modal/editar/editar_usuario.php";
 <script src="../../../js/tablas/buscador_usuario.js"></script>
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

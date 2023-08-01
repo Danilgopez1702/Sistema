@@ -48,7 +48,7 @@ $(document).ready(function () {
     fila = $(this);           
     user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
     console.log(user_id); 
-    window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/clientes/consultar/prospecto.php?id=" + user_id;
+    window.location.href = "/Sistema/Aguascalientes/incluides/admin/clientes/consultar/prospecto.php?id=" + user_id;
     
   });
   
@@ -57,7 +57,7 @@ $(document).ready(function () {
     fila = $(this);
     user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
     console.log(user_id); 
-    window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
+    window.location.href = "/Sistema/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
     
   });
   })

@@ -56,7 +56,7 @@ $(document).on("click", ".btnBorrar", function(){
   fila = $(this);           
   user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
   console.log(user_id); 
-  window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/clientes/consultar/caratula.php?id=" + user_id;
+  window.location.href = "/Sistema/Aguascalientes/incluides/admin/clientes/consultar/caratula.php?id=" + user_id;
   
 });
 
@@ -65,7 +65,7 @@ $(document).on("click", ".btnRepo", function(){
   fila = $(this);           
   user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
   console.log(user_id); 
-  window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
+  window.location.href = "/Sistema/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
   
 });
 })

@@ -176,5 +176,5 @@ include "../../../procesos/dashboard.php";
     </div>
 
     <?php
-    include_once "../../../header/header2_admin.php";
+    include_once "../../../header/header2.php";
     ?>

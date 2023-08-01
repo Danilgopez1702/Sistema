@@ -229,5 +229,5 @@ include "../../../procesos/pago_tarjeta.php";
         $("#3ds-form").enviarPagoFacil3dSecure("produccion");//Metodo contenido en el archivo -pagofacil3ds.js-
 </script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

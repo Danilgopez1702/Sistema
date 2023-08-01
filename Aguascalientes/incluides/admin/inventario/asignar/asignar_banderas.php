@@ -66,5 +66,5 @@ require_once("../../../base_datos/conexion/conexion.php");
 <script src="../../../js/inventario/asignar/asignar_tecnico_bandera.js"></script>
 
 <?php
-require("../../../header/header2_admin.php");
+require("../../../header/header2.php");
 ?>

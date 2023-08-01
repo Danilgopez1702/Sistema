@@ -29,5 +29,5 @@ require("../../../base_datos/conexion/conexion_local.php");
 </div>
 <script src="../../../js/tablas/buscador_pp.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

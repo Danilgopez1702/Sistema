@@ -197,6 +197,22 @@ function formSubmit() {
     toastr.success('Modificando cliente!');
     $("#velocidad").prop("disabled", false);
     $("#precio_m").prop("disabled", false);
+    $("#status").prop("disabled", false);
+    $("#paquete").prop("disabled", false);
+    $("#fecha_corte").prop("disabled", false);
+    $("#instalador").prop("disabled", false);
+    $("#instalacion_nueva").prop("disabled", false);
+    $("#antena").prop("disabled", false);
+    $("#zona_onu").prop("disabled", false);
+    $("#puerto_onu").prop("disabled", false);
+    $("#onu").prop("disabled", false);
+    $("#router").prop("disabled", false);
+    $("#bandera_onu").prop("disabled", false);
+    $("#zona_ont").prop("disabled", false);
+    $("#bote_ont").prop("disabled", false);
+    $("#puerto_ont").prop("disabled", false);
+    $("#ont").prop("disabled", false);
+    $("#bandera_ont").prop("disabled", false);
     $("#formo").submit();
 }
 function refresh(){
@@ -228,7 +244,7 @@ function arreglar(){
     $.ajax({
         url: "../../../mikrotik/boton_arreglar.php",
         type: 'POST',
-        data: {
+        data: { 
             'id' : id
         }
     }).done(function(data) {

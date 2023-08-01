@@ -1,0 +1,35 @@
+<?php
+include "../../../header/header_atc.php";
+require("../../../base_datos/conexion/conexion.php");
+include "../../../modal/editar/editar_bandera.php";
+?>
+
+<h2>Historico de Pagos</h2>
+<div class="card shadow mb-4">
+    <div class="card-header py-sm-2">
+        <h4 class="m-0 font-weight-bold text-primary">Consultar Pagos</h4>
+    </div>
+    <div class="card-body ">
+        <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>Lugar</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Referencia</th>
+                    <th>Monto</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../../../js/tablas_atc/buscador_pagos.js"></script>
+
+<?php
+include "../../../header/header2.php";
+?>

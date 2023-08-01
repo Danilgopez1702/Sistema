@@ -31,5 +31,5 @@ include "../../../modal/editar/editar_bandera.php";
 <script src="../../../js/tablas/buscador_pagos.js"></script>
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

@@ -68,4 +68,4 @@ include "../../../header/header_admin.php";
 <script src="../../../js/oxxo/agregar/agregar_oxxo.js"></script>
 
 
-<?php include "../../../header/header2_admin.php";  ?>
+<?php include "../../../header/header2.php";  ?>

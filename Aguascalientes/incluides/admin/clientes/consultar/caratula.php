@@ -18,12 +18,12 @@ include "../../../modal/pago/pago_manual.php";
                 <button type="button" class="btn btn-primary" id="btn_arreglar" name= "btn_arreglar" onclick="arreglar();">Arreglar</button>
                 <?php
                 if ($radio_cliente != NULL) {
-                ?>
-                    <a href="https://<?php echo $ip_cliente ?>/login.cgi?uri=/" type="button" class="btn btn-secondary" target="_blank">Revisar Instalacion</a>
+                    ?>
+                    <a href="https://<?php echo $ip_reporte ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
                 <?php
                 } else {
                 ?>
-                    <a href="https://<?php echo $ip_olt ?>/action/login.html" type="button" class="btn btn-secondary" target="_blank">Revisar Instalacion</a>
+                    <a href="https://<?php echo $ip_olt ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
                 <?php
                 }
                 ?>
@@ -718,5 +718,5 @@ include "../../../modal/pago/pago_manual.php";
 </div>
 <script src="../../../js/cliente/editar_cliente.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

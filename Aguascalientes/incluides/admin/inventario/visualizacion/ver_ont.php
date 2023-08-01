@@ -32,5 +32,5 @@ include "../../../modal/editar/editar_ont.php";
 <script src="../../../js/tablas/buscador_ont.js"></script>
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

@@ -40,5 +40,5 @@ include "../../../modal/editar/editar_olt.php";
 <script src="../../../js/tablas/buscador_olt.js"></script>
 
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

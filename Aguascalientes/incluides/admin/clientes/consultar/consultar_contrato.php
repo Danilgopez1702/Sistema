@@ -59,5 +59,5 @@ if ($acomodo == 0) {
 </div>
 <script src="../../../js/tablas/buscador_contrato.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

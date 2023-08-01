@@ -589,5 +589,5 @@ require_once("../../../base_datos/conexion/conexion.php");
 <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../../../js/toastr/toastr.min.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

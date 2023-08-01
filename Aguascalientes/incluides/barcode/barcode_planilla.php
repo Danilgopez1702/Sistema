@@ -174,7 +174,7 @@ for ($i=0; $i < $_GET['rango']; $i++) {
 
 //invoke planilla
 for ($i=0; $i < $_GET['rango']; $i++) {
-	$dest[$i] = imagecreatefrompng('tarjeta-planilla-7.png');
+	$dest[$i] = imagecreatefrompng("tarjeta-planilla-7.png");
 }
 
 for ($i=0; $i < $_GET['rango']; $i++) {
@@ -196,10 +196,6 @@ imagepng($back);
 for ($i=0; $i < $_GET['rango']; $i++) {
 	imagedestroy($dest[$i]);
 }
-/*
-$im = imagecreatefrompng("tarjeta-a-b&w.png");
-imagepng($im);
-imagedestroy($im);
-*/
+
 	
 ?>

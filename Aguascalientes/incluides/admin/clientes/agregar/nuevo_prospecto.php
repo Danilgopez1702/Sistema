@@ -176,5 +176,5 @@ require_once("../../../base_datos/conexion/conexion.php");
     </div>
 </div>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

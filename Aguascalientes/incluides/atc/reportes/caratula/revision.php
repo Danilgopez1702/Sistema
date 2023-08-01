@@ -2,13 +2,39 @@
 include "../../../header/header_admin.php";
 require("../../../base_datos/conexion/conexion.php");
 $id = $_GET['id'];
-include "../../../procesos/ventas.php"
+$tipo = $_GET['tipo'];
+include "../../../procesos/reparaciones.php";
+
+if ($tipo == 1) {
+	$tipo_repo = "del Cambio de Domicilio";
+} else if ($tipo == 2) {
+	$tipo_repo = "de la Reparacion";
+} else if ($tipo == 3) {
+	$tipo_repo = "de la Migracion";
+} else if ($tipo == 4) {
+	$tipo_repo = "de la Venta";
+}
+
+
 ?>
 
-<h2>Ver ventas #<?php echo $numero_reporte ?></h2>
+<h2>Ver reparaciones #<?php echo $numero_reporte ?></h2>
 <div class="card shadow mb-4">
 	<div class="card-header py-sm-2">
-		<h4 class="m-0 font-weight-bold text-primary">Consultar venta de: <?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?></h4>
+		<h4 class="m-0 font-weight-bold text-primary">Consultar reparacion de: <?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?></h4>
+	</div>
+	<div class="text-right">
+		<?php
+		if ($onu_reporte == "") {
+		?>
+			<a href="https://<?php echo $ip_reporte ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
+		<?php
+		} else {
+		?>
+			<a href="https://<?php echo $ip_olt ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
+		<?php
+		}
+		?>
 	</div>
 	<div class="card-body ">
 
@@ -175,12 +201,12 @@ include "../../../procesos/ventas.php"
 				</div>
 			</div>
 		</div>
-		<form class="forms-sample" method='post' action='../../../base_datos/editar/editar_ventas.php' enctype="multipart/form-data">
+		<form class="forms-sample" method='post' action='../../../base_datos/editar/editar_reparaciones.php' enctype="multipart/form-data">
 			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $numero_reporte ?>" required="" />
 			<!-- div de Informacion de la Reparacion -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-sm-2">
-					<h4 class="m-0 font-weight-bold text-primary">Informacion del Reporte</h4>
+					<h4 class="m-0 font-weight-bold text-primary">Informacion <?php echo $tipo_repo ?></h4>
 				</div>
 				<div class="form-row py-3">
 					<div class="container text-center">
@@ -209,31 +235,31 @@ include "../../../procesos/ventas.php"
 								<div class="form-inline ">
 									<label class="col-sm-4 col-form-label">Status</label>
 									<div class="col-sm-8">
-										
-											<?php
-											if ($status_reporte == 1) {
-											?>
-												<input class="form-control col-sm-12" id="status" name="status" value="Visita Pendiente" disabled>
-											<?php
-											} else if ($status_reporte == 2) {
-											?>
-												<input class="form-control col-sm-12" id="status" name="status" value="Revisión Pendiente" disabled>
-											<?php
-											} else if ($status_reporte == 3) {
-											?>
-												<input class="form-control col-sm-12" id="status" name="status" value="Segunda Visita Pendiente" disabled>
-											<?php
-											} else if ($status_reporte == 4) {
-											?>
-												<input class="form-control col-sm-12" id="status" name="status" value="Segunda Revisión Pendiente" disabled>
-											<?php
-											} else if ($status_reporte == 5) {
-											?>
+
+										<?php
+										if ($status_reporte == 1) {
+										?>
+											<input class="form-control col-sm-12" id="status" name="status" value="Visita Pendiente" disabled>
+										<?php
+										} else if ($status_reporte == 2) {
+										?>
+											<input class="form-control col-sm-12" id="status" name="status" value="Revisión Pendiente" disabled>
+										<?php
+										} else if ($status_reporte == 3) {
+										?>
+											<input class="form-control col-sm-12" id="status" name="status" value="Segunda Visita Pendiente" disabled>
+										<?php
+										} else if ($status_reporte == 4) {
+										?>
+											<input class="form-control col-sm-12" id="status" name="status" value="Segunda Revisión Pendiente" disabled>
+										<?php
+										} else if ($status_reporte == 5) {
+										?>
 											<input class="form-control col-sm-12" id="status" name="status" value="Reparacion Completa" disabled>
-											<?php
-											}
-											?>
-											</select>
+										<?php
+										}
+										?>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -246,7 +272,6 @@ include "../../../procesos/ventas.php"
 									</div>
 								</div>
 							</div>
-
 							<!-- Reparador -->
 							<div class="col-md-6 mb-3">
 								<div class="form-inline ">
@@ -333,6 +358,34 @@ include "../../../procesos/ventas.php"
 					</div>
 				</div>
 			</div>
+			<!-- div de Informacion de la segunda visita del Tecnico-->
+			<div class="card shadow mb-4" style="display:none;" id="rep_tecnico">
+				<div class="card-header py-sm-2">
+					<h4 class="m-0 font-weight-bold text-primary">Reporte del Tecnico</h4>
+				</div>
+				<div class="form-row py-3">
+					<div class="container text-center">
+						<!-- Problema Encontrado -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Problema Encontrado<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="problema_encontrado_2" name="problema_encontrado_2" required disabled><?php echo $problema_reporte ?></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- Solucion -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="solucion_2" name="solucion_2" required disabled><?php echo $solucion_reporte ?></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="text-right">
 				<a class="btn btn-success" href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
 					Ver Cliente
@@ -344,7 +397,7 @@ include "../../../procesos/ventas.php"
 </div>
 
 
-<script src="../../../js/reportes/cambio_domicilio.js"></script>
+<script src="../../../js/reportes/reparaciones.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

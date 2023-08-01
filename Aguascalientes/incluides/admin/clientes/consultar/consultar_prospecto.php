@@ -30,5 +30,5 @@ require("../../../base_datos/conexion/conexion.php");
 </div>
 <script src="../../../js/tablas/buscador_prospecto.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

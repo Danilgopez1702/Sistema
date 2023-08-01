@@ -2,23 +2,36 @@
 include "../../../header/header_admin.php";
 require("../../../base_datos/conexion/conexion.php");
 $id = $_GET['id'];
-include "../../../procesos/domicilio.php"
+$tipo = $_GET['tipo'];
+include "../../../procesos/reparaciones.php";
+
+if ($tipo == 1) {
+	$tipo_repo = "del Cambio de Domicilio";
+} else if ($tipo == 2) {
+	$tipo_repo = "de la Reparacion";
+} else if ($tipo == 3) {
+	$tipo_repo = "de la Migracion";
+} else if ($tipo == 4) {
+	$tipo_repo = "de la Venta";
+}
+
+
 ?>
 
-<h2>Ver Cambio de Domicilio #<?php echo $numero_reporte ?></h2>
+<h2>Ver reparaciones #<?php echo $numero_reporte ?></h2>
 <div class="card shadow mb-4">
 	<div class="card-header py-sm-2">
-		<h4 class="m-0 font-weight-bold text-primary">Consultar Cambio de Domicilio de: <?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?></h4>
+		<h4 class="m-0 font-weight-bold text-primary">Consultar reparacion de: <?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?></h4>
 	</div>
 	<div class="text-right">
 		<?php
 		if ($onu_reporte == "") {
 		?>
-			<a href="http://<?php echo $ip_reporte ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
+			<a href="https://<?php echo $ip_reporte ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
 		<?php
 		} else {
 		?>
-			<a href="https://<?php echo $ip_olt ?>/action/login.html" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
+			<a href="https://<?php echo $ip_olt ?>" type="button" class="btn btn-info" target="_blank">Revisar Instalacion</a>
 		<?php
 		}
 		?>
@@ -188,12 +201,12 @@ include "../../../procesos/domicilio.php"
 				</div>
 			</div>
 		</div>
-		<form class="forms-sample" method='post' action='../../../base_datos/editar/editar_domicilio.php' enctype="multipart/form-data">
-			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $id_numero_reporte ?>" required="" />
+		<form class="forms-sample" method='post' action='../../../base_datos/editar/editar_reparaciones.php' enctype="multipart/form-data">
+			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $numero_reporte ?>" required="" />
 			<!-- div de Informacion de la Reparacion -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-sm-2">
-					<h4 class="m-0 font-weight-bold text-primary">Informacion del Cambio de Domicilio</h4>
+					<h4 class="m-0 font-weight-bold text-primary">Informacion <?php echo $tipo_repo ?></h4>
 				</div>
 				<div class="form-row py-3">
 					<div class="container text-center">
@@ -203,13 +216,13 @@ include "../../../procesos/domicilio.php"
 								<label class="col-sm-4 col-form-label">Reporte</label>
 								<div class="col-sm-8">
 									<?php
-									if ($activo_reporte == 2) {
+									if ($activo_reporte == 1) {
 									?>
-										<button type="button" class="btn btn-primary btn-sm" disabled>Activo</button>
+										<button type="button" class="btn btn-primary btn-sm">Activo</button>
 									<?php
 									} else {
 									?>
-										<button type="button" class="btn btn-danger btn-sm" disabled>Cerrado</button>
+										<button type="button" class="btn btn-danger btn-sm">Cerrado</button>
 									<?php
 									}
 									?>
@@ -259,7 +272,6 @@ include "../../../procesos/domicilio.php"
 									</div>
 								</div>
 							</div>
-
 							<!-- Reparador -->
 							<div class="col-md-6 mb-3">
 								<div class="form-inline ">
@@ -279,23 +291,113 @@ include "../../../procesos/domicilio.php"
 							</div>
 						</div>
 					</div>
-		</form>
-		
-	</div>
-	
-</div>
-<?php if ($activo_reporte == 2) { ?>
-						<div class="text-right" id="bb">
-							<a class="btn btn-info" href="../../../base_datos/confirmar/domicilio.php?id=<?php echo $id_numero_reporte ?>">
-								Cerrar Reporte
-							</a>
-							<a class="btn btn-success" href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
-								Ver Cliente
-							</a>
-							<button type="submit" class="btn btn-primary submitBtn">Actualizar</button>
+				</div>
+			</div>
+			<!-- div de Informacion de la Reparacion Tecnico-->
+			<div class="card shadow mb-4" style="display:none;" id="rep_tecnico">
+				<div class="card-header py-sm-2">
+					<h4 class="m-0 font-weight-bold text-primary">Reporte del Tecnico</h4>
+				</div>
+				<div class="form-row py-3">
+					<div class="container text-center">
+						<!-- Problema Encontrado -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Problema Encontrado<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="problema_encontrado" name="problema_encontrado" required disabled><?php echo $problema_reporte ?></textarea>
+								</div>
+							</div>
 						</div>
-					<?php } ?>
+						<!-- Solucion -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="solucion" name="solucion" required disabled><?php echo $solucion_reporte ?></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- div de Informacion del rechazo -->
+			<div class="card shadow mb-4" style="display:none;" id="rechazo">
+				<div class="card-header py-sm-2">
+					<h4 class="m-0 font-weight-bold text-primary">Rechazo de la Reparacion</h4>
+				</div>
+				<div class="form-row py-3">
+					<div class="container text-center">
+						<!-- Fecha del Rechazo -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Fecha del Rechazo<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<input type="date" class="form-control col-sm-12" id="fecha_rechazo" name="fecha_rechazo" value="<?php echo $fecha_rechazo ?>" required>
+								</div>
+							</div>
+						</div>
+						<!-- Razon -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Razon del Rechazo<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="razon_rechazo" name="razon_rechazo" value="<?php echo $razon_rechazo ?>" required></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- Fecha de reagendacion -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Fecha de reagendacion<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<input type="date" class="form-control col-sm-12" id="fecha_reagendado" name="fecha_reagendado" value="<?php echo $fecha_reagendado ?>" required>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- div de Informacion de la segunda visita del Tecnico-->
+			<div class="card shadow mb-4" style="display:none;" id="rep_tecnico">
+				<div class="card-header py-sm-2">
+					<h4 class="m-0 font-weight-bold text-primary">Reporte del Tecnico</h4>
+				</div>
+				<div class="form-row py-3">
+					<div class="container text-center">
+						<!-- Problema Encontrado -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Problema Encontrado<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="problema_encontrado_2" name="problema_encontrado_2" required disabled><?php echo $problema_reporte ?></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- Solucion -->
+						<div class="col-md-6 mb-3">
+							<div class="form-inline">
+								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
+								<div class="col-sm-8">
+									<textarea class="form-control col-sm-12" type="text" id="solucion_2" name="solucion_2" required disabled><?php echo $solucion_reporte ?></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<a class="btn btn-success" href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
+					Ver Cliente
+				</a>
+				<button type="submit" class="btn btn-primary submitBtn">Actualizar</button>
+			</div>
+		</form>
+	</div>
+</div>
 
+
+<script src="../../../js/reportes/reparaciones.js"></script>
 <?php
-include "../../../header/header2_admin.php";
+include "../../../header/header2.php";
 ?>

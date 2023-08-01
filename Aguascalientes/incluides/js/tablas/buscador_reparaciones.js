@@ -53,7 +53,7 @@ $(document).ready(function () {
                     $(document).on("click", ".btnAbrir", function () {
                       fila = $(this);
                       user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
-                      window.location.href = "/digitalnetsistem/Aguascalientes/incluides/admin/reportes/caratula/reparaciones.php?id=" + user_id;
+                      window.location.href = "/Sistema/Aguascalientes/incluides/admin/reportes/caratula/revision.php?id=" + user_id+"&&tipo=2";
                     });
                   
                     //Borrar
@@ -62,7 +62,7 @@ $(document).ready(function () {
                       user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
                       var y = confirm('Estás seguro que deseas eliminar la Antena');
                       if (y) {
-                        window.location.href = "/digitalnetsistem/Aguascalientes/incluides/base_datos/eliminar/eliminar_reparacion.php?id=" + user_id+"&&in=4";
+                        window.location.href = "/Sistema/Aguascalientes/incluides/base_datos/eliminar/eliminar_reparacion.php?id=" + user_id+"&&in=4";
                       }
                   
                     });
