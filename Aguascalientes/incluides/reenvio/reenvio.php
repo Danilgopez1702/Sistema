@@ -6,9 +6,12 @@ if($_SESSION['zona'] == 1){
         header('location: ../admin/dashboard/index/index.php');
     }else if($_SESSION['rol'] == 2){
         header('location: ../atc/dashboard/index/index.php');
+    }else if($_SESSION['rol'] == 4){
+        header('location: ../tecnicos/dashboard/index/index.php');
+    }else{
+
     }
-    
 }
   echo $_SESSION['rol'];
 ?>
-<p>entro</p>
+<p>entro</p>        
