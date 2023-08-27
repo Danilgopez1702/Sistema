@@ -9,7 +9,7 @@ include "../../../procesos/dashboard.php";
     <div class="card-header py-sm-2">
         <h4 class="m-0 font-weight-bold text-primary">Panel Principal</h4>
     </div>
-    <!-- Contratos en Revision -->
+    <!-- Datos del Contrato -->
     <div class="card-body w-100 mx-auto">
         <div class="card shadow mb-6">
             <div class="card-header py-sm-2">

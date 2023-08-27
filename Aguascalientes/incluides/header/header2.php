@@ -10,7 +10,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Este-Van</span>
+            <span>Copyright &copy; Dani 🐐</span>
         </div>
     </div>
 </footer>

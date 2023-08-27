@@ -1,5 +1,7 @@
 <?php
 session_start();
+$nombre_reparador = $_SESSION['nombre'];
+
 if (empty($_SESSION['active'])) {
     header('location: ../../../../../');
 }
@@ -107,8 +109,8 @@ if ($_SESSION['rol'] == 4) {
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="../../clientes/agregar/nuevo_prospecto.php">Nuevo</a>
-                            <a class="collapse-item" href="../../clientes/agregar/nuevo_contrato.php">Consultar</a>
+                            <a class="collapse-item" href="../../contrato/nuevo/nuevo_contrato.php">Nuevo</a>
+                            <a class="collapse-item" href="../../contrato/consultar/contrato.php">Consultar</a>
                         </div>
                     </div>
                 </li>

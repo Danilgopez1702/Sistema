@@ -1,7 +1,8 @@
 <?php
 include_once '../../conexion/conexion.php';
+session_start();
 $reparador = $_SESSION['id_usuario'];
-$consulta = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `vendedor_cliente` = 61 && `por_revisar` = 2");
+$consulta = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `vendedor_cliente` = '$reparador' && `por_revisar` = 2");
 $datos = mysqli_num_rows($consulta);
 $data = array();
 
