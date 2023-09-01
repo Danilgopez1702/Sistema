@@ -100,9 +100,7 @@ include "../../../procesos/reportes.php"
 				</div>
 			</div>
 		</form>
-
 	</div>
-
 </div>
 <?php
 include "../../../header/header2.php";

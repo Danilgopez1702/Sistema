@@ -108,7 +108,6 @@ if ($_SESSION['rol'] == 2) {
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="../../clientes/agregar/nuevo_prospecto.php">Nuevo Prospecto</a>
-                            <a class="collapse-item" href="../../clientes/agregar/nuevo_contrato.php">Nuevo Contrato</a>
                             <a class="collapse-item" href="../../clientes/consultar/consultar_contrato.php?acomodo=99">Consultar</a>
                             <a class="collapse-item" href="../../clientes/consultar/consultar_prospecto.php">Prospectos</a>
                             <a class="collapse-item" href="../../clientes/consultar/consultar_contrato.php?acomodo=9">Por Revisar</a>
@@ -156,15 +155,8 @@ if ($_SESSION['rol'] == 2) {
                     <div id="collapsePagosOXXO" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="../../pagos_oxxo/previsualizar/historial_pagos.php">Historial de Pagos</a>
-                            <a class="collapse-item" href="../../pagos_oxxo/agregar/subir_oxxo.php">Añadir Pagos OXXO</a>
                         </div>
                     </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="../../log/bitacora_general/bitacora.php">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Bitacora</span></a>
                 </li>
 
                 <!-- Divider -->

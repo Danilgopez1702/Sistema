@@ -15,10 +15,14 @@ require("../../../base_datos/conexion/conexion.php");
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Status</th>
+                        <th>Folio</th>
+                        <th>Onu</th>
+                        <th>Bandera</th>
+                        <th>Numero de Cliente</th>
                         <th>Apellido Paterno</th>
                         <th>Apellido Materno</th>
                         <th>Nombre(s)</th>
-                        <th>Telefono</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

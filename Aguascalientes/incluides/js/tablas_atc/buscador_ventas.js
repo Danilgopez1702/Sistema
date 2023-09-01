@@ -53,7 +53,7 @@ $(document).ready(function () {
                     $(document).on("click", ".btnAbrir", function () {
                       fila = $(this);
                       user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
-                      window.location.href = "/Sistema/Aguascalientes/incluides/atc/reportes/caratula/ventas.php?id=" + user_id + "&&tipo=4";
+                      window.location.href = "/Sistema/Aguascalientes/incluides/atc/reportes/caratula/revision.php?id=" + user_id + "&&tipo=4";
                     });
                   
                     //Borrar

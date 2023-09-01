@@ -7,7 +7,9 @@ $(document).ready(function () {
       },
       "columns":[
   
-        {"data": "id_cliente" },
+        {"data": "id_cliente" }, 
+        {"data": "status_cliente" }, 
+        {"data": "ont_cliente"},
         {"data": "onu_cliente"},
         {"data": "bandera_cliente"},
         {"data": "numero_cliente"},

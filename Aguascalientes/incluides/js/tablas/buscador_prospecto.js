@@ -1,17 +1,21 @@
 $(document).ready(function () {
     var table = $('#dataTable').DataTable({
       "ajax": {
-        "url": "../../../base_datos/ajax/tablas/consulta_prospectos.php",
+        "url": "../../../base_datos/ajax/tablas/consulta_contratos.php",
         "method": 'POST', //usamos el metodo POST
         "dataSrc":""
       },
       "columns":[
   
-        {"data": "id_prospecto" },
-        {"data": "apellido_p__prospecto"},
-        {"data": "apellido_m__prospecto"},
-        {"data": "nombre_prospecto"},
-        {"data": "tel1"},
+        {"data": "id_cliente" },
+        {"data": "status_cliente"},
+        {"data": "folio_cliente"},
+        {"data": "onu_cliente"},
+        {"data": "bandera_cliente"},
+        {"data": "numero_cliente"},
+        {"data": "apellido_p_cliente"},
+        {"data": "apellido_m_cliente"},
+        {"data": "nombre_cliente"},
   
         {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnRepo' data-toggle='modal' title='Levantar reporte'><i class='fas fa-thin fa-wrench ml-2'></i></button></div>"}
     ],

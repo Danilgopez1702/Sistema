@@ -1,14 +1,22 @@
 <?php
 include_once '../../conexion/conexion.php';
+
 session_start();
 $reparador = $_SESSION['id_usuario'];
-$consulta = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `por_revisar` = 2 and `vendedor_cliente` = '$reparador'");
-$datos = mysqli_num_rows($consulta);
+
+$query = "SELECT * FROM `cliente` WHERE `por_revisar` = 2 and `vendedor_cliente` = '$reparador'";
+$consulta = mysqli_query($conexion, $query);
+
+if (!$consulta) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+
 $data = array();
 
 while ($info = mysqli_fetch_assoc($consulta)) {
-
     $id_cliente = $info['id_cliente'];
+    $status_cliente = $info['status_cliente'];
+    $ont_cliente = $info['ont_cliente'];
     $onu_cliente = $info['onu_cliente'];
     $bandera_cliente = $info['bandera_cliente'];
     $numero_cliente = $info['numero_cliente'];
@@ -18,6 +26,8 @@ while ($info = mysqli_fetch_assoc($consulta)) {
 
     $data[] = [
         'id_cliente' => $id_cliente,
+        'status_cliente' => $status_cliente,
+        'ont_cliente' => $ont_cliente,
         'onu_cliente' => $onu_cliente,
         'bandera_cliente' => $bandera_cliente,
         'numero_cliente' => $numero_cliente,
@@ -26,7 +36,8 @@ while ($info = mysqli_fetch_assoc($consulta)) {
         'nombre_cliente' => $nombre_cliente
     ];
 }
+mysqli_free_result($consulta); // Liberar los resultados
+$conexion->close(); // Cerrar la conexión
 
-
-print json_encode($data, JSON_UNESCAPED_UNICODE); //envio el array final el formato json a AJAX
-$conexion = null;
+print json_encode($data, JSON_UNESCAPED_UNICODE); // Enviar respuesta JSON
+?>

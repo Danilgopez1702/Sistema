@@ -1,14 +1,12 @@
 <?php
 include "../../../header/header_atc.php";
 require("../../../base_datos/conexion/conexion.php");
-$acomodo = $_GET['acomodo'];
 ?>
 
 <h2>Tabla de Clientes por Revisar</h2>
 <div class="card shadow mb-4">
     <div class="card-header py-sm-2">
         <h4 class="m-0 font-weight-bold text-primary">Consultar Cliente</h4>
-        <input  type="hidden" class="form-control" id="acomodo" name="acomodo" value="<?php echo $acomodo ?>" />
     </div>
     <div class="card-body">
         <div class="table-responsive">

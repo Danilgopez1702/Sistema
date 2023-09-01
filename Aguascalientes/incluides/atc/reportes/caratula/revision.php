@@ -1,5 +1,5 @@
 <?php
-include "../../../header/header_admin.php";
+include "../../../header/header_atc.php";
 require("../../../base_datos/conexion/conexion.php");
 $id = $_GET['id'];
 $tipo = $_GET['tipo'];
@@ -387,7 +387,7 @@ if ($tipo == 1) {
 				</div>
 			</div>
 			<div class="text-right">
-				<a class="btn btn-success" href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
+				<a class="btn btn-success" href="../../../atc/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
 					Ver Cliente
 				</a>
 				<button type="submit" class="btn btn-primary submitBtn">Actualizar</button>

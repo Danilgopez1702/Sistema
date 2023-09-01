@@ -23,6 +23,8 @@ include "../../../procesos/dashboard.php";
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Status</th>
+                                        <th>Ont</th>
                                         <th>Onu</th>
                                         <th>Bandera</th>
                                         <th>Numero de Cliente</th>

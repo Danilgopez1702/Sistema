@@ -112,13 +112,13 @@ include "../../../procesos/dashboard.php";
                     </div>
                     <div class="card-body">
                         <div class="list-group">
-                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=1" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_contrato.php?acomodo=9" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Revisar</h5>
                                     <small><?php echo $rev ?></small>
                                 </div>
                             </a>
-                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=2" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_contrato.php?acomodo=10" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Por Revisar (segunda vez)</h5>
                                     <small><?php echo $rev2 ?></small>
