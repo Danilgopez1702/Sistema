@@ -30,7 +30,7 @@ $(function() {
 
 
 //se mando una alerta (temporalmente)  de que fue cargada exitosamente
-                } else {
+                } else if(data == 'success'){
                     toastr.success('Equipo ' + $("#numont").val() + ' agregado a la base de datos.'); 
                     $("#numont").val('');
                     $("#numont").focus();

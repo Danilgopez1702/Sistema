@@ -18,7 +18,7 @@ $(document).ready(function () {
       { "data": "comentario" },
       {
         "defaultContent":
-          "<div class='text-center'><div class='btn-group'><div class='btn-group'><button class='btn btn-sucess btn-sm btnAbrir' title='Ver Reporte'><i class='fas fa-light fa-eye'></i></button></div><button class='btn btn-sucess btn-sm btnBorrar' title='Eliminar Reporte'><i class='fa fa-trash ml-2'></i></button></div></div>"
+          "<div class='text-center'><div class='btn-group'><div class='btn-group'><button class='btn btn-sucess btn-sm btnAbrir' title='Ver Reporte'><i class='fas fa-light fa-eye'></i></button></div></div></div>"
       }
     ],
     lengthMenu: [50, 75, 100],

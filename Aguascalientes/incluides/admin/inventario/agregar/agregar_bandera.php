@@ -17,11 +17,11 @@ require_once("../../../base_datos/conexion/conexion.php");
                 <div class="container text-left">
                     <!-- Ingresar Numero de bandera -->
                     <div class="row mb-3">
-                        <label class="col-sm-6 col-form-label text-justify"> Numero de Bandera </label>
+                        <label class="col-sm-6 col-form-label text-justify"> Numero de Bandera<span class="require">*</span> </label>
                         <div class="col-sm-6">
                         <!-- aqui en el max length se modifica dependiendo los caracteres necesarios -->
                             <input type="text" class="form-control text-uppercase" id="numbandera" maxlength="9">
-                            <div class="texto-nombre-amigo" style="font-size: 10px; color:red">Debes implenetar una letra "A" antes de los 8 numeros de la bandera</div>
+                            <div class="texto-nombre-amigo" style="font-size: 10px; color:red">Debe contener una letra "A" antes de los 8 numeros de la bandera</div>
                         </div>
                     </div>
                     <div class="row col-mb-3">
@@ -34,7 +34,6 @@ require_once("../../../base_datos/conexion/conexion.php");
                         </div>
                     </div>
                     <br>
-                    <div>Utilice el lector de código de barras para agregar los 9 caracteres del código de barras de un equipo, éste se agregará automáticamente al inventario.</div>
                     <br>
                 </div>
             </div>

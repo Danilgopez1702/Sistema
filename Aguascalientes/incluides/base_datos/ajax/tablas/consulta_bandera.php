@@ -1,7 +1,7 @@
 <?php
 include_once '../../conexion/conexion.php';
 
-$consulta = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE `tipo_inventario` = 4");
+$consulta = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE `tipo_inventario` = 4 ORDER BY id_inventario ASC");
 
 $data = array();
 

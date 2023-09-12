@@ -21,3 +21,15 @@ $(document).ready(function() {
         document.getElementById("rechazo").style.display = "block";
     }
 });
+
+function enviar(){
+    toastr.success('Modificando reporte!');
+    $("#status").prop("disabled", false);
+    $("#fecha_asignacion").prop("disabled", false);
+    $("#fecha_acudir").prop("disabled", false);
+    $("#problema_encontrado").prop("disabled", false);
+    $("#solucion").prop("disabled", false);
+    $("#problema_encontrado_2").prop("disabled", false);
+    $("#segunda_solucion").prop("disabled", false);
+    $("#formo").submit();
+}

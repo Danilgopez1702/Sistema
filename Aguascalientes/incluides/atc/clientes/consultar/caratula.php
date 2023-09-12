@@ -172,7 +172,7 @@ include "../../../modal/pago/pago_manual.php";
                                             <option value="<?php echo $vendedor_cliente ?>" selected="true"><?php echo $vendedor ?></option>
                                             <?php
                                             //aqui se seleccion el tipo de usuario tecnico
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -228,7 +228,7 @@ include "../../../modal/pago/pago_manual.php";
                                         <select class="form-control col-sm-12" name="instalador" id="instalador" style="border-radius: 5px;" onchange='form_instalacion();' disabled>
                                             <option value="<?php echo $instalador_cliente ?>" selected="true"><?php echo $instalador . " (Actual)" ?></option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -325,7 +325,7 @@ include "../../../modal/pago/pago_manual.php";
                                         <select class="form-control col-sm-12" name="zona_onu" id="zona_onu" style="border-radius: 5px;" onchange="seleccion_onu()" disabled>
                                             <option value="<?php echo $id_zona ?>"><?php echo $nombre_zona . " (Actual)" ?></option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -408,7 +408,7 @@ include "../../../modal/pago/pago_manual.php";
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" onchange="seleccion_ont()" disabled>
                                             <<option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
                                                 <?php
-                                                $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                                $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                                 $result_tecnico = mysqli_num_rows($tecnico);
                                                 if ($result_tecnico > 0) {
                                                     while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -463,6 +463,15 @@ include "../../../modal/pago/pago_manual.php";
                                         <select class="form-control col-sm-12" name="bandera_ont" id="bandera_ont" style="border-radius: 5px;" disabled>
                                             <option value="<?php echo $bandera_cliente ?>"><?php echo $bandera_cliente ?></option>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ingresar Router -->
+                            <div class="col-md-6 mb-3">
+                                <div class="form-inline">
+                                    <label class="col-sm-4 col-form-label">Router</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control col-sm-12" id="num_router" name="num_router" value="<?php echo $router_cliente ?>" maxlength="12" disabled>
                                     </div>
                                 </div>
                             </div>

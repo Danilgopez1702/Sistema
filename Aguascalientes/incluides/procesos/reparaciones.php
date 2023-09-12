@@ -12,8 +12,7 @@ $status_reporte = $extraccion_reporte['status_reportes'];
 $mensaje_reporte = $extraccion_reporte['mensaje_reportes'];
 $problema_reporte = $extraccion_reporte['problema_reportes'];
 $solucion_reporte = $extraccion_reporte['solucion_reportes'];
-$fecha_reporte = date("Y-m-d", strtotime( $extraccion_reporte['fecha_reportes']));
-
+$fecha_reporte = date("Y-m-d", strtotime( $extraccion_reporte['fecha_creacion']));
 
 $query_cliente = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE `id_cliente` =  '$cliente_reporte'");
 $usuario_cliente = mysqli_fetch_assoc($query_cliente);

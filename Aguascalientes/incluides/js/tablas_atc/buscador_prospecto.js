@@ -8,8 +8,8 @@ $(document).ready(function () {
       "columns":[
   
         {"data": "id_prospecto" },
-        {"data": "apellido_p__prospecto"},
-        {"data": "apellido_m__prospecto"},
+        {"data": "apellido_p_prospecto"},
+        {"data": "apellido_m_prospecto"},
         {"data": "nombre_prospecto"},
         {"data": "tel1"},
   

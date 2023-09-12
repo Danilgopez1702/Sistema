@@ -45,8 +45,8 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
         $reporte = $_POST['reporte'];
         
 
-        $sql = mysqli_query($conexion, "INSERT INTO `reportes`(`status_reportes`, `id_cliente`, `no_reporte_reportes`, `tipo_reportes`, `mensaje_reportes`, `id_usuario`,
-         `fecha_reportes`, `id_reparador`) VALUES ( 1, '$id', '$numero_reporte', '$tipo', '$reporte', '$id_usuario', '$fecha', '$reparador')");
+        $sql = mysqli_query($conexion, "INSERT INTO `reportes`(`status_reportes`, `id_cliente`, `no_reporte_reportes`,  `fecha_creacion`, `tipo_reportes`, `mensaje_reportes`, `id_usuario`,
+         `fecha_reportes`, `id_reparador`) VALUES ( 1, '$id', '$numero_reporte','$fecha', '$tipo', '$reporte', '$id_usuario', '$asignacion', '$reparador')");
 
         mysqli_close($conexion);
 

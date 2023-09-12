@@ -104,6 +104,12 @@ function seleccion_ont() {
         }
     }).done(function (data) {
         $('#ont').html(data);
+
+        dec = parseInt(data, 16);
+        nrouter = dec+1;
+        hex = nrouter.toString(16);
+        $("#num_router").val(hex);
+        
         console.log(data);
     });
 

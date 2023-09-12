@@ -53,8 +53,8 @@ if ($conteo_mk > 0) {
 //deslogueamos
 $deslogear = $deslogeo($ip_general, $mk_user, $mk_pass, $mac, $API);
 
-if ($ip_general == 0) { 
-	echo "error2";
+if ($ip_general == 0) {
+    echo "error2";
 } else {
-	echo "ok";
+    echo "ok";
 }

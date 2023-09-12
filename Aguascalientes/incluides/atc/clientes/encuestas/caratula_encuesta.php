@@ -97,7 +97,7 @@ include "../../../mikrotik/get_info.php";
                                             <option value="<?php echo $vendedor_cliente ?>" selected="true"><?php echo $vendedor ?></option>
                                             <?php
                                             //aqui se seleccion el tipo de usuario tecnico
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -144,7 +144,7 @@ include "../../../mikrotik/get_info.php";
                                         <select class="form-control col-sm-12" name="instalador" id="instalador" style="border-radius: 5px;" onchange='form_instalacion();' disabled>
                                             <option value="<?php echo $instalador_cliente ?>" selected="true"><?php echo $instalador ?></option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -237,7 +237,7 @@ include "../../../mikrotik/get_info.php";
                                         <select class="form-control col-sm-12" name="zona_onu" id="zona_onu" style="border-radius: 5px;" onchange="seleccion_onu()" disabled>
                                             <option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -320,7 +320,7 @@ include "../../../mikrotik/get_info.php";
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" onchange="seleccion_ont()" disabled>
                                             <<option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
                                                 <?php
-                                                $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                                $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                                 $result_tecnico = mysqli_num_rows($tecnico);
                                                 if ($result_tecnico > 0) {
                                                     while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {

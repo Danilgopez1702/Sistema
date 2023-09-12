@@ -221,9 +221,9 @@ if ($tipo == 1) {
 				</div>
 			</div>
 		</div>
-		<form class="forms-sample" method='post' action='../../../base_datos/editar/editar_reparaciones.php'>
-			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte"
-				value="<?php echo $numero_reporte ?>" required="" />
+		<form class="forms-sample" method='post' id="formo" name="formo" action='../../../base_datos/editar/editar_reparacion.php'>
+			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $id ?>" required="" />
+			<input type="hidden" class="form-control" id="tipos" name="tipos" value="<?php echo $tipo ?>" required="" />
 			<!-- div de Informacion de la Reparacion -->
 			<div class="card shadow mb-4">
 				<div class="card-header py-sm-2">
@@ -239,11 +239,11 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Reporte</label>
 								<div class="col-sm-8">
 									<?php
-									if ($activo_reporte == 1) {
+									if ($status_reporte == 1) {
 										?>
 										<button type="button" class="btn btn-primary btn-sm">Activo</button>
 										<?php
-									} else {
+									} else if ($status_reporte == 2){
 										?>
 										<button type="button" class="btn btn-danger btn-sm">Cerrado</button>
 										<?php
@@ -291,13 +291,24 @@ if ($tipo == 1) {
 									</div>
 								</div>
 							</div>
-							<!-- Fecha para la Reparacion -->
+							<!-- Fecha Asignacion -->
 							<div class="col-md-6 mb-3">
 								<div class="form-inline ">
 									<label class="col-sm-4 col-form-label">Fecha de Asignacion</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12 text-left" type="date"
 											id="fecha_asignacion" name="fecha_asignacion"
+											value="<?php echo $fecha_reporte ?>" disabled required>
+									</div>
+								</div>
+							</div>
+							<!-- Fecha para la Reparacion -->
+							<div class="col-md-6 mb-3">
+								<div class="form-inline ">
+									<label class="col-sm-4 col-form-label">Fecha de Reparacion</label>
+									<div class="col-sm-8">
+										<input class="form-control col-sm-12 text-left" type="date"
+											id="fecha_acudir" name="fecha_acudir"
 											value="<?php echo $fecha_reporte ?>" disabled required>
 									</div>
 								</div>
@@ -425,8 +436,8 @@ if ($tipo == 1) {
 							<div class="form-inline">
 								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
 								<div class="col-sm-8">
-									<textarea class="form-control col-sm-12" type="text" id="solucion_2"
-										name="solucion_2" required disabled><?php echo $solucion_reporte ?></textarea>
+									<textarea class="form-control col-sm-12" type="text" id="segunda_solucion"
+										name="segunda_solucion" required disabled><?php echo $solucion_reporte ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -438,7 +449,7 @@ if ($tipo == 1) {
 					href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
 					Ver Cliente
 				</a>
-				<button type="submit" class="btn btn-primary submitBtn">Actualizar</button>
+				<button type="button" class="btn btn-primary submitBtn" id="btn_enviar" name= "btn_enviar" onclick="enviar();">Actualizar</button>
 			</div>
 		</form>
 	</div>

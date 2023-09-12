@@ -12,7 +12,7 @@ $tipo = mysqli_fetch_assoc($query_tipo);
 $tipo_olt = $tipo['equipo_zonafibra'];
 echo $tipo_olt;
 if($tipo_olt == 1){
-    $query = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE tipo_inventario = 1 && fallo_inventario = 2 && id_instalador = $instalador");
+    $query = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE tipo_inventario = 1 && fallo_inventario = 2 && asignado_inventario !=2 && id_instalador = $instalador");
     if (mysqli_num_rows($query) > 0){   //hay equipos asignados, imprimir options
         while($row = $query->fetch_assoc()) {
             $equipos .= '<option value="'.$row["onu_inventario"].'">'.$row["onu_inventario"].'</option>';
@@ -22,7 +22,7 @@ if($tipo_olt == 1){
         echo '<option value="---">No hay equipos asignados a este Instalador</option>';
     }
 }else if($tipo_olt == 2){
-    $query = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE tipo_inventario = 1 && fallo_inventario = 2 && id_instalador = $instalador");
+    $query = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE tipo_inventario = 1 && fallo_inventario = 2 && asignado_inventario !=2 && id_instalador = $instalador");
     if (mysqli_num_rows($query) > 0){   //hay equipos asignados, imprimir options
         while($row = $query->fetch_assoc()) {
             $equipos .= '<option value="'.$row["mac_inventario"].'">'.$row["mac_inventario"].'</option>';

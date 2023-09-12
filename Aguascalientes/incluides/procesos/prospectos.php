@@ -4,8 +4,8 @@ require("../../../base_datos/conexion/conexion.php");
     $cliente = mysqli_fetch_assoc($consultar_cliente);
 
     $nombre = $cliente['nombre_prospecto'];
-    $paterno = $cliente['apellido_p__prospecto'];
-    $materno = $cliente['apellido_m__prospecto'];
+    $paterno = $cliente['apellido_p_prospecto'];
+    $materno = $cliente['apellido_m_prospecto'];
     $postal = $cliente['postal_prospecto'];
     $estado = $cliente['estado_prospecto'];
     $municipio = $cliente['municipio_prospecto'];

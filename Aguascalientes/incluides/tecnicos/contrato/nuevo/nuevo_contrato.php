@@ -177,7 +177,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                         <select class="form-control col-sm-12" name="zona_onu" id="zona_onu" style="border-radius: 5px;" require onchange="seleccion_onu()">
                                             <option value="0">Selecciona una Zona....</option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -259,7 +259,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" require onchange="seleccion_ont()">
                                             <option value="0">Selecciona una Zona....</option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {

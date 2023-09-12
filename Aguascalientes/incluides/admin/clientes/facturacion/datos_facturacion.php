@@ -202,7 +202,7 @@ include "../../../procesos/procesos_facturacion.php";
                                                 <option value="<?php echo $regimen_factura ?>" selected="true"><?php echo $regimen_factura  ?> | <?php echo  $regimen_facturas ?></option>
                                                 <?php
                                             }
-                                            $fiscales = mysqli_query($conexion, "SELECT * FROM `regimen_fiscal`");
+                                            $fiscales = mysqli_query($conexion, "SELECT * FROM `regimen_fiscal` ORDER BY id_rf ASC");
                                             $regimen_fiscales = mysqli_num_rows($fiscales);
                                             if ($regimen_fiscales > 0) {
                                                 while ($regimenes = mysqli_fetch_assoc($fiscales)) {

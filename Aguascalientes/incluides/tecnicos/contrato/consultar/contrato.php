@@ -1,6 +1,7 @@
 <?php
 include "../../../header/header_tecnicos.php";
 require_once("../../../base_datos/conexion/conexion.php");
+$id_tecnico = $_SESSION['id_usuario'];
 include "../../../modal/tecnicos/modal_equipo.php";
 ?>
 <div class="card shadow mb-4">

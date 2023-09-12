@@ -27,7 +27,7 @@
                     <select class="form-control" name="editar_id_instalador" id="editar_id_instalador" style="border-radius: 5px;">
                       <option value="No Asignado">Sin Asignar....</option>
                       <?php
-                      $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                      $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                       $result_tecnico = mysqli_num_rows($tecnico);
                       if ($result_tecnico > 0) {
                         while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -48,7 +48,6 @@
                   <label class="col-sm-8 col-form-label">Fallo <span class="require">*</span></label>
                   <div class="col-sm-10">
                     <select class="form-control" id="editar_fallo_inventario" name="editar_fallo_inventario" required>
-                    <option value="No Asignado">Sin Asignar....</option>
                       <option value='No'>No</option>
                       <option value='Si'>Si</option>
                     </select>

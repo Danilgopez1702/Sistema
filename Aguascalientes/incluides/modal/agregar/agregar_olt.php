@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Nuevo Eqipo</h4>
+                <h4 class="modal-title">Nuevo Equipo</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">x</button>
             </div>
             <div class="container"></div>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="row-md-12">
                           <div class="form-group row">
-                            <label class="col-sm-8 col-form-label">Puertos <span class="require">*</span></label>
+                            <label class="col-sm-8 col-form-label">Puertos por Bote<span class="require">*</span></label>
                             <div class="col-sm-10">
                               <input type="text" class="form-control" id="puertos" name="puertos" required="" />
                             </div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="row-md-12">
                           <div class="form-group row">
-                            <label class="col-sm-8 col-form-label">Ip <span class="require">*</span></label>
+                            <label class="col-sm-8 col-form-label">IP <span class="require">*</span></label>
                             <div class="col-sm-10">
                               <input type="text" class="form-control" id="ip" name="ip" required="" />
                             </div>

@@ -17,6 +17,7 @@ $(document).ready(function () {
         {"defaultContent": 
         "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnEditar' data-toggle='modal' title='Eliminar antena'><i class='fas fa-thin fa-pen ml-2'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar' title='Eliminar antena'><i class='fa fa-trash ml-2'></i></button></div></div>"}
     ],
+      order: [1, 'desc'],
       lengthMenu: [50, 75, 100],
       language: {
         url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-MX.json',

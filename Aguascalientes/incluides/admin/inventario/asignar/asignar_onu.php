@@ -26,7 +26,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <option value="999999999999">Selecciona un tecnico....</option>
                                 <?php
                                 //aqui se seleccion ul tipo de usuario tecnico
-                                $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                                $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                 $result_tecnico = mysqli_num_rows($tecnico);
                                 if ($result_tecnico > 0) {
                                     while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {

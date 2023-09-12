@@ -150,19 +150,19 @@ include "../../../procesos/dashboard.php";
                     </div>
                     <div class="card-body">
                         <div class="list-group">
-                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=1" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_reparaciones.php?acomodo=1" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Primera Revisón</h5>
                                     <small><?php echo $rep ?></small>
                                 </div>
                             </a>
-                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=2" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_reparaciones.php?acomodo=2" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Segunda Revisón</h5>
                                     <small><?php echo $segunda ?></small>
                                 </div>
                             </a>
-                            <a href="../../clientes/consultar/consultar_revisar.php?acomodo=3" class="list-group-item list-group-item-action ">
+                            <a href="../../clientes/consultar/consultar_reparaciones.php?acomodo=3" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Revisón Morosa</h5>
                                     <small><?php echo $moroso ?></small>

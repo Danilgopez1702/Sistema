@@ -89,7 +89,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                             <option value="999999999999">Selecciona un tecnico....</option>
                                             <?php
                                             //aqui se seleccion el tipo de usuario tecnico
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -135,7 +135,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                         <select class="form-control col-sm-12" name="instalador" id="instalador" style="border-radius: 5px;" onchange='form_instalacion();'>
                                             <option value="999999999999">Selecciona un tecnico....</option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -292,7 +292,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" require onchange="seleccion_ont()">
                                             <option value="0">Selecciona una Zona....</option>
                                             <?php
-                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra");
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
                                             if ($result_tecnico > 0) {
                                                 while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {

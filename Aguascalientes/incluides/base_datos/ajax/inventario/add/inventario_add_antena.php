@@ -15,8 +15,8 @@ if($numero>=1){
 echo "error";
 }else{
     //si no es mayor a 1 se inserta los datos que estan en el post
-$sql = mysqli_query($conexion, "INSERT INTO `inventario`( `radio_inventario`, `id_instalador`, `fallo_inventario`, `tipo_inventario`)
-VALUES ('$numradio', 2,$fallo,3)");
+$sql = mysqli_query($conexion, "INSERT INTO `inventario`( `radio_inventario`, `id_instalador`, `fallo_inventario`, `tipo_inventario`, `id_zona`)
+VALUES ('$numradio', 2,$fallo,3,1)");
 //el valor mensajes es para llamarlo en el log como string
 $mensajes ='Se agrego la antena '.$numradio .' al inventario';
 //esta consulta inserta valores en el historial (logs)
@@ -25,6 +25,4 @@ $sql_log = mysqli_query($conexion, "INSERT INTO `log`( `accion_log`, `nombre_usu
     //el echo error es para mandar llamar en ad_inv_radio.js la alerta (temporal) tipo success
 echo "success";
 }
-
-
 ?>

@@ -27,7 +27,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <option value="999999999999">Selecciona un tecnico....</option>
                                 <?php
                                 //aqui se seleccion ul tipo de usuario tecnico
-                                $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4");
+                                $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                 $result_tecnico = mysqli_num_rows($tecnico);
                                 if ($result_tecnico > 0) {
                                     while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
@@ -45,10 +45,10 @@ require_once("../../../base_datos/conexion/conexion.php");
                     <br>
                     <!-- Ingresar Numero de cliente -->
                     <div class="row mb-3">
-                        <label class="col-sm-6 col-form-label text-justify"> Numero de bandera </label>
+                        <label class="col-sm-6 col-form-label text-justify"> Numero de bandera<span class="require">*</span> </label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control text-uppercase" id="numbandera" maxlength="9">
-                            <div class="texto-nombre-amigo" style="font-size: 10px; color:red">Debes implenetar una letra "A" antes de los 9 numeros de la bandera</div>
+                            <div class="texto-nombre-amigo" style="font-size: 10px; color:red">Debe contener una letra "A" antes de los 9 numeros de la bandera</div>
                         </div>
                     </div>
                     <br>

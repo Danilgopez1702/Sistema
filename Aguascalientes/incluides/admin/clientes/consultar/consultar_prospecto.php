@@ -6,8 +6,7 @@ require("../../../base_datos/conexion/conexion.php");
 <h2>Tabla de Clientes Prospectos</h2>
 <div class="card shadow mb-4">
     <div class="card-header py-sm-2">
-        <h4 class="m-0 font-weight-bold text-primary">Consultar Cliente</h4>
-        <input  type="hidden" class="form-control" id="acomodo" name="acomodo" value="<?php echo $acomodo ?>" />
+        <h4 class="m-0 font-weight-bold text-primary">Consultar Prospecto</h4>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -15,14 +14,10 @@ require("../../../base_datos/conexion/conexion.php");
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Status</th>
-                        <th>Folio</th>
-                        <th>Onu</th>
-                        <th>Bandera</th>
-                        <th>Numero de Cliente</th>
                         <th>Apellido Paterno</th>
                         <th>Apellido Materno</th>
                         <th>Nombre(s)</th>
+                        <th>Telefono</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

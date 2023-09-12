@@ -16,7 +16,7 @@ $(document).ready(function () {
         {"data": "fecha_inventario"},
   
         {"defaultContent": 
-        "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnEditar' data-toggle='modal' title='Eliminar antena'><i class='fas fa-thin fa-pen ml-2'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar' title='Eliminar antena'><i class='fa fa-trash ml-2'></i></button></div></div>"}
+        "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnEditar' data-toggle='modal' title='Editar Ont'><i class='fas fa-thin fa-pen ml-2'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar' title='Eliminar ont'><i class='fa fa-trash ml-2'></i></button></div></div>"}
     ],
       lengthMenu: [50, 75, 100],
       language: {
