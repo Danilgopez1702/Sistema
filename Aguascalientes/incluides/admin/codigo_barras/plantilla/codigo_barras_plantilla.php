@@ -6,7 +6,7 @@ require_once("../../../base_datos/conexion/conexion.php");
 ?>
 
 <div class="card-body">
-    <form class="user" method="GET" action='../../../barcode/index_planilla.php' target="_blank">
+    <form class="user" method="GET" action='../../../barcode/index_planilla.php' method="GET" target="_blank">
 
         <!-- Referencias Personales -->
         <div class="card shadow col-sm-6 py-sm-2 m-sm-1">

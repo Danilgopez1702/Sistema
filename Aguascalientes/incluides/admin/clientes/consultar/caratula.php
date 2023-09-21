@@ -171,7 +171,7 @@ include "../../../modal/pago/pago_manual.php";
                                     <label class="col-sm-4 col-form-label">Velocidad</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control col-sm-12" id="velocidad"
-                                            name="velocidad" value="<?php echo $velocidad_cliente ?>" disabled>
+                                            name="velocidad" value="<?php echo $velocidad_cliente ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@ include "../../../modal/pago/pago_manual.php";
                                     <label class="col-sm-4 col-form-label">Precio Mensual</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control col-sm-12" id="precio_m" name="precio_m"
-                                            value="<?php echo $precio_m ?>" disabled>
+                                            value="<?php echo $precio_m ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -446,6 +446,7 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont"
                                             style="border-radius: 5px;" onchange="seleccion_ont()">
+                                            <<option value="0">Seleccionar Zona</option>
                                             <<option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
                                                 <?php
                                                 $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
@@ -493,9 +494,8 @@ include "../../../modal/pago/pago_manual.php";
                                     <label class="col-sm-4 col-form-label">Seleccionar ONT</label>
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="ont" id="ont"
-                                            style="border-radius: 5px;">
+                                            style="border-radius: 5px;" onchange="ont_router()">
                                             <option value="<?php echo $ont_cliente ?>"><?php echo $ont_cliente ?>
-                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -513,12 +513,12 @@ include "../../../modal/pago/pago_manual.php";
                                 </div>
                             </div>
                             <!-- Ingresar Router -->
-                            <div class="col-md-6 mb-3" >
+                            <div class="col-md-6 mb-3">
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Router</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control col-sm-12" id="router_ont"
-                                            name="router_ont" maxlength="12">
+                                            name="router_ont" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -793,7 +793,7 @@ include "../../../modal/pago/pago_manual.php";
             <?php
         }
         ?>
-        <a href="../../../edoDeCuenta/pdf_estado_cuenta.php?id=<?php echo $id_cliente ?>" type="button"
+        <a href="../../../edoDeCuenta/generar_boton.php?id=<?php echo $id_cliente ?>" type="button"
             class="btn btn-secondary" target="_blank">Ver estado de cuenta</a>
         <a href="../../pagos_oxxo/agregar/pago_tarjeta.php?id=<?php echo $id_cliente ?>" type="button"
             class="btn btn-secondary" target="_blank">Realizar Pago con Tarjeta</a>

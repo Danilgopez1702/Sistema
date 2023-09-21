@@ -28,8 +28,8 @@ $paquete_userman = $cambio_paquete($userman_ip, $userman_user, $userman_pass, $A
 //Consultamos los mk para ver en donde se encuentra (hotspot)
 $consulta_mk = mysqli_query($conexion, "SELECT * FROM `mk` WHERE `nombre_mk` != 'DigitalNet 1'");
 $conteo_mk = mysqli_num_rows($consulta_mk);
-if($conteo_mk > 0){
-    while($mk = mysqli_fetch_array($consulta_mk)){
+if ($conteo_mk > 0) {
+    while ($mk = mysqli_fetch_array($consulta_mk)) {
 
         $mk_ip = $mk['ip_mk'];
         $mk_user = 'SYSADMIN';
@@ -40,14 +40,18 @@ if($conteo_mk > 0){
 
         // Verificar una condición para detener el bucle
         if (!$funcion_mk['id_general']) {
-        }else{
+        } else {
             $ip_general = $funcion_mk['mk_ip'];
             break; // Detener el bucle cuando se cumpla la condición
         }
     }
 }
+if (!$ip_general) {
 
-        //deslogueamos
-        $deslogear = $deslogeo($ip_general, $mk_user, $mk_pass, $mac, $API);
+} else {
+    //deslogueamos
+    $deslogear = $deslogeo($ip_general, $mk_user, $mk_pass, $mac, $API);
 
-        $update = mysqli_query($conexion,"UPDATE `cliente` SET `velocidad_cliente`='$user_profile' WHERE `id_cliente` = '$id_cliente'");
+    $update = mysqli_query($conexion, "UPDATE `cliente` SET `velocidad_cliente`='$user_profile' WHERE `id_cliente` = '$id_cliente'");
+
+}

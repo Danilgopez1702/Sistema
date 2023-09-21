@@ -45,7 +45,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Folio</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="folio" name="folio" maxlength="6" value="<?php echo $folio ?>" required>
+                                        <input type="text" class="form-control col-sm-12" id="folio" name="folio" maxlength="6" value="<?php echo $folio ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Status de Cliente</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="status" id="status" style="border-radius: 5px;" required onchange='precio();' disabled>
+                                        <select class="form-control col-sm-12" name="status" id="status" style="border-radius: 5px;" required onchange='precio();' readonly>
                                             <option selected="true"><?php echo $status . " (Actual)" ?></option>
                                             <?php
                                             if ($status_cliente == 0) {
@@ -126,7 +126,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Paquete</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="paquete" id="paquete" style="border-radius: 5px;" required onchange='precio();' disabled>
+                                        <select class="form-control col-sm-12" name="paquete" id="paquete" style="border-radius: 5px;" required onchange='precio();' readonly>
                                             <option selected="true"><?php echo $user_profile ?> (Actual)</option>
                                             <option value="2Megas">2 Megas</option>
                                             <option value="4Megas">4 Megas</option>
@@ -150,7 +150,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Velocidad</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="velocidad" name="velocidad" value="<?php echo $velocidad_cliente ?>" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="velocidad" name="velocidad" value="<?php echo $velocidad_cliente ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Precio Mensual</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="precio_m" name="precio_m" value="<?php echo $precio_m ?>" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="precio_m" name="precio_m" value="<?php echo $precio_m ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Vendedor</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" name="vendedor" id="vendedor" style="border-radius: 5px;">
+                                        <select class="form-control" name="vendedor" id="vendedor" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $vendedor_cliente ?>" selected="true"><?php echo $vendedor ?></option>
                                             <?php
                                             //aqui se seleccion el tipo de usuario tecnico
@@ -194,7 +194,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Fecha de Instalacion</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control col-sm-12" id="fecha_instalacion" name="fecha_instalacion" value="<?php echo date('Y-m-d', strtotime($instalacion_cliente)) ?>" required>
+                                        <input type="date" class="form-control col-sm-12" id="fecha_instalacion" name="fecha_instalacion" value="<?php echo date('Y-m-d', strtotime($instalacion_cliente)) ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Proxima fecha de Corte</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control col-sm-12" id="fecha_corte" name="fecha_corte" value="<?php echo date('Y-m-d', strtotime($fecha_corte)) ?>" disabled>
+                                        <input type="date" class="form-control col-sm-12" id="fecha_corte" name="fecha_corte" value="<?php echo date('Y-m-d', strtotime($fecha_corte)) ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +225,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Instalador</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="instalador" id="instalador" style="border-radius: 5px;" onchange='form_instalacion();' disabled>
+                                        <select class="form-control col-sm-12" name="instalador" id="instalador" style="border-radius: 5px;" onchange='form_instalacion();' readonly>
                                             <option value="<?php echo $instalador_cliente ?>" selected="true"><?php echo $instalador . " (Actual)" ?></option>
                                             <?php
                                             $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
@@ -254,7 +254,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label" id="instalacion_div">Tipo de Instalacion</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="instalacion_nueva" id="instalacion_nueva" required onchange='form_instalacion();' disabled>
+                                        <select class="form-control col-sm-12" name="instalacion_nueva" id="instalacion_nueva" required onchange='form_instalacion();' readonly>
                                             <?php
                                             if ($instalacion == 1) {
                                             ?>
@@ -295,7 +295,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Equipo</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="antena" id="antena" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="antena" id="antena" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $radio_cliente ?>" selected="true"><?php echo $radio_cliente . " (Actual)" ?></option>
                                         </select>
                                     </div>
@@ -306,7 +306,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-2 col-form-label">IP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control col-sm-12" id="ip" name="ip" value="<?php echo $ip_cliente  . " (Actual)" ?>" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="ip" name="ip" value="<?php echo $ip_cliente  . " (Actual)" ?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +322,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Zona</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="zona_onu" id="zona_onu" style="border-radius: 5px;" onchange="seleccion_onu()" disabled>
+                                        <select class="form-control col-sm-12" name="zona_onu" id="zona_onu" style="border-radius: 5px;" onchange="seleccion_onu()" readonly>
                                             <option value="<?php echo $id_zona ?>"><?php echo $nombre_zona . " (Actual)" ?></option>
                                             <?php
                                             $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
@@ -347,7 +347,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Bote</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="bote_onu" id="bote_onu" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="bote_onu" id="bote_onu" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $bote_cliente ?>"><?php echo $bote_cliente . " (Actual)" ?></option>
                                         </select>
                                     </div>
@@ -358,7 +358,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Puerto</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="puerto_onu" name="puerto_onu" value="<?php echo $puerto_cliente ?>" maxlength="2" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="puerto_onu" name="puerto_onu" value="<?php echo $puerto_cliente ?>" maxlength="2" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +367,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar ONU</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="onu" id="onu" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="onu" id="onu" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $onu_cliente ?>"><?php echo $onu_cliente . " (Actual)" ?></option>
                                         </select>
                                     </div>
@@ -378,7 +378,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Router</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="router" name="router" value="<?php echo $router_cliente ?>" maxlength="12" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="router" name="router" value="<?php echo $router_cliente ?>" maxlength="12" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -387,7 +387,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Bandera</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="bandera_onu" id="bandera_onu" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="bandera_onu" id="bandera_onu" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $bandera_cliente ?>"><?php echo $bandera_cliente . " (Actual)" ?></option>
                                         </select>
                                     </div>
@@ -405,7 +405,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Zona</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" onchange="seleccion_ont()" disabled>
+                                        <select class="form-control col-sm-12" name="zona_ont" id="zona_ont" style="border-radius: 5px;" onchange="seleccion_ont()" readonly>
                                             <<option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
                                                 <?php
                                                 $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
@@ -429,7 +429,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Bote</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="bote_ont" id="bote_ont" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="bote_ont" id="bote_ont" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $bote_cliente ?>"><?php echo $bote_cliente ?></option>
                                         </select>
                                     </div>
@@ -440,7 +440,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Puerto</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="puerto_ont" name="puerto_ont" value="<?php echo $puerto_cliente ?>" maxlength="2" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="puerto_ont" name="puerto_ont" value="<?php echo $puerto_cliente ?>" maxlength="2" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -449,7 +449,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar ONT</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="ont" id="ont" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="ont" id="ont" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $ont_cliente ?>"><?php echo $ont_cliente ?></option>
                                         </select>
                                     </div>
@@ -460,7 +460,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Seleccionar Bandera</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control col-sm-12" name="bandera_ont" id="bandera_ont" style="border-radius: 5px;" disabled>
+                                        <select class="form-control col-sm-12" name="bandera_ont" id="bandera_ont" style="border-radius: 5px;" readonly>
                                             <option value="<?php echo $bandera_cliente ?>"><?php echo $bandera_cliente ?></option>
                                         </select>
                                     </div>
@@ -471,7 +471,7 @@ include "../../../modal/pago/pago_manual.php";
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Router</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control col-sm-12" id="num_router" name="num_router" value="<?php echo $router_cliente ?>" maxlength="12" disabled>
+                                        <input type="text" class="form-control col-sm-12" id="num_router" name="num_router" value="<?php echo $router_cliente ?>" maxlength="12" readonly>
                                     </div>
                                 </div>
                             </div>

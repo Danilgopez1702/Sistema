@@ -114,7 +114,7 @@ function DV ($atributos){
 
 	$white = imagecolorallocate($srcbarra, 0, 0, 0);
 
-	$font_path = 'OpenSans-Regular.TTF';
+	$font_path = dirname(__DIR__).'/edoDeCuenta/OpenSans-Regular.ttf';
 
 	$text = $text;
 

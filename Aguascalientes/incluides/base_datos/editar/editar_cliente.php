@@ -1,8 +1,11 @@
 <?php
 session_start();
-if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
+if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 
     require("../conexion/conexion.php");
+
+    $nombre_usuario = $_SESSION['nombre'];
+    $id_usuario = $_SESSION['id_usuario'];
 
     $id_cliente = $_POST['id'];
     $folio = $_POST['folio'];
@@ -22,6 +25,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
     $nacimiento = $_POST['nacimiento'];
     $postal = $_POST['postal'];
     $estado = $_POST['estado'];
+    $router_ont = $_POST['router_ont'];
     $municipio = $_POST['municipio'];
     $colonia = $_POST['colonia'];
     $calle = $_POST['calle'];
@@ -64,21 +68,21 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
 
     if (stristr($status, "Activo")) {
         $estatus = 0;
-    }else if (stristr($status, "por vencer")) {
+    } else if (stristr($status, "por vencer")) {
         $estatus = 1;
-    }else if (stristr($status, "moroso inactivo")) {
+    } else if (stristr($status, "moroso inactivo")) {
         $estatus = 3;
-    }else if (stristr($status, "moroso")) {
+    } else if (stristr($status, "moroso")) {
         $estatus = 2;
-    }else if (stristr($status, "sin recuperar")) {
+    } else if (stristr($status, "sin recuperar")) {
         $estatus = 5;
-    }else if (stristr($status, "recuperado")) {
+    } else if (stristr($status, "recuperado")) {
         $estatus = 4;
-    }else if (stristr($status, "cancelado")) {
+    } else if (stristr($status, "cancelado")) {
         $estatus = 6;
-    }else if (stristr($status, "dificil")) {
+    } else if (stristr($status, "dificil")) {
         $estatus = 8;
-    }else if (stristr($status, "prospecto")) {
+    } else if (stristr($status, "prospecto")) {
         $estatus = 7;
     }
 
@@ -196,15 +200,22 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             } else if ($status == 3) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
             } else if ($status == 4) {
 
                 $mac_vieja = $antena_antigua;
                 include "../../mikrotik/eliminar_equipo.php";
+
                 $sql_status_4 = mysqli_query($conexion, "UPDATE `inventario` SET `id_instalador` = 0, `asignado_inventario` = 0,`id_cliente` = '' WHERE `radio_inventario `= '$antena_antigua' ");
                 $antena = "";
             } else if ($status == 5) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
             }
 
             if (!isset($onu_antigua)) {
@@ -212,19 +223,26 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
                 include "../../mikrotik/eliminar_equipo.php";
             }
             if (!isset($ont_antigua)) {
-                $mac_vieja = $ont_antigua;
+                $mac_vieja = $router_ont;
                 include "../../mikrotik/eliminar_equipo.php";
             }
         }
         if ($paquete_antigua != $paquete) {
             $perfil = $paquete;
             include "../../mikrotik/manual_cambiar_paquete.php";
+
+            $mensajes = 'El usuario: ' . $nombre_usuario . ' cambio el paquete: ' . $paquete_antigua . ' al paquete: ' . $paquete . ' del cliente: ' . $numero_cliente;
+            $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
+
         }
         if ($antena_antigua != $antena) {
             $mac_vieja = $antena_antigua;
             $perfil = $paquete;
             include "../../mikrotik/eliminar_equipo.php";
             include "../../mikrotik/manual_cambiar_paquete.php";
+
+            $mensajes = 'El usuario: ' . $nombre_usuario . ' cambio el quipo: ' . $mac_vieja . ' al equipo: ' . $mac . ' del cliente: ' . $numero_cliente;
+            $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
         }
 
         $sql_update_antena = mysqli_query($conexion, "UPDATE `cliente` SET
@@ -237,6 +255,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
         `entre_calle2`= '$calle2',`ref_dom`= '$ref',`tel1_cliente`= '$tel1',`tel2_cliente`= '$tel2',
         `tel3_cliente`= '$tel3',`ref_nombre1`= '$ref1',`ref_tel1`= '$ref_tel',`ref_nombre2`= '$ref2',
         `ref_tel2`= '$ref_tel2',`radio_cliente`= '$antena',`router_cliente`= '$router',`onu_cliente`='$onu',`ont_cliente`='$ont',`bandera_cliente`='$bandera_ont',`bote_cliente`='$bote_ont',`puerto_cliente`='$puerto_ont' WHERE `id_cliente` = '$id_cliente'");
+
     } else if ($instalacion_nueva == 2) {
         $mac = $router;
 
@@ -351,6 +370,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             } else if ($status == 3) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
             } else if ($status == 4) {
 
                 $mac_vieja = $router_antigua;
@@ -360,6 +382,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             } else if ($status == 5) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
             }
         }
         if ($paquete_antigua != $paquete) {
@@ -371,58 +396,21 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             $perfil = $paquete;
             include "../../mikrotik/eliminar_equipo.php";
             include "../../mikrotik/manual_cambiar_paquete.php";
+
+            $mensajes = 'El usuario: ' . $nombre_usuario . ' cambio el quipo: ' . $mac_vieja . ' al equipo: ' . $mac . ' del cliente: ' . $numero_cliente;
+            $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
         }
         if (!isset($antena_antigua)) {
             $mac_vieja = $antena_antigua;
             include "../../mikrotik/eliminar_equipo.php";
+
+            $mensajes = 'El usuario: ' . $nombre_usuario . ' cambio el paquete: ' . $paquete_antigua . ' al paquete: ' . $paquete . ' del cliente: ' . $numero_cliente;
+            $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
         }
         if (!isset($ont_antigua)) {
             $mac_vieja = $ont_antigua;
             include "../../mikrotik/eliminar_equipo.php";
         }
-
-        var_dump(
-            $n_cliente,
-            "/n",
-            $folio,
-            $status,
-            $paquete,
-            $velocidad,
-            $precio_m,
-            $fecha_corte,
-            $ip,
-            $vendedor,
-            $instalador,
-            $nombre,
-            $paterno,
-            $materno,
-            $nacimiento,
-            $email,
-            $calle,
-            $n_ext,
-            $n_int,
-            $municipio,
-            $estado,
-            $colonia,
-            $postal,
-            $calle1,
-            $calle2,
-            $ref,
-            $tel1,
-            $tel2,
-            $tel3,
-            $ref1,
-            $ref_tel,
-            $ref2,
-            $ref_tel2,
-            $antena,
-            $router,
-            $onu,
-            $ont,
-            $bandera_onu,
-            $bote_onu,
-            $puerto_onu
-        );
 
         $sql_update_antena = mysqli_query($conexion, "UPDATE `cliente` SET
         `numero_cliente`= '$n_cliente',`folio_cliente`= $folio,`status_cliente`= $estatus,`paquete_cliente`= '$paquete',
@@ -437,20 +425,10 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
         `bandera_cliente`='$bandera_onu',`bote_cliente`='$bote_onu',`puerto_cliente`='$puerto_onu' WHERE `id_cliente` = '$id_cliente'");
     } else if ($instalacion_nueva == 3) {
 
+        $suma = base_convert($router_ont, 16, 10);
+        $suma = $suma + 1;
+        $mac = base_convert($suma, 10, 16);
 
-        $consulta_ont = mysqli_query($conexion, "SELECT * from inventario WHERE ont_inventario = '$ont' or mac_ont_inventario = '$ont'");
-        $$consultas = mysqli_fetch_assoc($consulta_ont);
-        if (!$consultas['ont_inventario']) {
-            $ont = $consultas['mac_ont_inventario'];
-            $suma = base_convert($ont, 16, 10);
-            $suma = $suma + 1;
-            $mac = base_convert($suma, 10, 16);
-        } else {
-            $ont = $consultas['ont_inventario'];
-            $suma = base_convert($ont, 16, 10);
-            $suma = $suma + 1;
-            $mac = base_convert($suma, 10, 16);
-        }
 
         if ($status_antigua != $status) {
 
@@ -563,6 +541,10 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             } else if ($status == 3) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
+
             } else if ($status == 4) {
 
                 $mac_vieja = $ont_antigua;
@@ -572,6 +554,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             } else if ($status == 5) {
                 $perfil = "cancelado";
                 include "../../mikrotik/manual_cambiar_paquete.php";
+
+                $mensajes = 'El usuario: ' . $nombre_usuario . ' cancelo el paquete del cliente: ' . $numero_cliente;
+                $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
             }
         }
         if ($paquete_antigua != $paquete) {
@@ -583,6 +568,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
             $perfil = $paquete;
             include "../../mikrotik/eliminar_equipo.php";
             include "../../mikrotik/manual_cambiar_paquete.php";
+
+            $mensajes = 'El usuario: ' . $nombre_usuario . ' cambio el quipo: ' . $mac_vieja . ' al equipo: ' . $mac . ' del cliente: ' . $numero_cliente;
+            $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
         }
         if (!isset($antena_antigua)) {
             $mac_vieja = $antena_antigua;
@@ -602,7 +590,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 ) {
         `estado`= '$estado',`colonia_cliente`= '$colonia',`codigo_postal`= '$postal',`entre_calle1`= '$calle1',
         `entre_calle2`= '$calle2',`ref_dom`= '$ref',`tel1_cliente`= '$tel1',`tel2_cliente`= '$tel2',
         `tel3_cliente`= '$tel3',`ref_nombre1`= '$ref1',`ref_tel1`= '$ref_tel',`ref_nombre2`= '$ref2',
-        `ref_tel2`= '$ref_tel2',`radio_cliente`= '$antena',`router_cliente`= '$router',`onu_cliente`='$onu',`ont_cliente`='$ont',`bandera_cliente`='$bandera_ont',`bote_cliente`='$bote_ont',`puerto_cliente`='$puerto_ont' WHERE `id_cliente` = '$id_cliente'");
+        `ref_tel2`= '$ref_tel2',`radio_cliente`= '$antena',`router_cliente`= '$router_ont',`onu_cliente`='$onu',`ont_cliente`='$ont',`bandera_cliente`='$bandera_ont',`bote_cliente`='$bote_ont',`puerto_cliente`='$puerto_ont' WHERE `id_cliente` = '$id_cliente'");
     }
 }
 

@@ -2,7 +2,9 @@
 session_start();
 if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     require("../conexion/conexion.php");
-    $id_usuario = $_SESSION['nombre'];
+
+    $nombre_usuario = $_SESSION['nombre'];
+    $id_usuario = $_SESSION['id_usuario'];
 
     //traemos la info. de ver domicilio
     $id = $_POST['num_reporte'];
@@ -32,7 +34,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     `problema_rechazo`= '$segundoproblemaencontrado', `solucion_rechazo`= '$segundasolucion', 
     `fecha_segunda_visita`= '$fecha2visita' WHERE `id_reportes` = '$id'");
 
-    var_dump($tipo);
+
+    $mensajes = 'El usuario: ' . $nombre_usuario . ' edito la reparacion con id: ' . $id;
+    $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
 
     header("location: ../../admin/reportes/caratula/revision.php?id=$id&&tipo=$tipo");
 }

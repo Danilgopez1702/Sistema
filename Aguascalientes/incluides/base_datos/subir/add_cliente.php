@@ -12,6 +12,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     } else {
         require("../conexion/conexion.php");
 
+        $nombre_usuario = $_SESSION['nombre'];
+        $id_usuario = $_SESSION['id_usuario'];
+
         $folio = $_POST['folio'];
         $n_cliente = $_POST['n_cliente'];
         $paquete = $_POST['paquete'];
@@ -22,6 +25,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
         $fecha_corte = date("Y-m-d", strtotime($fecha_instalacion . "+ 1 month"));
         $instalador = $_POST['instalador'];
         $instalacion_nueva = $_POST['instalacion_nueva'];
+        $router_ont = $_POST['router_ont'];
         $nombre = $_POST['nombre'];
         $paterno = $_POST['paterno'];
         $materno = $_POST['materno'];
@@ -115,6 +119,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 
             $sql_revisar = mysqli_query($conexion, "INSERT INTO `revisar`( `id_cliente`, `status_revisar`)
         VALUES ('$id',1)");
+
         } else if ($instalacion_nueva == 2) {
 
             $sql = mysqli_query($conexion, "INSERT INTO `cliente`(`numero_cliente`, `folio_cliente`, `status_cliente`, `paquete_cliente`,
@@ -151,7 +156,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
          `router_cliente`, `ont_cliente`, `bandera_cliente`, `bote_cliente`, `puerto_cliente`, 
         `factura`, `por_revisar`, `id_zona` , `id_cede`) VALUES ('$n_cliente','$folio', 0,'$paquete','$velocidad','$precio_m','$fecha_instalacion','$fecha_corte',
         '$vendedor','$instalador','$nombre', '$paterno','$materno','$nacimiento','$email','$calle','$n_ext','$n_int','$municipio','$estado','$colonia','$postal',
-        '$calle1','$calle2','$ref', '$tel1','$tel2','$tel3','$ref1','$ref_tel','$ref2','$ref_tel2', '$router', '$ont', '$bandera', '$bote', '$puerto', 1, 2,'$zona', 1)");
+        '$calle1','$calle2','$ref', '$tel1','$tel2','$tel3','$ref1','$ref_tel','$ref2','$ref_tel2', '$router_ont', '$ont', '$bandera', '$bote', '$puerto', 1, 2,'$zona', 1)");
 
             $sql_id = mysqli_query($conexion, "SELECT * FROM `cliente` WHERE numero_cliente = '$n_cliente'");
             $extraccion_id = mysqli_fetch_assoc($sql_id);
@@ -180,7 +185,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
             $mac = $onu;
         } else if ($instalacion_nueva == 3) {
             $suma = base_convert($ont, 16, 10);
-            $suma = $suma +1;
+            $suma = $suma + 1;
             $mac = base_convert($suma, 10, 16);
         }
         $mac = str_replace(":", "", $mac);
@@ -190,6 +195,10 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
         include('../../mikrotik/manual_cambiar_paquete.php');
 
         var_dump($vendedor, $sql);
+
+
+        $mensajes = 'El usuario: ' . $nombre_usuario . ' dio de alta al cliente: ' . $numero_cliente;
+        $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
 
         header("location: ../../admin/clientes/consultar/caratula.php?id=$redir");
     }

@@ -36,7 +36,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                     <div class="row col-mb-3">
                         <label class="col-sm-6 col-form-label">Fallo<span class="require">*</span></label>
                         <div class="col-sm-6">
-                            <select class="form-control" name="paquete_seleccionado" id="paquete_seleccionado" style="border-radius: 5px;" required onchange='precio();'>
+                            <select class="form-control" name="fallo" id="fallo" style="border-radius: 5px;" required onchange='precio();'>
                                 <option value="2">NO</option>
                                 <option value="1">SI</option>
                             </select>

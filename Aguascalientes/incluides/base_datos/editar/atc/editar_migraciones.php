@@ -2,7 +2,9 @@
 session_start();
 if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     require("../conexion/conexion.php");
-    $id_usuario =  $_SESSION['nombre'];
+    
+    $nombre_usuario = $_SESSION['nombre'];
+    $id_usuario = $_SESSION['id_usuario'];
 
     //traemos la info. de ver domicilio
     $id = $_POST['num_reporte'];
@@ -31,6 +33,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     `solucion_reportes`='$solucion',`fecha_rechazo`='$fecharechazo',`razon_rechazo`='$razonrechazo',
     `reagendacion_reportes`='$fechareagendado',`problema_rechazo`='$segundoproblemaencontrado',`solucion_rechazo`='$segundasolucion',
     `fecha_segunda_visita`='$fecha2visita',`status_revisar`='$status' WHERE no_reporte_reportes = '$id'");
+    
+    $mensajes = 'El usuario: ' . $nombre_usuario . ' modifico la migracion con numero: ' . $id;
+    $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
 
     var_dump($sql);
 }

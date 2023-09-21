@@ -259,3 +259,19 @@ function formSubmit(){
         }
     });
 }
+function ont_router(){
+    var ont = document.getElementById('ont').value;
+    $.ajax({
+        url: "../../../base_datos/ajax/consultar_mac_ont.php",
+        type: 'POST',
+        data: {
+            'ont': ont
+        }
+    }).done(function (data) {
+        dec = parseInt(data, 16);
+        nrouter = dec+1;
+        hex = nrouter.toString(16);
+        $("#router_ont").val(hex);
+    });
+        
+}

@@ -3,6 +3,10 @@ session_start();
 if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     require("../conexion/conexion.php");
 
+    $nombre_usuario = $_SESSION['nombre'];
+    $id_usuario = $_SESSION['id_usuario'];
+
+
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $paterno = $_POST['paterno'];
@@ -20,12 +24,16 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     $tel1 = $_POST['tel1'];
     $tel2 = $_POST['tel2'];
 
-    $sql = mysqli_query($conexion,"UPDATE `cliente` SET `nombre_cliente`='$nombre',`apellido_p_cliente`='$paterno',`apellido_m_cliente`='$materno',
+    $sql = mysqli_query($conexion, "UPDATE `cliente` SET `nombre_cliente`='$nombre',`apellido_p_cliente`='$paterno',`apellido_m_cliente`='$materno',
     `calle_cliente`='$calle',`numero_ext`='$n_ext',`numero_int`='$n_int',`municipio`='$municipio',`estado`='$estado',`colonia_cliente`='$colonia',
     `codigo_postal`='$postal',`entre_calle1`='$calle1',`entre_calle2`='$calle2',`ref_dom`='$ref',`tel1_cliente`='$tel1',`tel2_cliente`='$tel2'
      WHERE `id_cliente` = '$id'");
 
-     
+
+    $mensajes = 'El usuario: ' . $nombre_usuario . ' edito el prospecto con id: ' . $id;
+    $log = mysqli_query($conexion, "INSERT INTO `log`(`accion_log`, `id_usuario`, `id_cliente`) VALUES ('$mensajes,'$id_usuario','$id_cliente')");
+
+
     header("location: ../../admin/clientes/consultar/prospecto.php?id=$id");
 }
 ?>

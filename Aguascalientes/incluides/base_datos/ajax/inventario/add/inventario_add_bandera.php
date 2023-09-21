@@ -15,7 +15,7 @@ if($numero>=1){
 echo "error";
 }else{
     //si no es mayor a 1 se inserta los datos que estan en el post
-$sql = mysqli_query($conexion, "INSERT INTO `inventario`( `bandera_inventario`,`id_instalador`, `fallo_inventario`, `tipo_inventario``id_zona`)
+$sql = mysqli_query($conexion, "INSERT INTO `inventario`( `bandera_inventario`,`id_instalador`, `fallo_inventario`, `tipo_inventario`,`id_zona`)
 VALUES ('$numbandera', 2,'$fallo',4,1)");
 //el valor mensajes es para llamarlo en el log como string
 $mensajes ='Se agrego la bandera '.$numbandera .' al inventario';

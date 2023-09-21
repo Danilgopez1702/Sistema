@@ -12,6 +12,7 @@ $tipo = mysqli_fetch_assoc($query_tipo);
 $tipo_olt = $tipo['equipo_zonafibra'];
 echo $tipo_olt;
 if($tipo_olt == 1){
+    $equipos .= '<option value="0">Seleccionar Equipo...</option>';
     $query = mysqli_query($conexion, "SELECT * FROM `inventario` WHERE tipo_inventario = 2 && fallo_inventario = 2 && id_instalador = $instalador");
     if (mysqli_num_rows($query) > 0){   //hay equipos asignados, imprimir options
         while($row = $query->fetch_assoc()) {

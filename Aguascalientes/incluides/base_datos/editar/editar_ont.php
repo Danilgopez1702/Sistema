@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     require("../conexion/conexion.php");
-    $id_usuario =  $_SESSION['nombre'];
+    $id_usuario = $_SESSION['nombre'];
 
     //traemos la info. del modal
     $id = $_POST['editar_id_inventario'];
@@ -11,9 +11,9 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
     $tecnico = $_POST['editar_id_instalador'];
     $fallo = $_POST['editar_fallo_inventario'];
 
-    if($fallo == "Si"){
+    if ($fallo == "Si") {
         $fallos = 1;
-    }else if($fallo == "No"){
+    } else if ($fallo == "No") {
         $fallos = 2;
     }
 
@@ -40,7 +40,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
         //agreagar a log
         $sql_log = mysqli_query($conexion, "INSERT INTO `log`( `accion_log`, `id_usuario`)
                                         VALUES ('$mensaje' ,'$id_usuario')");
-    }else if ($mac != $mac_antes) {
+    } else if ($mac != $mac_antes) {
         $mensaje = 'Se cambio la onu del del equipo, de ' . $mac_antes . ' a ' . $mac;
         //agreagar a log
         $sql_log = mysqli_query($conexion, "INSERT INTO `log`( `accion_log`, `id_usuario`)
