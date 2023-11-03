@@ -3,18 +3,18 @@ $(document).ready(function () {
     "ajax": {
       "url": "../../../base_datos/ajax/tablas/consulta_prospectos.php",
       "method": 'POST', //usamos el metodo POST
-      "dataSrc":""
+      "dataSrc": ""
     },
-    "columns":[
+    "columns": [
 
-      {"data": "id_prospecto"},
-      {"data": "apellido_p_prospecto"},
-      {"data": "apellido_m_prospecto"},
-      {"data": "nombre_prospecto"},
-      {"data": "tel1"},
+      { "data": "id_prospecto" },
+      { "data": "apellido_p_prospecto" },
+      { "data": "apellido_m_prospecto" },
+      { "data": "nombre_prospecto" },
+      { "data": "tel1" },
 
-      {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div><div class='btn-group'><button class='btn btn-sucess btn-sm btnRepo' data-toggle='modal' title='Levantar reporte'><i class='fas fa-thin fa-wrench ml-2'></i></button></div>"}
-  ],
+      { "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div>" }
+    ],
     lengthMenu: [50, 75, 100],
     language: {
       url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-MX.json',
@@ -43,22 +43,22 @@ $(document).ready(function () {
     }
   });
 
-//Borrar
-$(document).on("click", ".btnBorrar", function(){
-  fila = $(this);           
-  user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
-  console.log(user_id); 
-  window.location.href = "/Sistema/Aguascalientes/incluides/admin/clientes/consultar/prospecto.php?id=" + user_id;
-  
-});
+  //Borrar
+  $(document).on("click", ".btnBorrar", function () {
+    fila = $(this);
+    user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
+    console.log(user_id);
+    window.location.href = "/Sistema/Aguascalientes/incluides/admin/clientes/consultar/prospecto.php?id=" + user_id;
 
-//Reporte
-$(document).on("click", ".btnRepo", function(){
-  fila = $(this);           
-  user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		       
-  console.log(user_id); 
-  window.location.href = "/Sistema/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
-  
-});
+  });
+
+  //Reporte
+  $(document).on("click", ".btnRepo", function () {
+    fila = $(this);
+    user_id = parseInt($(this).closest('tr').find('td:eq(0)').text());
+    console.log(user_id);
+    window.location.href = "/Sistema/Aguascalientes/incluides/admin/reportes/nuevo_reporte/nuevo_reporte.php?id=" + user_id;
+
+  });
 })
 

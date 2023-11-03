@@ -1,5 +1,6 @@
 <?php
 require("../../../base_datos/conexion/conexion.php");
+
     $consultar_cliente = mysqli_query($conexion, "SELECT * FROM cliente WHERE id_cliente = $id");
     $cliente = mysqli_fetch_assoc($consultar_cliente);
 

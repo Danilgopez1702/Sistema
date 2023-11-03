@@ -7,8 +7,6 @@ $borrado = mysqli_query($conexion, "DELETE FROM `cliente`");
 $sql_clientes = mysqli_query($con, "SELECT * FROM `clientes`");
 $clientes_cont = mysqli_num_rows($sql_clientes);
 
-
-
 if ($clientes_cont > 0) {
     while ($data = mysqli_fetch_assoc($sql_clientes)) {
 
@@ -136,8 +134,7 @@ if ($clientes_cont > 0) {
 
             $vendedors = 1;
         }
-        
-        
+              
         try{
             if (!$NumRouter) {
                 $sql = mysqli_query($conexion, "INSERT INTO `cliente`(`id_cliente`,`numero_cliente`, `folio_cliente`, `status_cliente`, `paquete_cliente`, `velocidad_cliente`,
@@ -149,7 +146,6 @@ if ($clientes_cont > 0) {
             '$fecha_nacimiento','$email','$calle','$numero_ext','$numero_int','$colonia','$codigo_postal','$entre_calle1','$entre_calle2',
             '$ref_dom', '$tel1','$tel2','$ref_fam_nom','$ref_fam_tel','$ref_nofam_nom','$ref_nofam_tel','$num_equipo', '$factura', 1)");
     
-                //var_dump($sql);
             } else {
     
                 $sql = mysqli_query($conexion, "INSERT INTO `cliente`(`id_cliente`,`numero_cliente`, `folio_cliente`, `status_cliente`, `paquete_cliente`,
@@ -164,8 +160,7 @@ if ($clientes_cont > 0) {
         } catch (Throwable $e) {
             echo('<pre>');
             echo $num_cliente;
-            echo('<pre>');    
+            echo('<pre>');
         }
-        //var_dump($sql);
     }
 }

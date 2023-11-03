@@ -162,7 +162,7 @@ require_once("../../../base_datos/conexion/conexion.php");
                                 <div class="form-inline">
                                     <label class="col-sm-4 col-form-label">Comentarios</label>
                                     <div class="col-sm-8">
-                                        <textarea type="text" class="form-control col-sm-12" id="comentarios" name="comentarios" require></textarea>
+                                        <textarea type="text" class="form-control col-sm-12" id="comentario" name="comentario" require></textarea>
                                     </div>
                                 </div>
                             </div>

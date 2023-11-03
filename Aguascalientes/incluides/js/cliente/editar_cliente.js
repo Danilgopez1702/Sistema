@@ -103,7 +103,7 @@ function seleccion_ont() {
             'zona': zona_ont
         }
     }).done(function (data) {
-        $('#ont').html(data);        
+        $('#ont').html(data);
         console.log(data);
     });
 
@@ -215,7 +215,7 @@ function formSubmit() {
     $("#bandera_ont").prop("disabled", false);
     $("#formo").submit();
 }
-function refresh(){
+function refresh() {
     var id = $("#id").val();
     $("#btn_refresh").attr("disabled", true);
     toastr.info('Deslogueando...');
@@ -224,19 +224,19 @@ function refresh(){
         url: "../../../mikrotik/refresh.php",
         type: 'POST',
         data: {
-            'id' : id
+            'id': id
         }
-    }).done(function(data) {
+    }).done(function (data) {
         if (data == 'error2') {
             toastr.error('Cliente No Encontrado.');
             $("#btn_refresh").prop("disabled", false);
-        }else  {
+        } else {
             toastr.success('Cliente Deslogueado.');
             $("#btn_refresh").prop("disabled", false);
         }
     })
 }
-function arreglar(){
+function arreglar() {
     var id = $("#id").val();
     $("#btn_arreglar").prop("disabled", true);
     toastr.info('Arreglando...');
@@ -244,20 +244,20 @@ function arreglar(){
     $.ajax({
         url: "../../../mikrotik/boton_arreglar.php",
         type: 'POST',
-        data: { 
-            'id' : id
+        data: {
+            'id': id
         }
-    }).done(function(data) {
+    }).done(function (data) {
         if (data == 'error2') {
             toastr.error('Cliente No Encontrado.');
             $("#btn_refresh").prop("disabled", false);
-        }else  {
+        } else {
             toastr.success('Cliente Arreglado.');
             $("#btn_refresh").prop("disabled", false);
         }
     })
 }
-function ont_router(){
+function ont_router() {
     var ont = document.getElementById('ont').value;
     $.ajax({
         url: "../../../base_datos/ajax/consultar_mac_ont.php",
@@ -267,9 +267,41 @@ function ont_router(){
         }
     }).done(function (data) {
         dec = parseInt(data, 16);
-        nrouter = dec+1;
+        nrouter = dec + 1;
         hex = nrouter.toString(16);
         $("#router_ont").val(hex);
     });
-        
+
+}
+function abrirNuevaPestana() {
+    var precio = $("#precio_m").val();
+    // Especifica el tamaño de la nueva ventana
+    var ancho = 800;
+    var alto = 600;
+
+    // Eliminar caracteres no numéricos (mantener solo los dígitos)
+    precio = precio.replace(/[^0-9]/g, '');
+
+    // Convertir la cadena resultante en un número entero
+    var cantidad = parseInt(precio, 10);
+
+    // Calcula la posición del centro de la pantalla
+    var izquierda = (window.screen.width - ancho) / 2;
+    var arriba = (window.screen.height - alto) / 2;
+
+    // Abre una nueva ventana en el tamaño y posición especificados
+    window.open('../../../pago_tarjeta/tarjeta/checkout.php', 'MiNuevaPestana', 'width=' + ancho + ',height=' + alto + ',left=' + izquierda + ',top=' + arriba);
+
+    // Datos a enviar a la nueva ventana
+    var datos = {
+        nombre: cantidad
+    };
+
+    // Convierte los datos en una cadena JSON
+    var datosJSON = JSON.stringify(datos);
+
+
+    // Envía los datos a la nueva ventana
+    nuevaVentana.postMessage(datosJSON, window.location.origin);
+
 }

@@ -50,12 +50,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
 
         mysqli_close($conexion);
 
-		if($tipo == 1){
-			header("location: ../../admin/reportes/caratula/reparaciones.php?id=".$id);
-		}else if($tipo == 2){
-			header("location: ../../admin/reportes/caratula/migraciones.php?id=".$id);
-		}else if($tipo == 4){
-			header("location: ../../admin/reportes/caratula/domicilio.php?id=".$id);
-		}
+
+		header("location: ../../admin/reportes/caratula/reparaciones.php?id=" . $id . '&&tipo=' . $tipo);
     }
 }

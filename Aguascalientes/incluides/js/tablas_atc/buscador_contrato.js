@@ -38,6 +38,7 @@ $(document).ready(function () {
       }},
       {"data": "folio_cliente"},
       {"data": "onu_cliente"},
+      {"data": "ont_cliente"},
       {"data": "bandera_cliente"},
       {"data": "numero_cliente"},
       {"data": "apellido_p_cliente"},

@@ -14,8 +14,6 @@ if ($tipo == 1) {
 } else if ($tipo == 4) {
 	$tipo_repo = "de la Venta";
 }
-
-
 ?>
 
 <h2>Ver reparaciones #
@@ -24,7 +22,7 @@ if ($tipo == 1) {
 <div class="card shadow mb-4">
 	<div class="card-header py-sm-2">
 		<h4 class="m-0 font-weight-bold text-primary">Consultar reparacion de:
-			<?php echo $nombrec_reporte . " (" . $num_cliente . ")" ?>
+			<?php echo $nombrec_reporte . " (" . $num_cliente . ")." ?>
 		</h4>
 	</div>
 	<div class="text-right">
@@ -58,7 +56,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Numero de Cliente</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="folio" name="folio"
-										value="<?php echo $num_cliente ?>" disabled>
+										value="<?php echo $num_cliente ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -68,7 +66,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Nombre(s)</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $nombre_reporte ?>" disabled>
+										value="<?php echo $nombre_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -78,7 +76,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Apellido Paterno</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $paterno_reporte ?>" disabled>
+										value="<?php echo $paterno_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -88,7 +86,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Apellido Materno</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $materno_reporte ?>" disabled>
+										value="<?php echo $materno_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -98,7 +96,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Colonia</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $colonia_reporte ?>" disabled>
+										value="<?php echo $colonia_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -108,7 +106,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Calle</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $calle_reporte ?>" disabled>
+										value="<?php echo $calle_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -118,7 +116,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Numero Externo</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $externo_reporte ?>" disabled>
+										value="<?php echo $externo_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -132,7 +130,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Numero Interno</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $interno_reporte ?>" disabled>
+											value="<?php echo $interno_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -145,7 +143,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Telefono 1</label>
 								<div class="col-sm-8">
 									<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-										value="<?php echo $tel1_reporte ?>" disabled>
+										value="<?php echo $tel1_reporte ?>" readonly>
 								</div>
 							</div>
 						</div>
@@ -158,7 +156,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Telefono 2</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $tel2_reporte ?>" disabled>
+											value="<?php echo $tel2_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -174,7 +172,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Telefono 3</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $tel3_reporte ?>" disabled>
+											value="<?php echo $tel3_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -190,7 +188,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Onu</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $onu_reporte ?>" disabled>
+											value="<?php echo $onu_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -200,7 +198,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Bote</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $bote_reporte ?>" disabled>
+											value="<?php echo $bote_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -210,7 +208,7 @@ if ($tipo == 1) {
 									<label class="col-sm-4 col-form-label">Puerto</label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_cliente" name="n_cliente"
-											value="<?php echo $puerto_reporte ?>" disabled>
+											value="<?php echo $puerto_reporte ?>" readonly>
 									</div>
 								</div>
 							</div>
@@ -221,8 +219,10 @@ if ($tipo == 1) {
 				</div>
 			</div>
 		</div>
-		<form class="forms-sample" method='post' id="formo" name="formo" action='../../../base_datos/editar/editar_reparacion.php'>
-			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $id ?>" required="" />
+		<form class="forms-sample" method='post' id="formo" name="formo"
+			action='../../../base_datos/editar/editar_reparacion.php'>
+			<input type="hidden" class="form-control" id="num_reporte" name="num_reporte" value="<?php echo $id ?>"
+				required="" />
 			<input type="hidden" class="form-control" id="tipos" name="tipos" value="<?php echo $tipo ?>" required="" />
 			<!-- div de Informacion de la Reparacion -->
 			<div class="card shadow mb-4">
@@ -243,9 +243,9 @@ if ($tipo == 1) {
 										?>
 										<button type="button" class="btn btn-primary btn-sm">Activo</button>
 										<?php
-									} else if ($status_reporte == 2){
+									} else if ($status_reporte == 2) {
 										?>
-										<button type="button" class="btn btn-danger btn-sm">Cerrado</button>
+											<button type="button" class="btn btn-danger btn-sm">Cerrado</button>
 										<?php
 									}
 									?>
@@ -258,36 +258,34 @@ if ($tipo == 1) {
 								<div class="form-inline ">
 									<label class="col-sm-4 col-form-label">Status</label>
 									<div class="col-sm-8">
-
 										<?php
 										if ($status_reporte == 1) {
 											?>
 											<input class="form-control col-sm-12" id="status" name="status"
-												value="Visita Pendiente" disabled>
+												value="Visita Pendiente" readonly>
 											<?php
 										} else if ($status_reporte == 2) {
 											?>
 												<input class="form-control col-sm-12" id="status" name="status"
-													value="Revisión Pendiente" disabled>
+													value="Revisión Pendiente" readonly>
 											<?php
 										} else if ($status_reporte == 3) {
 											?>
 													<input class="form-control col-sm-12" id="status" name="status"
-														value="Segunda Visita Pendiente" disabled>
+														value="Segunda Visita Pendiente" readonly>
 											<?php
 										} else if ($status_reporte == 4) {
 											?>
 														<input class="form-control col-sm-12" id="status" name="status"
-															value="Segunda Revisión Pendiente" disabled>
+															value="Segunda Revisión Pendiente" readonly>
 											<?php
 										} else if ($status_reporte == 5) {
 											?>
 															<input class="form-control col-sm-12" id="status" name="status"
-																value="Reparacion Completa" disabled>
+																value="Reparacion Completa" readonly>
 											<?php
 										}
 										?>
-										</select>
 									</div>
 								</div>
 							</div>
@@ -298,7 +296,7 @@ if ($tipo == 1) {
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12 text-left" type="date"
 											id="fecha_asignacion" name="fecha_asignacion"
-											value="<?php echo $fecha_reporte ?>" disabled required>
+											value="<?php echo $fecha_reporte ?>" readonly required>
 									</div>
 								</div>
 							</div>
@@ -307,9 +305,8 @@ if ($tipo == 1) {
 								<div class="form-inline ">
 									<label class="col-sm-4 col-form-label">Fecha de Reparacion</label>
 									<div class="col-sm-8">
-										<input class="form-control col-sm-12 text-left" type="date"
-											id="fecha_acudir" name="fecha_acudir"
-											value="<?php echo $fecha_reporte ?>" disabled required>
+										<input class="form-control col-sm-12 text-left" type="date" id="fecha_acudir"
+											name="fecha_acudir" value="<?php echo $fecha_reporte ?>" readonly required>
 									</div>
 								</div>
 							</div>
@@ -320,7 +317,7 @@ if ($tipo == 1) {
 											class="require">*</span></label>
 									<div class="col-sm-8">
 										<input class="form-control col-sm-12" type="text" id="n_reparador"
-											name="n_reparador" value="<?php echo $reparador_reporte ?>" required>
+											name="n_reparador" value="<?php echo $reparador_reporte ?>" readonly>
 									</div>
 								</div>
 
@@ -352,7 +349,7 @@ if ($tipo == 1) {
 								<div class="col-sm-8">
 									<textarea class="form-control col-sm-12" type="text" id="problema_encontrado"
 										name="problema_encontrado" required
-										disabled><?php echo $problema_reporte ?></textarea>
+										readonly><?php echo $problema_reporte ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -362,7 +359,7 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
 								<div class="col-sm-8">
 									<textarea class="form-control col-sm-12" type="text" id="solucion" name="solucion"
-										required disabled><?php echo $solucion_reporte ?></textarea>
+										required readonly><?php echo $solucion_reporte ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -427,7 +424,7 @@ if ($tipo == 1) {
 								<div class="col-sm-8">
 									<textarea class="form-control col-sm-12" type="text" id="problema_encontrado_2"
 										name="problema_encontrado_2" required
-										disabled><?php echo $problema_reporte ?></textarea>
+										readonly><?php echo $problema_reporte ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -437,7 +434,8 @@ if ($tipo == 1) {
 								<label class="col-sm-4 col-form-label">Solucion<span class="require">*</span></label>
 								<div class="col-sm-8">
 									<textarea class="form-control col-sm-12" type="text" id="segunda_solucion"
-										name="segunda_solucion" required disabled><?php echo $solucion_reporte ?></textarea>
+										name="segunda_solucion" required
+										readonly><?php echo $solucion_reporte ?></textarea>
 								</div>
 							</div>
 						</div>
@@ -449,7 +447,11 @@ if ($tipo == 1) {
 					href="../../../admin/clientes/consultar/caratula.php?id=<?php echo $id_cliente ?>" target="_blank">
 					Ver Cliente
 				</a>
-				<button type="button" class="btn btn-primary submitBtn" id="btn_enviar" name= "btn_enviar" onclick="enviar();">Actualizar</button>
+				<button type="button" class="btn btn-primary submitBtn" id="btn_enviar" name="btn_enviar"
+					onclick="enviar();">Actualizar</button>
+				<a type="button" class="btn btn-warning submitBtn"
+					href="../../../base_datos/confirmar/cerrar_reparacion.php?id=<?php echo $id ?>">Cerrar
+					Reparacion</a>
 			</div>
 		</form>
 	</div>

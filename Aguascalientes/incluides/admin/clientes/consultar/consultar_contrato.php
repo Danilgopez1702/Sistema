@@ -43,6 +43,7 @@ if ($acomodo == 0) {
                         <th>Status</th>
                         <th>Folio</th>
                         <th>Onu</th>
+                        <th>Ont</th>
                         <th>Bandera</th>
                         <th>Numero de Cliente</th>
                         <th>Apellido Paterno</th>

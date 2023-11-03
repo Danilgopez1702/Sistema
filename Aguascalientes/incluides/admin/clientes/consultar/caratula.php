@@ -192,7 +192,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control" name="vendedor" id="vendedor"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $vendedor_cliente ?>" selected="true"><?php echo $vendedor ?></option>
+                                            <option value="<?php echo $vendedor_cliente ?>" selected="true">
+                                                <?php echo $vendedor ?>
+                                            </option>
                                             <?php
                                             //aqui se seleccion el tipo de usuario tecnico
                                             $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 or tipo_usuario = 5 ORDER BY id_usuario ASC");
@@ -255,7 +257,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="instalador" id="instalador"
                                             style="border-radius: 5px;" onchange='form_instalacion();'>
-                                            <option value="<?php echo $instalador_cliente ?>" selected="true"><?php echo $instalador . " (Actual)" ?></option>
+                                            <option value="<?php echo $instalador_cliente ?>" selected="true">
+                                                <?php echo $instalador . " (Actual)" ?>
+                                            </option>
                                             <?php
                                             $tecnico = mysqli_query($conexion, "SELECT * FROM usuario WHERE tipo_usuario = 4 ORDER BY id_usuario ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
@@ -328,7 +332,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="antena" id="antena"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $radio_cliente ?>" selected="true"><?php echo $radio_cliente . " (Actual)" ?></option>
+                                            <option value="<?php echo $radio_cliente ?>" selected="true">
+                                                <?php echo $radio_cliente . " (Actual)" ?>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -357,7 +363,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="zona_onu" id="zona_onu"
                                             style="border-radius: 5px;" onchange="seleccion_onu()">
-                                            <option value="<?php echo $id_zona ?>"><?php echo $nombre_zona . " (Actual)" ?></option>
+                                            <option value="<?php echo $id_zona ?>">
+                                                <?php echo $nombre_zona . " (Actual)" ?>
+                                            </option>
                                             <?php
                                             $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
                                             $result_tecnico = mysqli_num_rows($tecnico);
@@ -383,7 +391,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="bote_onu" id="bote_onu"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $bote_cliente ?>"><?php echo $bote_cliente . " (Actual)" ?></option>
+                                            <option value="<?php echo $bote_cliente ?>">
+                                                <?php echo $bote_cliente . " (Actual)" ?>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -405,7 +415,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="onu" id="onu"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $onu_cliente ?>"><?php echo $onu_cliente . " (Actual)" ?></option>
+                                            <option value="<?php echo $onu_cliente ?>">
+                                                <?php echo $onu_cliente . " (Actual)" ?>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -427,7 +439,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="bandera_onu" id="bandera_onu"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $bandera_cliente ?>"><?php echo $bandera_cliente . " (Actual)" ?></option>
+                                            <option value="<?php echo $bandera_cliente ?>">
+                                                <?php echo $bandera_cliente . " (Actual)" ?>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -446,21 +460,23 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="zona_ont" id="zona_ont"
                                             style="border-radius: 5px;" onchange="seleccion_ont()">
-                                            <<option value="0">Seleccionar Zona</option>
-                                            <<option value="<?php echo $id_zona ?>"><?php echo $nombre_zona ?></option>
-                                                <?php
-                                                $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
-                                                $result_tecnico = mysqli_num_rows($tecnico);
-                                                if ($result_tecnico > 0) {
-                                                    while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
-                                                        ?>
-                                                        <option value="<?php echo $data_tecnico['id_zonafibra'] ?>">
-                                                            <?php echo $data_tecnico['nombre_zonafibra'] ?>
-                                                        </option>
-                                                        <?php
-                                                    }
+                                            <option value="0">Seleccionar Zona</option>
+                                            <option value="<?php echo $id_zona ?>">
+                                                <?php echo $nombre_zona ?>
+                                            </option>
+                                            <?php
+                                            $tecnico = mysqli_query($conexion, "SELECT * FROM zonafibra ORDER BY id_zonafibra ASC");
+                                            $result_tecnico = mysqli_num_rows($tecnico);
+                                            if ($result_tecnico > 0) {
+                                                while ($data_tecnico = mysqli_fetch_assoc($tecnico)) {
+                                                    ?>
+                                                    <option value="<?php echo $data_tecnico['id_zonafibra'] ?>">
+                                                        <?php echo $data_tecnico['nombre_zonafibra'] ?>
+                                                    </option>
+                                                    <?php
                                                 }
-                                                ?>
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -472,7 +488,8 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="bote_ont" id="bote_ont"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $bote_cliente ?>"><?php echo $bote_cliente ?>
+                                            <option value="<?php echo $bote_cliente ?>">
+                                                <?php echo $bote_cliente ?>
                                             </option>
                                         </select>
                                     </div>
@@ -495,7 +512,8 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="ont" id="ont"
                                             style="border-radius: 5px;" onchange="ont_router()">
-                                            <option value="<?php echo $ont_cliente ?>"><?php echo $ont_cliente ?>
+                                            <option value="<?php echo $ont_cliente ?>">
+                                                <?php echo $ont_cliente ?>
                                         </select>
                                     </div>
                                 </div>
@@ -507,7 +525,9 @@ include "../../../modal/pago/pago_manual.php";
                                     <div class="col-sm-8">
                                         <select class="form-control col-sm-12" name="bandera_ont" id="bandera_ont"
                                             style="border-radius: 5px;">
-                                            <option value="<?php echo $bandera_cliente ?>"><?php echo $bandera_cliente ?></option>
+                                            <option value="<?php echo $bandera_cliente ?>">
+                                                <?php echo $bandera_cliente ?>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -795,11 +815,13 @@ include "../../../modal/pago/pago_manual.php";
         ?>
         <a href="../../../edoDeCuenta/generar_boton.php?id=<?php echo $id_cliente ?>" type="button"
             class="btn btn-secondary" target="_blank">Ver estado de cuenta</a>
-        <a href="../../pagos_oxxo/agregar/pago_tarjeta.php?id=<?php echo $id_cliente ?>" type="button"
-            class="btn btn-secondary" target="_blank">Realizar Pago con Tarjeta</a>
+        <a type="button" class="btn btn-secondary" onclick="abrirNuevaPestana();">Realizar Pago con Tarjeta</a>
+        <a href="../../reportes/nuevo_reporte/nuevo_reporte.php?id=<?php echo $id_cliente ?>" type="button"
+            class="btn btn-secondary" target="_blank">Levantar Reporte</a>
     </div>
 </div>
 <script src="../../../js/cliente/editar_cliente.js"></script>
+
 <?php
 include "../../../header/header2.php";
 ?>

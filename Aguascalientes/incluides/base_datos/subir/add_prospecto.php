@@ -28,15 +28,15 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) 
         $tel2 = $_POST['tel2'];
         $comentario = $_POST['comentario'];
 
-        var_dump($nombre, $paterno, $materno, $postal, $estado, $municipio, $colonia, $calle, $n_ext, $n_int, $calle1, $calle2, $ref, $tel1, $tel2);
+        $sql = mysqli_query($conexion, "INSERT INTO `prospecto`(`nombre_prospecto`, `apellido_p_prospecto`, `apellido_m_prospecto`, `postal_prospecto`,
+        `estado_prospecto`, `municipio_prospecto`, `colonia_prospecto`, `calle_prospecto`, `n_ext`, `n_int`, `calle1`, `calle2`, `ref`, 
+        `tel1`, `tel2`, `notas_prospectos`) VALUES ('$nombre','$paterno','$materno','$postal','$estado','$municipio','$colonia','$calle','$n_ext','$n_int','$calle1',
+        '$calle2','$ref','$tel1','$tel2','$comentario')");
 
-        $sql = mysqli_query($conexion, "INSERT INTO `prospecto`(`nombre_prospecto`, `apellido_p__prospecto`, `apellido_m__prospecto`, `postal_prospecto`, `estado_prospecto`,
-     `municipio_prospecto`, `colonia_prospecto`, `calle_prospecto`, `n_ext`, `n_int`, `calle1`, `calle2`, `ref`, `tel1`, `tel2`, `notas_prospectos`) VALUES ( '$nombre', '$paterno','$materno',
-     '$postal','$estado','$municipio','$colonia','$calle','$n_ext','$n_int','$calle1','$calle2','$ref','$tel1','$tel2', '$comentario')");
+        var_dump($sql);
 
-
-        $consulta = mysqli_query($conexion, "SELECT * FROM `prospecto` WHERE `nombre_prospecto` = '$nombre' and `apellido_p__prospecto` = '$paterno' 
-    and `calle_prospecto` = '$calle' and  `n_ext` = '$n_ext'");
+        $consulta = mysqli_query($conexion, "SELECT `id_prospecto` FROM `prospecto` WHERE `nombre_prospecto` = '$nombre'  and `apellido_p_prospecto` = '$paterno' 
+        and `calle_prospecto` =  '$calle' and `n_ext` = '$n_ext' ");
         $consul = mysqli_fetch_assoc($consulta);
         $redir = $consul['id_prospecto'];
 
