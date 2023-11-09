@@ -813,9 +813,13 @@ include "../../../modal/pago/pago_manual.php";
             <?php
         }
         ?>
+        <a type="button" class="btn btn-info" onclick="abrirNuevaPestana();">Realizar Pago con Tarjeta</a>
+        <br>
+        <br>
+    </div>
+    <div class="panel-body text-left">
         <a href="../../../edoDeCuenta/generar_boton.php?id=<?php echo $id_cliente ?>" type="button"
             class="btn btn-secondary" target="_blank">Ver estado de cuenta</a>
-        <a type="button" class="btn btn-secondary" onclick="abrirNuevaPestana();">Realizar Pago con Tarjeta</a>
         <a href="../../reportes/nuevo_reporte/nuevo_reporte.php?id=<?php echo $id_cliente ?>" type="button"
             class="btn btn-secondary" target="_blank">Levantar Reporte</a>
     </div>

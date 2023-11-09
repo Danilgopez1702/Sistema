@@ -45,7 +45,7 @@ $(document).ready(function () {
       { "data": "apellido_p_cliente" },
       { "data": "apellido_m_cliente" },
       { "data": "nombre_cliente" },
-      { "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div><div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div>" }
+      { "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-sucess btn-sm btnBorrar'><i class='fas fa-light fa-eye'></i></button></div>" }
     ],
     lengthMenu: [50, 75, 100],
     language: {
