@@ -183,6 +183,14 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
                     <div id="collapseRevisiones" class="collapse" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
+                            <?php
+                            if ($_SESSION['rol'] == 3132) {
+                                ?>
+                                <a class="collapse-item" href="../../reportes/eliminar_reporte/eliminar_reporte.php">Eliminar
+                                    Reporte antiguos</a>
+                                <?php
+                            }
+                            ?>
                             <a class="collapse-item" href="../../reportes/visualizacion/ver_domicilio.php">Cambio de
                                 Domicilio</a>
                             <a class="collapse-item"

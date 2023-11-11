@@ -825,7 +825,6 @@ include "../../../modal/pago/pago_manual.php";
     </div>
 </div>
 <script src="../../../js/cliente/editar_cliente.js"></script>
-
 <?php
 include "../../../header/header2.php";
 ?>
