@@ -290,18 +290,18 @@ function abrirNuevaPestana() {
     var arriba = (window.screen.height - alto) / 2;
 
     // Abre una nueva ventana en el tamaño y posición especificados
-    window.open('../../../pago_tarjeta/tarjeta/checkout.php', 'MiNuevaPestana', 'width=' + ancho + ',height=' + alto + ',left=' + izquierda + ',top=' + arriba);
+    window.open('../../../pago_tarjeta/tarjeta/checkout.php?dinero=' + cantidad + '00', 'MiNuevaPestana', 'width=' + ancho + ',height=' + alto + ',left=' + izquierda + ',top=' + arriba);
 
-    // Datos a enviar a la nueva ventana
-    var datos = {
-        nombre: cantidad
-    };
-
-    // Convierte los datos en una cadena JSON
-    var datosJSON = JSON.stringify(datos);
-
-
-    // Envía los datos a la nueva ventana
-    nuevaVentana.postMessage(datosJSON, window.location.origin);
+    // Escucha el mensaje de la nueva ventana
+    window.addEventListener('message', function (event) {
+        // Verifica que el mensaje provenga de la ventana correcta (por seguridad)
+        if (event.source === nuevaVentana) {
+            // Realiza la acción necesaria cuando se recibe el mensaje
+            if (event.data === 'Pago exitoso') {
+                console.log('Pago exitoso. Realiza la acción necesaria aquí.');
+                // Puedes llamar a funciones o realizar otras acciones
+            }
+        }
+    });
 
 }

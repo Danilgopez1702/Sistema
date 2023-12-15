@@ -188,6 +188,7 @@ if ($_SESSION['rol'] == 3132 || $_SESSION['rol'] == 1) {
                                 ?>
                                 <a class="collapse-item" href="../../reportes/eliminar_reporte/eliminar_reporte.php">Eliminar
                                     Reporte antiguos</a>
+                                <a class="collapse-item" href="../../reportes/descargar_reporte/descargar_reporte.php">Descargar Reportes</a>
                                 <?php
                             }
                             ?>

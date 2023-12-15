@@ -5,12 +5,12 @@ require_once '../secrets.php';
 
 $stripe = new \Stripe\StripeClient($stripeSecretKey);
 
-function calculateOrderAmount(array $items): int
+function calculateOrderAmount($items): int
 {
     // Reemplaza esta constante con un cálculo del monto del pedido
     // Calcula el total del pedido en el servidor para evitar
     // personas que manipulen directamente el importe del cliente
-    return 1400;
+    return $items;
 }
 
 header('Content-Type: application/json');
@@ -22,7 +22,7 @@ try {
 
     // Crea un PaymentIntent con monto y moneda
     $paymentIntent = $stripe->paymentIntents->create([
-        'amount' => calculateOrderAmount($jsonObj->items),
+        'amount' => calculateOrderAmount($_GET['dinero']),
         'currency' => 'mxn',
         // En la última versión de la API, especificar el parámetro `automatic_paid_methods` es opcional porque Stripe habilita su funcionalidad de forma predeterminada.
         'automatic_payment_methods' => [

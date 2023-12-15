@@ -18,7 +18,11 @@ document
 let emailAddress = '';
 // Obtiene una intención de pago y captura el secreto del cliente
 async function initialize() {
-  const { clientSecret } = await fetch("create.php", {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const cantidad = parseInt(urlParams.get('dinero'));
+  console.log(cantidad);
+  const { clientSecret } = await fetch("create.php?dinero=" + cantidad, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items }),
@@ -45,7 +49,7 @@ async function handleSubmit(e) {
     elements,
     confirmParams: {
       // Asegúrate de cambiar esto a tu página de finalización de pago
-      return_url: "http://localhost:4242/checkout.html",
+      return_url: "https://www.google.com/",
       receipt_email: emailAddress,
     },
   });
@@ -79,6 +83,7 @@ async function checkStatus() {
   switch (paymentIntent.status) {
     case "succeeded":
       showMessage("Payment succeeded!");
+      window.opener.postMessage("Pago exitoso")
       break;
     case "processing":
       showMessage("Your payment is processing.");

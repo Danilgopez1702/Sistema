@@ -21,19 +21,6 @@ include('barcode.php');
 end TARJETA OXXO
 ************/
 
-/*if ($row['factura'] == 1) { //si factura, tomar los datos de mascarilla factura
-    $sql_status2 = "SELECT nombre, calle, numero_ext, numero_int, colonia, precio_mensual FROM datos_facturacion WHERE idClientes = " . $_GET['idClientes'];
-    $result2 = mysqli_query($conexion, $sql_status2);
-    $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
-
-    $suscriptor = $row2['nombre'];
-    $domicilio = $row2['calle'] . " " . $row2['numero_ext'] . " " . $row2['numero_int'] . ", " . $row2['colonia'];
-    $nocliente = $row['num_cliente'];
-    $paquete = $row['paquete'];
-    $total = number_format((float)$row2['precio_mensual'], 2, '.', '');
-    $fechalimite = strftime("%d de %B de %Y", strtotime($row['fecha_ultimo_corte']));
-} else {*/
-
 $suscriptor = $row['nombre_cliente'] . " " . $row['apellido_p_cliente'] . " " . $row['apellido_m_cliente'];
 $domicilio = $row['calle_cliente'] . " " . $row['numero_ext'] . " " . $row['numero_int'] . ", " . $row['colonia_cliente'];
 $nocliente = $row['numero_cliente'];
@@ -50,7 +37,7 @@ $src = $jpg_image;
 //no de cliente
 imagettftext($jpg_image, 18, 0, 630, 268, $negro, $fuente, $nocliente);
 //paquete
-//imagettftext($jpg_image, 16, 0, 580, 300, $negro, $fuente, $paquete);
+imagettftext($jpg_image, 16, 0, 580, 300, $negro, $fuente, $paquete);
 //suscriptor
 imagettftext($jpg_image, 16, 0, 178, 335, $negro, $fuente, $suscriptor);
 //domicilio
