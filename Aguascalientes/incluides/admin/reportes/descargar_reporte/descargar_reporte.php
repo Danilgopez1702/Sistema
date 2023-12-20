@@ -16,7 +16,7 @@ require("../../../base_datos/conexion/conexion.php");
             </div>
             <div class="form py-5">
                 <div class="container">
-                    <form method='POST' id="form" name="form" action='../../../base_datos/eliminar/eliminar_reporte.php'
+                    <form method='POST' id="form" name="form" action='../../../reportes/csv/reporte_tecnicos.php'
                         enctype="multipart/form-data">
                         <div class="form-row align-items-center">
                             <div class="form-inline col-sm-12">

@@ -1,7 +1,7 @@
 <?php
     include_once "../../base_datos/conexion/conexion.php"; 
 
-    $filename = "Morosos_Activos";         //File Name
+    $filename = "Por_Recuperar";         //File Name
     //header info for browser
     header("Content-Type: application/csv");    
     header("Content-Disposition: attachment; filename=$filename.csv");  
@@ -39,5 +39,4 @@
     }
     print(trim($schema_insert1));
     print "\n";
-
 ?>
