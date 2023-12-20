@@ -1,7 +1,7 @@
 <?php
 include_once "../../base_datos/conexion/conexion.php";
 //aqui se pone el nombre que se le va a poner eal archivo
-$filename = "inventar_clientes_activos_" . date("d-m-Y");         //File Name
+$filename = "inventar_clientes_por_vencer_" . date("d-m-Y");         //File Name
 //aqui va el formato en el que se va a descargar el archivo
 header("Content-Type: application/xls");
 header("Content-Disposition: attachment; filename=$filename.xls");
